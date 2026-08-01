@@ -425,14 +425,19 @@ function render(a) {
       `Meanwhile, over the five years to 2023/24 ${a.name} granted planning permission for ` +
       `<strong>${fmt(a.approvals)} homes</strong> and completed <strong>${fmt(a.completions)}</strong>`;
     cp.hidden = false;
+    // Completions and starts are counted separately, so the never-started figure is
+    // its own sentence rather than a subset of the completions shortfall.
+    const unstarted = a.approved_not_started > 0
+      ? ` Separately, <strong>${fmt(a.approved_not_started)} approved homes never broke ground at ` +
+        `all</strong> — ${(a.approved_not_started / a.households).toFixed(1)}× the number of ` +
+        `households ${subject} currently has in temporary accommodation.`
+      : "";
     cp.innerHTML = gap > 0
-      ? `${opening} — a shortfall of <strong>${fmt(gap)}</strong>, a ${a.completion_rate_pct}% completion ` +
-        `rate. <strong>${fmt(a.approved_not_started)}</strong> of those homes were never even started. ` +
-        `That is ${(a.approved_not_started / a.households).toFixed(1)}× the number of households ` +
-        `${subject} currently has in temporary accommodation.`
+      ? `${opening} — a shortfall of <strong>${fmt(gap)}</strong>, a ${a.completion_rate_pct}% ` +
+        `completion rate.${unstarted}`
       : `${opening} — completing <strong>${fmt(-gap)} more</strong> than it approved, by working through ` +
         `consents granted before this window. One of the few London boroughs where delivery ran ahead of ` +
-        `new permission.`;
+        `new permission.${unstarted}`;
   } else {
     cp.hidden = true;
   }
