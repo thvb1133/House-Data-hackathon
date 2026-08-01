@@ -252,6 +252,11 @@
         homelessness. Comparing an annual cost to a one-off stock of reserves is a rough gauge of
         exposure, not an accounting statement — a borough spending more than its reserves each year
         is not thereby insolvent, it is funding the cost from revenue.</li>
+      <li><strong>A few boroughs report a negative net position in some years.</strong> Net
+        expenditure is spend minus income, and on council-owned or leased stock the subsidy and
+        rent recovered can exceed the spend, most visibly in Tower Hamlets. Those are real returns,
+        not errors, but they make shares and growth rates meaningless, so this page suppresses both
+        rather than printing a nonsensical percentage.</li>
       <li><strong>The spending series starts at 2021-22.</strong> Earlier revenue outturn releases exist,
         but most boroughs leave the homelessness component lines blank before then, so a longer run would
         compare against gaps rather than against genuinely smaller numbers.</li>
@@ -353,11 +358,14 @@ function drawDoom(a) {
     `<text x="${pad.l}" y="${H - 4}" font-size="12" fill="#c8102e" font-weight="600">Temporary accommodation</text>` +
     `<text x="${pad.l + 190}" y="${H - 4}" font-size="12" fill="#1a7a4c" font-weight="600">Prevention and relief</text>`;
 
+  const s = a.spend;
+  const share = s.ta_share_pct != null
+    ? ` Temporary accommodation now takes <strong>${s.ta_share_pct}%</strong> of all homelessness ` +
+      `spending here` + (s.ta_change_pct != null ? `, after rising ${s.ta_change_pct}% in three years.` : ".")
+    : ` ${a.name} reported a negative net position on temporary accommodation in at least one year, ` +
+      `where subsidy and rent recovered exceeded spend, so a share and a growth rate would be misleading.`;
   document.getElementById("doomcap").innerHTML =
-    `Net current expenditure by ${a.name}, as reported to MHCLG. Temporary accommodation now takes ` +
-    `<strong>${a.spend.ta_share_pct}%</strong> of all homelessness spending here` +
-    (a.spend.ta_change_pct != null
-      ? `, after rising ${a.spend.ta_change_pct}% in three years.` : ".");
+    `Net current expenditure by ${a.name}, as reported to MHCLG.` + share;
 }
 
 function emailBody(a) {
@@ -369,7 +377,7 @@ I live in ${a.name} and I want to ask what the council is doing about temporary 
 
 According to MHCLG's own statutory homelessness figures for ${quarterLabel(DATA.latest_quarter)}, ${a.name} has ${fmt(a.households)} households in temporary accommodation, including ${fmt(a.children)} children. That is roughly one in every ${fmt(a.one_in)} households in the borough${a.change_pct != null ? `, and it has changed by ${a.change_pct > 0 ? "+" : ""}${a.change_pct}% since ${quarterLabel(a.baseline_quarter)}` : ""}.
 
-${a.spend ? `In ${DATA.latest_spend_year} the council reported net spending of £${fmt(a.spend.ta / 1e6)}m on temporary accommodation — ${a.spend.ta_share_pct}% of its entire homelessness budget, and ${a.spend.ta_vs_reserves_pct}% of its spendable reserves, after a rise of ${a.spend.ta_change_pct}% in three years.` : ""}
+${a.spend && a.spend.ta > 0 ? `In ${DATA.latest_spend_year} the council reported net spending of £${fmt(a.spend.ta / 1e6)}m on temporary accommodation${a.spend.ta_share_pct ? `, ${a.spend.ta_share_pct}% of its entire homelessness budget` : ""}${a.spend.ta_vs_reserves_pct ? `, and ${a.spend.ta_vs_reserves_pct}% of its spendable reserves` : ""}${a.spend.ta_change_pct ? `, after a rise of ${a.spend.ta_change_pct}% in three years` : ""}.` : ""}
 
 I would like to know:
 
@@ -397,12 +405,12 @@ function render(a) {
     [a.change_pct == null ? "—" : `${a.change_pct > 0 ? "+" : ""}${a.change_pct}%`,
       `since ${quarterLabel(a.baseline_quarter)}`, dir],
     [fmt(a.placed_out_of_borough), "placed outside the borough"],
-    a.spend
+    a.spend && a.spend.ta > 0
       ? [`£${fmt(a.spend.ta / 1e6)}m`, `a year on temporary accommodation, ${DATA.latest_spend_year}`, "up"]
-      : [`£${fmt(cost)}`, "a day on accommodation the council does not own"],
+      : null,
     a.spend && a.spend.ta_share_pct
       ? [`${a.spend.ta_share_pct}%`, "of its homelessness budget goes on it", "up"]
-      : [`£${fmt(cost * 365 / 1e6)}m`, "a year, at the assumed nightly rate"],
+      : null,
     a.spend && a.spend.ta_vs_reserves_pct
       ? [`${a.spend.ta_vs_reserves_pct}%`, "of its spendable reserves, every year", "up"]
       : null,
@@ -429,13 +437,19 @@ function render(a) {
   }
 
   const punch = document.getElementById("punchline");
-  if (a.spend) {
-    const cumulative = a.spend.series.reduce((t, p) => t + (p.ta || 0), 0);
+  const cumulative = a.spend ? a.spend.series.reduce((t, p) => t + (p.ta || 0), 0) : 0;
+  if (a.spend && cumulative > 0) {
     const first = a.spend.series[0].year;
     punch.innerHTML =
       `Since ${first}, ${a.name} has spent <strong>£${fmt(cumulative / 1e6)}m</strong> of its own budget ` +
       `on temporary accommodation — enough to have built about ` +
       `<strong>${fmt(cumulative / buildCost)} homes</strong>. It owns none of it.`;
+  } else if (a.spend) {
+    punch.innerHTML =
+      `Across ${a.spend.series[0].year} to ${DATA.latest_spend_year}, ${a.name}'s net position on ` +
+      `temporary accommodation nets out at or below zero — subsidy and rent recovered offset the ` +
+      `spend. That is unusual, and it means the cost comparison used elsewhere on this page does ` +
+      `not apply here.`;
   } else {
     const annual = a.households * nightlyRate * 365;
     punch.innerHTML =

@@ -180,7 +180,9 @@
     "prevention": 3895000.0,
     "total": 9355000.0,
     "ta_share_pct": 27.8,
-    "ta_change_pct": 804
+    "ta_change_pct": 804,
+    "baseline_year": "2021-22",
+    "baseline_ta": 288000.0
    },
    "approvals": 10565.0,
    "completions": 5780.0,
@@ -275,7 +277,9 @@
     "prevention": 8845250.0,
     "total": 20266020.0,
     "ta_share_pct": 56.4,
-    "ta_change_pct": 168
+    "ta_change_pct": 168,
+    "baseline_year": "2021-22",
+    "baseline_ta": 4264000.0
    },
    "approvals": 17580.0,
    "completions": 10727.0,
@@ -370,7 +374,9 @@
     "prevention": 41000.0,
     "total": 8222000.0,
     "ta_share_pct": 66.3,
-    "ta_change_pct": -47
+    "ta_change_pct": -47,
+    "baseline_year": "2021-22",
+    "baseline_ta": 10243000.0
    },
    "approvals": 3646.0,
    "completions": 2765.0,
@@ -465,7 +471,9 @@
     "prevention": 18631000.0,
     "total": 51170000.0,
     "ta_share_pct": 63.6,
-    "ta_change_pct": 142
+    "ta_change_pct": 142,
+    "baseline_year": "2021-22",
+    "baseline_ta": 13465000.0
    },
    "approvals": 19278.0,
    "completions": 10613.0,
@@ -560,7 +568,9 @@
     "prevention": 1237000.0,
     "total": 28483000.0,
     "ta_share_pct": 71.2,
-    "ta_change_pct": 114
+    "ta_change_pct": 114,
+    "baseline_year": "2021-22",
+    "baseline_ta": 9495000.0
    },
    "approvals": 4670.0,
    "completions": 2311.0,
@@ -655,7 +665,9 @@
     "prevention": 3719000.0,
     "total": 33564000.0,
     "ta_share_pct": 64.7,
-    "ta_change_pct": 112
+    "ta_change_pct": 112,
+    "baseline_year": "2021-22",
+    "baseline_ta": 10253000.0
    },
    "approvals": 2299.0,
    "completions": 3096.0,
@@ -749,8 +761,10 @@
     "ta": -252000.0,
     "prevention": 5468000.0,
     "total": 5216000.0,
-    "ta_share_pct": -4.8,
-    "ta_change_pct": -224
+    "ta_share_pct": null,
+    "ta_change_pct": null,
+    "baseline_year": "2021-22",
+    "baseline_ta": 204000.0
    },
    "approvals": 646.0,
    "completions": 645.0,
@@ -845,7 +859,9 @@
     "prevention": 5725040.0,
     "total": 43030320.0,
     "ta_share_pct": 79.9,
-    "ta_change_pct": 266
+    "ta_change_pct": 266,
+    "baseline_year": "2021-22",
+    "baseline_ta": 9392000.0
    },
    "approvals": 9024.0,
    "completions": 11233.0,
@@ -940,7 +956,9 @@
     "prevention": 11357020.0,
     "total": 28687440.0,
     "ta_share_pct": 44.5,
-    "ta_change_pct": 35
+    "ta_change_pct": 35,
+    "baseline_year": "2021-22",
+    "baseline_ta": 9483000.0
    },
    "approvals": 22558.0,
    "completions": 7963.0,
@@ -1035,7 +1053,9 @@
     "prevention": 7537000.0,
     "total": 39609990.0,
     "ta_share_pct": 73.9,
-    "ta_change_pct": 180
+    "ta_change_pct": 180,
+    "baseline_year": "2021-22",
+    "baseline_ta": 10465000.0
    },
    "approvals": 10946.0,
    "completions": 3477.0,
@@ -1130,7 +1150,9 @@
     "prevention": 1914000.0,
     "total": 11833000.0,
     "ta_share_pct": 66.9,
-    "ta_change_pct": 128
+    "ta_change_pct": 128,
+    "baseline_year": "2021-22",
+    "baseline_ta": 3476000.0
    },
    "approvals": 24694.0,
    "completions": 6625.0,
@@ -1225,7 +1247,9 @@
     "prevention": 14540000.0,
     "total": 46819000.0,
     "ta_share_pct": 66.5,
-    "ta_change_pct": 112
+    "ta_change_pct": 112,
+    "baseline_year": "2021-22",
+    "baseline_ta": 14692000.0
    },
    "approvals": 2120.0,
    "completions": 4553.0,
@@ -1320,7 +1344,9 @@
     "prevention": 3897000.0,
     "total": 25141000.0,
     "ta_share_pct": 72.5,
-    "ta_change_pct": 125
+    "ta_change_pct": 125,
+    "baseline_year": "2021-22",
+    "baseline_ta": 8103000.0
    },
    "approvals": 6968.0,
    "completions": 5917.0,
@@ -1415,7 +1441,9 @@
     "prevention": 883000.0,
     "total": 36653000.0,
     "ta_share_pct": 68.7,
-    "ta_change_pct": 205
+    "ta_change_pct": 205,
+    "baseline_year": "2021-22",
+    "baseline_ta": 8248000.0
    },
    "approvals": 9259.0,
    "completions": 5586.0,
@@ -1510,7 +1538,9 @@
     "prevention": 3637000.0,
     "total": 13735000.0,
     "ta_share_pct": 62.1,
-    "ta_change_pct": 278
+    "ta_change_pct": 278,
+    "baseline_year": "2021-22",
+    "baseline_ta": 2254000.0
    },
    "approvals": 5089.0,
    "completions": 4184.0,
@@ -1605,7 +1635,9 @@
     "prevention": 8050000.0,
     "total": 20445000.0,
     "ta_share_pct": 51.2,
-    "ta_change_pct": 166
+    "ta_change_pct": 166,
+    "baseline_year": "2021-22",
+    "baseline_ta": 3942000.0
    },
    "approvals": 7300.0,
    "completions": 4067.0,
@@ -1700,7 +1732,9 @@
     "prevention": 3847000.0,
     "total": 20574000.0,
     "ta_share_pct": 62.1,
-    "ta_change_pct": 587
+    "ta_change_pct": 587,
+    "baseline_year": "2021-22",
+    "baseline_ta": 1858000.0
    },
    "approvals": 10260.0,
    "completions": 4923.0,
@@ -1795,7 +1829,9 @@
     "prevention": -17000.0,
     "total": 17303000.0,
     "ta_share_pct": 56.1,
-    "ta_change_pct": 174
+    "ta_change_pct": 174,
+    "baseline_year": "2021-22",
+    "baseline_ta": 3545000.0
    },
    "approvals": 13860.0,
    "completions": 6558.0,
@@ -1890,7 +1926,9 @@
     "prevention": 2712110.0,
     "total": 15827180.0,
     "ta_share_pct": 70.4,
-    "ta_change_pct": 319
+    "ta_change_pct": 319,
+    "baseline_year": "2021-22",
+    "baseline_ta": 2659000.0
    },
    "approvals": 2506.0,
    "completions": 3338.0,
@@ -1985,7 +2023,9 @@
     "prevention": 7964000.0,
     "total": 30820000.0,
     "ta_share_pct": 49.9,
-    "ta_change_pct": 73
+    "ta_change_pct": 73,
+    "baseline_year": "2021-22",
+    "baseline_ta": 8897000.0
    },
    "approvals": 1316.0,
    "completions": 1946.0,
@@ -2080,7 +2120,9 @@
     "prevention": 8000.0,
     "total": 15062000.0,
     "ta_share_pct": 90.0,
-    "ta_change_pct": 90
+    "ta_change_pct": 90,
+    "baseline_year": "2021-22",
+    "baseline_ta": 7120000.0
    },
    "approvals": 5783.0,
    "completions": 2349.0,
@@ -2175,7 +2217,9 @@
     "prevention": 6242320.0,
     "total": 79839390.0,
     "ta_share_pct": 89.6,
-    "ta_change_pct": 210
+    "ta_change_pct": 210,
+    "baseline_year": "2021-22",
+    "baseline_ta": 23047000.0
    },
    "approvals": 7601.0,
    "completions": 3527.0,
@@ -2270,7 +2314,9 @@
     "prevention": 2969000.0,
     "total": 41098000.0,
     "ta_share_pct": 92.8,
-    "ta_change_pct": 322
+    "ta_change_pct": 322,
+    "baseline_year": "2021-22",
+    "baseline_ta": 9034000.0
    },
    "approvals": 7768.0,
    "completions": 2818.0,
@@ -2365,7 +2411,9 @@
     "prevention": 656750.0,
     "total": 10345110.0,
     "ta_share_pct": 93.7,
-    "ta_change_pct": 368
+    "ta_change_pct": 368,
+    "baseline_year": "2021-22",
+    "baseline_ta": 2070000.0
    },
    "approvals": 5303.0,
    "completions": 2600.0,
@@ -2460,7 +2508,9 @@
     "prevention": 5282000.0,
     "total": 76856000.0,
     "ta_share_pct": 88.5,
-    "ta_change_pct": 272
+    "ta_change_pct": 272,
+    "baseline_year": "2021-22",
+    "baseline_ta": 18306000.0
    },
    "approvals": 19485.0,
    "completions": 10460.0,
@@ -2555,7 +2605,9 @@
     "prevention": 10355000.0,
     "total": 35902000.0,
     "ta_share_pct": 60.2,
-    "ta_change_pct": 83
+    "ta_change_pct": 83,
+    "baseline_year": "2021-22",
+    "baseline_ta": 11792000.0
    },
    "approvals": 6753.0,
    "completions": 2318.0,
@@ -2650,7 +2702,9 @@
     "prevention": 2321000.0,
     "total": 13702000.0,
     "ta_share_pct": 61.7,
-    "ta_change_pct": 282
+    "ta_change_pct": 282,
+    "baseline_year": "2021-22",
+    "baseline_ta": 2212000.0
    },
    "approvals": 1792.0,
    "completions": 1057.0,
@@ -2745,7 +2799,9 @@
     "prevention": 86050.0,
     "total": 47048530.0,
     "ta_share_pct": 75.9,
-    "ta_change_pct": 104
+    "ta_change_pct": 104,
+    "baseline_year": "2021-22",
+    "baseline_ta": 17468000.0
    },
    "approvals": 13395.0,
    "completions": 8551.0,
@@ -2840,7 +2896,9 @@
     "prevention": 0.0,
     "total": 12895000.0,
     "ta_share_pct": 62.1,
-    "ta_change_pct": 502
+    "ta_change_pct": 502,
+    "baseline_year": "2021-22",
+    "baseline_ta": 1331000.0
    },
    "approvals": 3037.0,
    "completions": 2220.0,
@@ -2935,7 +2993,9 @@
     "prevention": 10950000.0,
     "total": 35296000.0,
     "ta_share_pct": 51.0,
-    "ta_change_pct": -483
+    "ta_change_pct": null,
+    "baseline_year": "2021-22",
+    "baseline_ta": -4707000.0
    },
    "approvals": 21400.0,
    "completions": 13890.0,
@@ -3030,7 +3090,9 @@
     "prevention": 5197000.0,
     "total": 29649000.0,
     "ta_share_pct": 77.6,
-    "ta_change_pct": 165
+    "ta_change_pct": 165,
+    "baseline_year": "2021-22",
+    "baseline_ta": 8693000.0
    },
    "approvals": 8652.0,
    "completions": 5585.0,
@@ -3125,7 +3187,9 @@
     "prevention": 146000.0,
     "total": 39977000.0,
     "ta_share_pct": 77.6,
-    "ta_change_pct": 196
+    "ta_change_pct": 196,
+    "baseline_year": "2021-22",
+    "baseline_ta": 10472000.0
    },
    "approvals": 17159.0,
    "completions": 9541.0,
@@ -3220,7 +3284,9 @@
     "prevention": 14557390.0,
     "total": 102036620.0,
     "ta_share_pct": 71.0,
-    "ta_change_pct": 6281
+    "ta_change_pct": 6281,
+    "baseline_year": "2021-22",
+    "baseline_ta": 1136000.0
    },
    "approvals": 4225.0,
    "completions": 3327.0,
@@ -3376,7 +3442,9 @@
     "prevention": 172652930.0,
     "total": 1046460600.0,
     "ta_share_pct": 70.7,
-    "ta_change_pct": 204
+    "ta_change_pct": 204,
+    "baseline_year": "2021-22",
+    "baseline_ta": 243200000.0
    },
    "approvals": 320203.0,
    "completions": 184169.0,

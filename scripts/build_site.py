@@ -94,10 +94,22 @@ def main() -> None:
             "ta": latest["ta"],
             "prevention": latest["prevention"],
             "total": latest["total"],
-            "ta_share_pct": round(latest["ta"] / latest["total"] * 100, 1) if latest["total"] else None,
-            "ta_change_pct": (
-                round((latest["ta"] / first["ta"] - 1) * 100) if first["ta"] else None
+            # A few boroughs report a negative net position in some years, where
+            # subsidy and rent recovery exceed spend on a placement category. Those
+            # make ratios meaningless, so shares and growth are suppressed rather
+            # than printed as nonsense.
+            "ta_share_pct": (
+                round(latest["ta"] / latest["total"] * 100, 1)
+                if latest["total"] and latest["total"] > 0 and latest["ta"] > 0
+                else None
             ),
+            "ta_change_pct": (
+                round((latest["ta"] / first["ta"] - 1) * 100)
+                if first["ta"] and first["ta"] > 0 and latest["ta"] > 0
+                else None
+            ),
+            "baseline_year": first["year"],
+            "baseline_ta": first["ta"],
         }
 
     pipe = pd.read_csv(PIPELINE)
