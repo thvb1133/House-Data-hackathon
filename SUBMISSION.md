@@ -1,6 +1,7 @@
 # House London #0 — submission
 
-**Team name:** _fill this in before you submit_
+**Entrant:** Beejal, working solo
+**Project name:** Homes vs Hotels
 **Brief:** PD (temporary accommodation) crossed with DE (permitted but unbuilt)
 **Track:** Data, Policy and Software — the entry is deliberately legible to all three
 
