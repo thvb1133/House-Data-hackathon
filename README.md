@@ -31,27 +31,39 @@ accommodation.
 ## Run it
 
 You need no data files of your own. Every dataset is downloaded automatically from
-gov.uk, the London Datastore and ONS. One command does everything:
+gov.uk, the London Datastore and ONS. One command does everything, on any operating system:
 
 ```bash
-./run.sh
+python run.py
 ```
 
-Then open **http://localhost:8099** in your browser. Press `Ctrl+C` in the terminal to stop.
+On macOS and Linux you may need `python3 run.py`. There is also `./run.sh` if you prefer bash.
+
+It opens your browser at **http://localhost:8099** by itself. If it doesn't, type that address in
+manually — or whatever address the script prints, since it moves to the next free port if 8099 is
+taken. Press `Ctrl+C` in the terminal window to stop it.
 
 The script installs the Python packages, downloads the official spreadsheets, parses them,
 builds the map and the page payload, and starts a local web server. It takes a couple of
 minutes the first time and a few seconds after that, because downloads are cached in
 `data/raw/`. Safe to re-run any time.
 
+**The site is only up while that terminal window is running.** Close the window, or press
+`Ctrl+C`, and the page stops loading. That is normal — start it again with the same command.
+
 ### If something goes wrong
 
-**`OSError: [Errno 98] Address already in use`** — the site is already running from an earlier
-`./run.sh`, so nothing is broken. Open http://localhost:8099 and it will be there. Newer runs
-step along to the next free port automatically and print which one they picked. To stop an
-old one, click the terminal window it is running in and press `Ctrl+C`.
+**"This site can't be reached" / `ERR_CONNECTION_REFUSED`** — nothing is serving the page. Either
+the script was never started, or its terminal window was closed. Run `python run.py` again and
+leave the window open.
 
-**`permission denied: ./run.sh`** — run `chmod +x run.sh` once, then try again.
+**`OSError: [Errno 98] Address already in use`** — the opposite problem: it is already running,
+so nothing is broken. `run.py` now steps to the next free port and prints which one it chose.
+
+**`./run.sh` is not recognised** — you are on Windows, where that bash script does not apply.
+Use `python run.py` instead.
+
+**`permission denied: ./run.sh`** — macOS or Linux only. Run `chmod +x run.sh` once, then try again.
 
 **A download fails** — re-run `./run.sh`. It keeps whatever it already fetched and only
 retries the missing files.
@@ -60,7 +72,7 @@ If you would rather run the steps yourself:
 
 ```bash
 python3 -m pip install pandas odfpy openpyxl
-python3 scripts/fetch_data.py        # download the official source files
+python3 scripts/fetch_data.py        # download the official source files (no login needed)
 python3 scripts/extract_ta.py        # MHCLG homelessness tables -> TA panel
 python3 scripts/extract_pipeline.py  # GLA AMR 21 -> approvals/starts/completions
 python3 scripts/build_map.py         # boundaries -> site/boroughs.json
