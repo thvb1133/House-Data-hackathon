@@ -1,4 +1,4 @@
-"""Turn the TA panel into the JSON payload the lookup page reads."""
+"""Join the TA panel and the delivery pipeline into the JSON payload the page reads."""
 
 import json
 from pathlib import Path
@@ -20,6 +20,8 @@ NIGHTLY_COST_ASSUMPTION = 60.0
 
 def _num(v):
     return None if pd.isna(v) else float(v)
+
+
 
 
 def main() -> None:

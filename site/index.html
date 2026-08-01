@@ -48,6 +48,12 @@
   .up { color: var(--alarm); }
   .down { color: #1a7a4c; }
 
+  .assumption { margin-top: 22px; padding-top: 18px; border-top: 1px dashed var(--line); }
+  .assumption label { font-size: 14px; color: var(--muted); display: block; }
+  .assumption output { font-weight: 600; color: var(--ink); font-variant-numeric: tabular-nums; }
+  .assumption input { padding: 0; margin: 10px 0 4px; accent-color: var(--accent); }
+  .assumption p { font-size: 13px; color: var(--muted); margin: 0; }
+
   .counterpunch {
     margin: 22px 0 0; padding: 16px 18px; border-left: 4px solid var(--accent);
     background: #f2f7f9; border-radius: 0 8px 8px 0; font-size: 17px;
@@ -64,6 +70,21 @@
     padding: 13px 20px; border-radius: 8px; font-weight: 600; font-size: 16px;
   }
   .btn:hover { background: #0d3d52; }
+
+  .maptabs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; }
+  .maptabs button {
+    font: inherit; font-size: 14px; padding: 8px 14px; cursor: pointer;
+    border: 1px solid var(--line); background: #fff; color: var(--muted); border-radius: 999px;
+  }
+  .maptabs button.on { background: var(--ink); border-color: var(--ink); color: #fff; }
+  .mapwrap { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 12px; }
+  #map path { stroke: #fff; stroke-width: 0.8; cursor: pointer; transition: opacity .12s; }
+  #map path:hover { opacity: 0.72; }
+  #map path.selected { stroke: var(--ink); stroke-width: 2.2; }
+  .legend { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--muted); padding: 0 4px; }
+  .legend .swatches { display: flex; flex: 1; }
+  .legend .swatches i { flex: 1; height: 9px; display: block; }
+  .maphint { font-size: 13px; color: var(--muted); margin: 8px 4px 0; }
 
   details { border-top: 1px solid var(--line); padding: 14px 0; }
   summary { cursor: pointer; font-weight: 600; }
@@ -93,6 +114,14 @@
   <section class="card" id="card" hidden>
     <p class="headline" id="headline"></p>
     <div class="stats" id="stats"></div>
+    <div class="assumption">
+      <label for="rate">Assumed cost per household per night
+        <output id="rateout"></output>
+      </label>
+      <input type="range" id="rate" min="20" max="200" step="5">
+      <p>Not a measured figure. MHCLG does not publish temporary accommodation spend by borough in
+        this release, so move the slider to your own estimate and every cost on this page follows it.</p>
+    </div>
     <p class="counterpunch" id="counterpunch"></p>
     <figure>
       <svg id="chart" viewBox="0 0 640 190" role="img" aria-label="Households in temporary accommodation over time"></svg>
@@ -102,6 +131,17 @@
       <a class="btn" id="email" href="#">Email your councillor about this</a>
     </div>
   </section>
+
+  <h2>The whole city at once</h2>
+  <div class="maptabs" id="maptabs">
+    <button data-metric="pressure" class="on">Households in temporary accommodation</button>
+    <button data-metric="unbuilt">Homes approved but not built</button>
+  </div>
+  <div class="mapwrap">
+    <svg id="map" viewBox="0 0 720 480" role="img" aria-label="Map of London boroughs"></svg>
+    <div class="legend" id="legend"></div>
+    <p class="maphint" id="maphint">Click any borough to load its figures above.</p>
+  </div>
 
   <h2>Where the pressure is worst</h2>
   <table id="league">
@@ -167,7 +207,7 @@
 
 <script>
 const fmt = n => n == null ? "—" : n.toLocaleString("en-GB", {maximumFractionDigits: 0});
-let DATA, current;
+let DATA, current, nightlyRate;
 
 function quarterLabel(q) {
   const [y, m] = q.split("-");
@@ -201,7 +241,7 @@ function drawChart(area) {
 }
 
 function emailBody(a) {
-  const cost = a.households * DATA.nightly_cost_assumption * 365;
+  const cost = a.households * nightlyRate * 365;
   return encodeURIComponent(
 `Dear Councillor,
 
@@ -209,7 +249,7 @@ I live in ${a.name} and I want to ask what the council is doing about temporary 
 
 According to MHCLG's own statutory homelessness figures for ${quarterLabel(DATA.latest_quarter)}, ${a.name} has ${fmt(a.households)} households in temporary accommodation, including ${fmt(a.children)} children. That is roughly one in every ${fmt(a.one_in)} households in the borough${a.change_pct != null ? `, and it has changed by ${a.change_pct > 0 ? "+" : ""}${a.change_pct}% since ${quarterLabel(a.baseline_quarter)}` : ""}.
 
-At an illustrative £${DATA.nightly_cost_assumption} per household per night, that is in the order of £${fmt(cost)} a year of recurring spend on accommodation the council does not own.
+At an illustrative £${nightlyRate} per household per night, that is in the order of £${fmt(cost)} a year of recurring spend on accommodation the council does not own.
 
 I would like to know:
 
@@ -226,7 +266,7 @@ function render(a) {
   current = a;
   document.getElementById("card").hidden = false;
   const dir = a.change_pct == null ? "" : (a.change_pct > 0 ? "up" : "down");
-  const cost = a.households * DATA.nightly_cost_assumption;
+  const cost = a.households * nightlyRate;
 
   document.getElementById("headline").innerHTML =
     `In ${a.name}, <strong>${fmt(a.households)} households</strong> are living in temporary accommodation — ` +
@@ -237,7 +277,8 @@ function render(a) {
     [a.change_pct == null ? "—" : `${a.change_pct > 0 ? "+" : ""}${a.change_pct}%`,
       `since ${quarterLabel(a.baseline_quarter)}`, dir],
     [fmt(a.placed_out_of_borough), "placed outside the borough"],
-    [`£${fmt(cost)}`, `a day, at an assumed £${DATA.nightly_cost_assumption} per household per night`],
+    [`£${fmt(cost)}`, `a day on accommodation the council does not own`],
+    [`£${fmt(cost * 365 / 1e6)}m`, "a year, at the assumed nightly rate"],
   ].map(([v, l, cls]) => `<div class="stat"><div class="value ${cls || ""}">${v}</div><div class="label">${l}</div></div>`).join("");
 
   const cp = document.getElementById("counterpunch");
@@ -260,8 +301,54 @@ function render(a) {
   }
 
   drawChart(a);
+  drawMap();
   document.getElementById("email").href = `mailto:?subject=${encodeURIComponent(
     `Temporary accommodation in ${a.name}`)}&body=${emailBody(a)}`;
+}
+
+const METRICS = {
+  pressure: {
+    value: a => a.per_1000_households,
+    label: "Households in temporary accommodation, per 1,000 households in the borough",
+    format: v => v.toFixed(0),
+  },
+  unbuilt: {
+    value: a => a.approved_not_completed,
+    label: "Homes approved but not completed, 2019/20 to 2023/24",
+    format: v => fmt(v),
+  },
+};
+let GEO, metric = "pressure";
+
+// Perceptually even ramp, pale to deep red, so small differences stay readable.
+const RAMP = ["#fdf0ec", "#fbd5c6", "#f6ae95", "#ea8168", "#d75144", "#b31f2c", "#7f0d1f"];
+const shade = t => RAMP[Math.min(RAMP.length - 1, Math.max(0, Math.floor(t * RAMP.length)))];
+
+function drawMap() {
+  if (!GEO) return;
+  const m = METRICS[metric];
+  const vals = DATA.areas.filter(a => a.is_borough && GEO.paths[a.name])
+    .map(a => ({area: a, v: m.value(a)})).filter(d => d.v != null);
+  const lo = Math.min(...vals.map(d => d.v)), hi = Math.max(...vals.map(d => d.v));
+  const t = v => hi === lo ? 0.5 : (v - lo) / (hi - lo);
+
+  document.getElementById("map").innerHTML = vals.map(({area, v}) =>
+    `<path d="${GEO.paths[area.name]}" fill="${shade(t(v))}" data-code="${area.code}"
+       class="${current && current.code === area.code ? "selected" : ""}">
+       <title>${area.name}: ${m.format(v)}</title></path>`).join("");
+
+  document.getElementById("legend").innerHTML =
+    `<span>${m.format(lo)}</span><span class="swatches">${RAMP.map(c => `<i style="background:${c}"></i>`).join("")}</span>` +
+    `<span>${m.format(hi)}</span>`;
+  document.getElementById("maphint").textContent = m.label + ". Click any borough to load its figures above.";
+
+  document.getElementById("map").querySelectorAll("path").forEach(p =>
+    p.onclick = () => {
+      const area = DATA.areas.find(a => a.code === p.dataset.code);
+      document.getElementById("area").value = area.code;
+      render(area);
+      document.getElementById("card").scrollIntoView({behavior: "smooth", block: "start"});
+    });
 }
 
 async function lookupPostcode(pc) {
@@ -283,6 +370,7 @@ async function lookupPostcode(pc) {
 
 fetch("data.json").then(r => r.json()).then(d => {
   DATA = d;
+  nightlyRate = d.nightly_cost_assumption;
   const london = d.areas.find(a => a.code === "E12000007");
   document.getElementById("standfirst").innerHTML =
     `<span class="hero-number">${fmt(london.children)} children</span> in London are living in temporary ` +
@@ -297,6 +385,16 @@ fetch("data.json").then(r => r.json()).then(d => {
   const pc = document.getElementById("postcode");
   pc.onchange = () => pc.value.trim() && lookupPostcode(pc.value.trim());
 
+  const rate = document.getElementById("rate");
+  rate.value = nightlyRate = d.nightly_cost_assumption;
+  const showRate = () => document.getElementById("rateout").textContent = `£${nightlyRate}`;
+  showRate();
+  rate.oninput = () => {
+    nightlyRate = Number(rate.value);
+    showRate();
+    if (current) render(current);
+  };
+
   const rows = d.areas.filter(a => a.is_borough && a.one_in)
     .sort((x, y) => x.one_in - y.one_in).slice(0, 10);
   document.querySelector("#league tbody").innerHTML = rows.map(a =>
@@ -305,7 +403,14 @@ fetch("data.json").then(r => r.json()).then(d => {
     `<td class="n ${a.change_pct > 0 ? "up" : "down"}">${a.change_pct == null ? "—" : (a.change_pct > 0 ? "+" : "") + a.change_pct + "%"}</td>` +
     `<td class="n ${a.approved_not_completed < 0 ? "down" : ""}">${fmt(a.approved_not_completed)}</td></tr>`).join("");
 
+  document.querySelectorAll("#maptabs button").forEach(b => b.onclick = () => {
+    document.querySelectorAll("#maptabs button").forEach(x => x.classList.toggle("on", x === b));
+    metric = b.dataset.metric;
+    drawMap();
+  });
+
   render(london);
+  fetch("boroughs.json").then(r => r.json()).then(g => { GEO = g; drawMap(); });
 });
 </script>
 </body>

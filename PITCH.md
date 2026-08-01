@@ -32,11 +32,20 @@ the number of households it currently has in temporary accommodation.
 
 ## 1:45 — Demo, live
 
-*Ask the room to shout out a borough. Type it in.*
+*Ask the room to shout out a borough. Click it on the map.*
 
 Every London borough. Households, children, how many are placed outside the borough entirely,
 how it has moved since 2019, what it costs per day, and the homes approved but not delivered.
 Postcode lookup, so anyone can find their own.
+
+*Flip the map toggle to "homes approved but not built".*
+
+Same city, second measure. The dark boroughs move.
+
+*Drag the cost slider.*
+
+And we are not asking you to take our cost estimate on trust. The nightly rate is a slider,
+because the government does not publish it. Put in your own number and the page follows.
 
 *Click the button.*
 
