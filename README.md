@@ -33,7 +33,14 @@ Two numbers worth sitting with. The select committee evidence widely quoted this
 **100,930**. The figure dipped through the pandemic years and has risen every quarter since 2022.
 
 Newham is the sharpest case: **one in every 17 households** in the borough is in temporary
-accommodation.
+accommodation. Hillingdon's annual temporary accommodation bill is **287% of its entire spendable
+reserves**.
+
+And the intuitive story is wrong. Across 31 boroughs, temporary accommodation pressure and
+failure to start approved homes are **unrelated** — rank correlation −0.21, permutation p = 0.25.
+The boroughs with the worst need are not the boroughs sitting on unstarted permissions. London's
+pipeline is not pointed at London's need, which is a targeting problem rather than a blame
+problem.
 
 ## Just look at it
 

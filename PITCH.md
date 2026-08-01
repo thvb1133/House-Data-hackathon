@@ -45,7 +45,26 @@ Put the two halves together. Since 2021-22 London has spent **£1.8 billion** of
 temporary accommodation. At £300,000 a home that is roughly **6,000 homes** — and the city owns
 none of it.
 
-## 1:45 — Demo, live
+## 1:35 — The finding nobody expects
+
+Here is where we thought we knew the answer and the data said no.
+
+You would expect the boroughs drowning in temporary accommodation to be the same boroughs failing
+to turn permissions into homes. The hypocrisy story. We tested it across 31 boroughs.
+
+**There is no relationship.** Rank correlation minus 0.21, p equals 0.25. Nothing.
+
+*Point at the scatter.*
+
+Look at the corners. Hackney has one of the worst temporary accommodation rates in London and has
+actually started more homes than it approved. Bexley has almost no temporary accommodation
+pressure and a pile of permissions that never broke ground.
+
+So this is not councils being hypocrites. It is worse, and more fixable: **London's unbuilt
+permissions are simply in the wrong places.** The pipeline is not pointed at the need. That is a
+targeting failure, and targeting is something policy can actually change.
+
+## 1:55 — Demo, live
 
 *Ask the room to shout out a borough. Click it on the map.*
 
@@ -67,7 +86,7 @@ because the government does not publish it. Put in your own number and the page 
 And a pre-written email to your councillor with your own borough's two numbers in it, asking the
 one question a council has to answer in writing.
 
-## 2:30 — Where we could be wrong
+## 2:35 — Where we could be wrong
 
 The honest bit. The approvals gap is **not** proof of land banking. Homes approved in 2023/24
 could not have completed by 2023/24, so some of that gap is ordinary build-out time. We show the
@@ -79,7 +98,10 @@ The spending is net, not gross, because housing benefit subsidy offsets most of 
 and net is what actually lands on a council's budget. The only assumption left on the page is
 what a home costs to build, and that is a slider.
 
-## 2:50 — Close
+And the mismatch finding is a null result. With 31 boroughs we could only have detected a strong
+relationship. We are saying there is no obvious link, not that we have proved none exists.
+
+## 2:55 — Close
 
 Every number here is open data. No data use agreement, nothing embargoed, the whole pipeline is
 four scripts in the repo and the site is one static page. Fork it, point it at next quarter's
@@ -106,6 +128,7 @@ The data to argue for fixing this already exists. We just made it typeable.
 | Homes completed | 184,169 |
 | Never even started | 112,104 |
 | Completion rate | 57.5% |
+| Need vs failure-to-build correlation | ρ = −0.21, p = 0.25, n = 31 — no relationship |
 | Biggest gap | Greenwich — 18,069 homes, 27% completion rate |
 
 ## Likely questions
@@ -128,6 +151,12 @@ cost from revenue, not by draining reserves. The comparison is a gauge of how la
 become relative to the money a council could reach for in an emergency, not an accounting
 statement. Our definition of spendable excludes schools, dedicated schools grant and public
 health reserves, which are ring-fenced.
+
+**"A null result isn't a finding."** It is when everyone in the room assumes the opposite. The
+default story — councils crying poverty while sitting on permissions — is not supported at
+borough level, and that changes the policy ask from "shame them into building" to "get the
+pipeline pointed at the need". We are also explicit that n=31 only lets us detect a strong
+relationship.
 
 **"How do you know they were never started?"** The GLA reports approvals, starts and completions
 separately. Never started is approvals minus starts over the same five years — a stronger claim
