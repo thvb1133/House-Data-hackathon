@@ -6,7 +6,12 @@ from pathlib import Path
 import pandas as pd
 
 PANEL = Path("data/processed/ta_panel_london.csv")
+PIPELINE = Path("data/processed/pipeline_london.csv")
 OUT = Path("site/data.json")
+
+# The AMR names two boroughs in short form and adds two development corporations,
+# whose consents sit inside host-borough boundaries and are left unmatched.
+PIPELINE_ALIASES = {"Kingston": "Kingston upon Thames", "Richmond": "Richmond upon Thames"}
 
 # MHCLG does not publish TA spend, so the per-night cost is applied as an
 # explicit, user-visible assumption rather than presented as measured data.
@@ -21,6 +26,18 @@ def main() -> None:
     panel = pd.read_csv(PANEL).drop_duplicates(subset=["quarter", "area_code"])
     quarters = sorted(panel["quarter"].unique())
     latest = quarters[-1]
+
+    pipe = pd.read_csv(PIPELINE)
+    pipe["borough"] = pipe["borough"].replace(PIPELINE_ALIASES)
+    pipeline = pipe.set_index("borough").to_dict("index")
+    london_pipeline = {
+        "approvals": float(pipe["approvals"].sum()),
+        "completions": float(pipe["completions"].sum()),
+        "approved_not_completed": float(pipe["approved_not_completed"].sum()),
+    }
+    london_pipeline["completion_rate_pct"] = round(
+        london_pipeline["completions"] / london_pipeline["approvals"] * 100, 1
+    )
 
     areas = []
     for code, group in panel.groupby("area_code"):
@@ -39,6 +56,7 @@ def main() -> None:
 
         households = _num(current.ta_households)
         stock = _num(current.households_in_area_000s)
+        pl = london_pipeline if code == "E12000007" else pipeline.get(current.area_name)
 
         areas.append(
             {
@@ -61,6 +79,10 @@ def main() -> None:
                     else None
                 ),
                 "series": series,
+                "approvals": _num(pl["approvals"]) if pl else None,
+                "completions": _num(pl["completions"]) if pl else None,
+                "approved_not_completed": _num(pl["approved_not_completed"]) if pl else None,
+                "completion_rate_pct": _num(pl["completion_rate_pct"]) if pl else None,
             }
         )
 
@@ -69,7 +91,11 @@ def main() -> None:
         "latest_quarter": latest,
         "quarters": quarters,
         "nightly_cost_assumption": NIGHTLY_COST_ASSUMPTION,
-        "source": "MHCLG statutory homelessness detailed local authority tables, table TA1",
+        "pipeline_years": "2019/20 to 2023/24",
+        "sources": [
+            "MHCLG statutory homelessness detailed local authority tables, table TA1",
+            "GLA London Plan Annual Monitoring Report 21 (January 2026), chapter 2 housing tables",
+        ],
         "areas": areas,
     }
 

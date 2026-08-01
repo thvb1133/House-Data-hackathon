@@ -10,7 +10,11 @@
   "2025-12"
  ],
  "nightly_cost_assumption": 60.0,
- "source": "MHCLG statutory homelessness detailed local authority tables, table TA1",
+ "pipeline_years": "2019/20 to 2023/24",
+ "sources": [
+  "MHCLG statutory homelessness detailed local authority tables, table TA1",
+  "GLA London Plan Annual Monitoring Report 21 (January 2026), chapter 2 housing tables"
+ ],
  "areas": [
   {
    "code": "E09000002",
@@ -63,7 +67,11 @@
      "households": 1020.0,
      "children": 1632.0
     }
-   ]
+   ],
+   "approvals": 10565.0,
+   "completions": 5780.0,
+   "approved_not_completed": 4785.0,
+   "completion_rate_pct": 54.7
   },
   {
    "code": "E09000003",
@@ -116,7 +124,11 @@
      "households": 2989.0,
      "children": 3400.0
     }
-   ]
+   ],
+   "approvals": 17580.0,
+   "completions": 10727.0,
+   "approved_not_completed": 6853.0,
+   "completion_rate_pct": 61.0
   },
   {
    "code": "E09000004",
@@ -169,7 +181,11 @@
      "households": 289.0,
      "children": 560.0
     }
-   ]
+   ],
+   "approvals": 3646.0,
+   "completions": 2765.0,
+   "approved_not_completed": 881.0,
+   "completion_rate_pct": 75.8
   },
   {
    "code": "E09000005",
@@ -222,7 +238,11 @@
      "households": null,
      "children": null
     }
-   ]
+   ],
+   "approvals": 19278.0,
+   "completions": 10613.0,
+   "approved_not_completed": 8665.0,
+   "completion_rate_pct": 55.1
   },
   {
    "code": "E09000006",
@@ -275,7 +295,11 @@
      "households": 1691.0,
      "children": 1712.0
     }
-   ]
+   ],
+   "approvals": 4670.0,
+   "completions": 2311.0,
+   "approved_not_completed": 2359.0,
+   "completion_rate_pct": 49.5
   },
   {
    "code": "E09000007",
@@ -328,7 +352,11 @@
      "households": 1339.0,
      "children": 1258.0
     }
-   ]
+   ],
+   "approvals": 2299.0,
+   "completions": 3096.0,
+   "approved_not_completed": -797.0,
+   "completion_rate_pct": 134.7
   },
   {
    "code": "E09000001",
@@ -381,7 +409,11 @@
      "households": 33.0,
      "children": 20.0
     }
-   ]
+   ],
+   "approvals": 646.0,
+   "completions": 645.0,
+   "approved_not_completed": 1.0,
+   "completion_rate_pct": 99.8
   },
   {
    "code": "E09000008",
@@ -434,7 +466,11 @@
      "households": 3272.0,
      "children": 4610.0
     }
-   ]
+   ],
+   "approvals": 9024.0,
+   "completions": 11233.0,
+   "approved_not_completed": -2209.0,
+   "completion_rate_pct": 124.5
   },
   {
    "code": "E09000009",
@@ -487,7 +523,11 @@
      "households": null,
      "children": null
     }
-   ]
+   ],
+   "approvals": 22558.0,
+   "completions": 7963.0,
+   "approved_not_completed": 14595.0,
+   "completion_rate_pct": 35.3
   },
   {
    "code": "E09000010",
@@ -540,7 +580,11 @@
      "households": 3090.0,
      "children": 4709.0
     }
-   ]
+   ],
+   "approvals": 10946.0,
+   "completions": 3477.0,
+   "approved_not_completed": 7469.0,
+   "completion_rate_pct": 31.8
   },
   {
    "code": "E09000011",
@@ -593,7 +637,11 @@
      "households": 1902.0,
      "children": 3055.0
     }
-   ]
+   ],
+   "approvals": 24694.0,
+   "completions": 6625.0,
+   "approved_not_completed": 18069.0,
+   "completion_rate_pct": 26.8
   },
   {
    "code": "E09000012",
@@ -646,7 +694,11 @@
      "households": 3682.0,
      "children": 4307.0
     }
-   ]
+   ],
+   "approvals": 2120.0,
+   "completions": 4553.0,
+   "approved_not_completed": -2433.0,
+   "completion_rate_pct": 214.8
   },
   {
    "code": "E09000013",
@@ -699,7 +751,11 @@
      "households": 1451.0,
      "children": 1862.0
     }
-   ]
+   ],
+   "approvals": 6968.0,
+   "completions": 5917.0,
+   "approved_not_completed": 1051.0,
+   "completion_rate_pct": 84.9
   },
   {
    "code": "E09000014",
@@ -752,7 +808,11 @@
      "households": 2648.0,
      "children": 3733.0
     }
-   ]
+   ],
+   "approvals": 9259.0,
+   "completions": 5586.0,
+   "approved_not_completed": 3673.0,
+   "completion_rate_pct": 60.3
   },
   {
    "code": "E09000015",
@@ -805,7 +865,11 @@
      "households": 1436.0,
      "children": 2483.0
     }
-   ]
+   ],
+   "approvals": 5089.0,
+   "completions": 4184.0,
+   "approved_not_completed": 905.0,
+   "completion_rate_pct": 82.2
   },
   {
    "code": "E09000016",
@@ -858,7 +922,11 @@
      "households": 1307.0,
      "children": 1839.0
     }
-   ]
+   ],
+   "approvals": 7300.0,
+   "completions": 4067.0,
+   "approved_not_completed": 3233.0,
+   "completion_rate_pct": 55.7
   },
   {
    "code": "E09000017",
@@ -911,7 +979,11 @@
      "households": 1793.0,
      "children": 2708.0
     }
-   ]
+   ],
+   "approvals": 10260.0,
+   "completions": 4923.0,
+   "approved_not_completed": 5337.0,
+   "completion_rate_pct": 48.0
   },
   {
    "code": "E09000018",
@@ -964,7 +1036,11 @@
      "households": 474.0,
      "children": 888.0
     }
-   ]
+   ],
+   "approvals": 13860.0,
+   "completions": 6558.0,
+   "approved_not_completed": 7302.0,
+   "completion_rate_pct": 47.3
   },
   {
    "code": "E09000019",
@@ -1017,7 +1093,11 @@
      "households": 1908.0,
      "children": 1839.0
     }
-   ]
+   ],
+   "approvals": 2506.0,
+   "completions": 3338.0,
+   "approved_not_completed": -832.0,
+   "completion_rate_pct": 133.2
   },
   {
    "code": "E09000020",
@@ -1070,7 +1150,11 @@
      "households": 1814.0,
      "children": 2296.0
     }
-   ]
+   ],
+   "approvals": 1316.0,
+   "completions": 1946.0,
+   "approved_not_completed": -630.0,
+   "completion_rate_pct": 147.9
   },
   {
    "code": "E09000021",
@@ -1123,7 +1207,11 @@
      "households": 890.0,
      "children": 1113.0
     }
-   ]
+   ],
+   "approvals": 5783.0,
+   "completions": 2349.0,
+   "approved_not_completed": 3434.0,
+   "completion_rate_pct": 40.6
   },
   {
    "code": "E09000022",
@@ -1176,7 +1264,11 @@
      "households": 4425.0,
      "children": 5842.0
     }
-   ]
+   ],
+   "approvals": 7601.0,
+   "completions": 3527.0,
+   "approved_not_completed": 4074.0,
+   "completion_rate_pct": 46.4
   },
   {
    "code": "E09000023",
@@ -1229,7 +1321,11 @@
      "households": 2363.0,
      "children": 3665.0
     }
-   ]
+   ],
+   "approvals": 7768.0,
+   "completions": 2818.0,
+   "approved_not_completed": 4950.0,
+   "completion_rate_pct": 36.3
   },
   {
    "code": "E09000024",
@@ -1282,7 +1378,11 @@
      "households": 746.0,
      "children": 1137.0
     }
-   ]
+   ],
+   "approvals": 5303.0,
+   "completions": 2600.0,
+   "approved_not_completed": 2703.0,
+   "completion_rate_pct": 49.0
   },
   {
    "code": "E09000025",
@@ -1335,7 +1435,11 @@
      "households": 7412.0,
      "children": 10708.0
     }
-   ]
+   ],
+   "approvals": 19485.0,
+   "completions": 10460.0,
+   "approved_not_completed": 9025.0,
+   "completion_rate_pct": 53.7
   },
   {
    "code": "E09000026",
@@ -1388,7 +1492,11 @@
      "households": 2874.0,
      "children": 4432.0
     }
-   ]
+   ],
+   "approvals": 6753.0,
+   "completions": 2318.0,
+   "approved_not_completed": 4435.0,
+   "completion_rate_pct": 34.3
   },
   {
    "code": "E09000027",
@@ -1441,7 +1549,11 @@
      "households": 681.0,
      "children": 717.0
     }
-   ]
+   ],
+   "approvals": 1792.0,
+   "completions": 1057.0,
+   "approved_not_completed": 735.0,
+   "completion_rate_pct": 59.0
   },
   {
    "code": "E09000028",
@@ -1494,7 +1606,11 @@
      "households": 4163.0,
      "children": 5686.0
     }
-   ]
+   ],
+   "approvals": 13395.0,
+   "completions": 8551.0,
+   "approved_not_completed": 4844.0,
+   "completion_rate_pct": 63.8
   },
   {
    "code": "E09000029",
@@ -1547,7 +1663,11 @@
      "households": 1081.0,
      "children": 1480.0
     }
-   ]
+   ],
+   "approvals": 3037.0,
+   "completions": 2220.0,
+   "approved_not_completed": 817.0,
+   "completion_rate_pct": 73.1
   },
   {
    "code": "E09000030",
@@ -1600,7 +1720,11 @@
      "households": 3096.0,
      "children": 4880.0
     }
-   ]
+   ],
+   "approvals": 21400.0,
+   "completions": 13890.0,
+   "approved_not_completed": 7510.0,
+   "completion_rate_pct": 64.9
   },
   {
    "code": "E09000031",
@@ -1653,7 +1777,11 @@
      "households": 1657.0,
      "children": 2481.0
     }
-   ]
+   ],
+   "approvals": 8652.0,
+   "completions": 5585.0,
+   "approved_not_completed": 3067.0,
+   "completion_rate_pct": 64.6
   },
   {
    "code": "E09000032",
@@ -1706,7 +1834,11 @@
      "households": 4176.0,
      "children": 4297.0
     }
-   ]
+   ],
+   "approvals": 17159.0,
+   "completions": 9541.0,
+   "approved_not_completed": 7618.0,
+   "completion_rate_pct": 55.6
   },
   {
    "code": "E09000033",
@@ -1759,7 +1891,11 @@
      "households": 4732.0,
      "children": 3959.0
     }
-   ]
+   ],
+   "approvals": 4225.0,
+   "completions": 3327.0,
+   "approved_not_completed": 898.0,
+   "completion_rate_pct": 78.7
   },
   {
    "code": "E92000001",
@@ -1812,7 +1948,11 @@
      "households": 134210.0,
      "children": 176130.0
     }
-   ]
+   ],
+   "approvals": null,
+   "completions": null,
+   "approved_not_completed": null,
+   "completion_rate_pct": null
   },
   {
    "code": "E12000007",
@@ -1865,7 +2005,11 @@
      "households": 75600.0,
      "children": 100930.0
     }
-   ]
+   ],
+   "approvals": 320203.0,
+   "completions": 184169.0,
+   "approved_not_completed": 136034.0,
+   "completion_rate_pct": 57.5
   }
  ]
 }

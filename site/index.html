@@ -48,6 +48,12 @@
   .up { color: var(--alarm); }
   .down { color: #1a7a4c; }
 
+  .counterpunch {
+    margin: 22px 0 0; padding: 16px 18px; border-left: 4px solid var(--accent);
+    background: #f2f7f9; border-radius: 0 8px 8px 0; font-size: 17px;
+  }
+  .counterpunch strong { font-variant-numeric: tabular-nums; }
+
   figure { margin: 24px 0 0; }
   figcaption { font-size: 13px; color: var(--muted); margin-top: 6px; }
   svg { width: 100%; height: auto; display: block; }
@@ -87,6 +93,7 @@
   <section class="card" id="card" hidden>
     <p class="headline" id="headline"></p>
     <div class="stats" id="stats"></div>
+    <p class="counterpunch" id="counterpunch"></p>
     <figure>
       <svg id="chart" viewBox="0 0 640 190" role="img" aria-label="Households in temporary accommodation over time"></svg>
       <figcaption id="chartcap"></figcaption>
@@ -99,7 +106,7 @@
   <h2>Where the pressure is worst</h2>
   <table id="league">
     <thead><tr>
-      <th>Borough</th><th class="n">Households in TA</th><th class="n">Children</th><th class="n">1 in every…</th><th class="n">Change</th>
+      <th>Borough</th><th class="n">Households in TA</th><th class="n">Children</th><th class="n">1 in every…</th><th class="n">Change</th><th class="n">Approved, not built</th>
     </tr></thead>
     <tbody></tbody>
   </table>
@@ -107,14 +114,25 @@
   <h2>How this was made</h2>
   <details open>
     <summary>The data</summary>
-    <p>Every figure comes from MHCLG's statutory homelessness detailed local-authority tables (table TA1),
-      the official quarterly return every English council files. Nothing here is modelled or estimated:
-      household counts, children, bed-and-breakfast placements and out-of-borough placements are as published.
-      Figures are snapshots at the end of each December, so seasonal comparison is like-for-like.</p>
+    <p>Temporary accommodation figures come from MHCLG's statutory homelessness detailed local-authority
+      tables (table TA1), the official quarterly return every English council files. Nothing there is modelled
+      or estimated: household counts, children, bed-and-breakfast placements and out-of-borough placements are
+      as published. Figures are snapshots at the end of each December, so seasonal comparison is like-for-like.</p>
+    <p>Approvals and completions come from the GLA's London Plan Annual Monitoring Report 21 (January 2026),
+      chapter 2, covering the five years 2019/20 to 2023/24 — the most recent published window.</p>
   </details>
   <details>
     <summary>What we're less sure about</summary>
     <ul>
+      <li><strong>The approvals gap is not the same as land banking.</strong> This is the single biggest
+        caveat on the page. Homes approved in 2023/24 could not physically have been completed by 2023/24, so
+        some of the gap is simply build-out time rather than anything stalling. It is a measure of consent
+        running ahead of delivery across a fixed five-year window, not a count of sites deliberately sat on.
+        Separating the two needs site-level permission dates from the London Development Database, which is
+        the obvious next build.</li>
+      <li><strong>Two development corporations are excluded.</strong> The Old Oak and Park Royal and London
+        Legacy corporations are the planning authority for parts of several boroughs, so consents inside their
+        areas are missing from those boroughs' figures and their homes are counted in the London total only.</li>
       <li><strong>Cost is an assumption, not a measurement.</strong> MHCLG does not publish TA spend by
         borough in this release. Where a daily cost appears it applies a single flat nightly rate across all
         placement types, shown on the face of the page so you can substitute your own. Real costs vary
@@ -130,11 +148,14 @@
   </details>
   <details>
     <summary>What would change our conclusion</summary>
-    <p>The claim on this page is narrow: TA caseloads in London are at a record high and rising, and boroughs
-      are absorbing that as a recurring revenue cost. It would be wrong if the rise were driven by better
-      recording rather than more households — worth testing against the underlying homelessness duty-acceptance
-      series — or if boroughs had materially shifted placements into cheaper council-owned stock, which the
-      accommodation-type split in the same table lets you check.</p>
+    <p>The claim on this page is narrow: TA caseloads in London are at a record high and rising, boroughs are
+      absorbing that as a recurring revenue cost, and consent is running well ahead of delivery at the same
+      time. It would be wrong if the TA rise were driven by better recording rather than more households —
+      worth testing against the underlying homelessness duty-acceptance series — or if boroughs had materially
+      shifted placements into cheaper council-owned stock, which the accommodation-type split in the same table
+      lets you check. On the supply side, it would be substantially weakened if the approvals gap turned out to
+      be normal build-out lag rather than delivery failure, which is why the two numbers are shown side by side
+      rather than presented as cause and effect.</p>
   </details>
 
   <footer>
@@ -193,7 +214,7 @@ At an illustrative £${DATA.nightly_cost_assumption} per household per night, th
 I would like to know:
 
 1. What did ${a.name} spend on temporary accommodation in the last financial year, and what does it forecast for this one?
-2. How many homes in the borough have planning permission but have not been started?
+2. Over the five years to 2023/24, the GLA's London Plan Annual Monitoring Report records ${fmt(a.approvals)} homes approved in ${a.name} and ${fmt(a.completions)} completed. What is the council doing about the ${fmt(a.approved_not_completed)}-home gap between consent and delivery?
 3. What is the council doing to move households out of nightly-paid accommodation and into settled homes?
 
 I would be grateful for a response.
@@ -218,6 +239,19 @@ function render(a) {
     [fmt(a.placed_out_of_borough), "placed outside the borough"],
     [`£${fmt(cost)}`, `a day, at an assumed £${DATA.nightly_cost_assumption} per household per night`],
   ].map(([v, l, cls]) => `<div class="stat"><div class="value ${cls || ""}">${v}</div><div class="label">${l}</div></div>`).join("");
+
+  const cp = document.getElementById("counterpunch");
+  if (a.approved_not_completed) {
+    cp.hidden = false;
+    cp.innerHTML =
+      `Meanwhile, over the five years to 2023/24 ${a.name} granted planning permission for ` +
+      `<strong>${fmt(a.approvals)} homes</strong> and completed <strong>${fmt(a.completions)}</strong> — ` +
+      `a shortfall of <strong>${fmt(a.approved_not_completed)}</strong>, or a ${a.completion_rate_pct}% ` +
+      `completion rate. That is ${(a.approved_not_completed / a.households).toFixed(1)}× the number of ` +
+      `households the borough currently has in temporary accommodation.`;
+  } else {
+    cp.hidden = true;
+  }
 
   drawChart(a);
   document.getElementById("email").href = `mailto:?subject=${encodeURIComponent(
@@ -262,7 +296,8 @@ fetch("data.json").then(r => r.json()).then(d => {
   document.querySelector("#league tbody").innerHTML = rows.map(a =>
     `<tr><td>${a.name}</td><td class="n">${fmt(a.households)}</td><td class="n">${fmt(a.children)}</td>` +
     `<td class="n">${fmt(a.one_in)}</td>` +
-    `<td class="n ${a.change_pct > 0 ? "up" : "down"}">${a.change_pct == null ? "—" : (a.change_pct > 0 ? "+" : "") + a.change_pct + "%"}</td></tr>`).join("");
+    `<td class="n ${a.change_pct > 0 ? "up" : "down"}">${a.change_pct == null ? "—" : (a.change_pct > 0 ? "+" : "") + a.change_pct + "%"}</td>` +
+    `<td class="n">${fmt(a.approved_not_completed)}</td></tr>`).join("");
 
   render(london);
 });
