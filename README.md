@@ -52,7 +52,7 @@ No install, no terminal, nothing to run:
 `main` / `/docs` → Save**. It goes live in a minute or two.)
 
 Mirror, works immediately without any setup:
-https://raw.githack.com/thvb1133/Data-hackathon-/main/dist/homes-vs-hotels.html
+https://raw.githack.com/thvb1133/Data-hackathon-/2e0cd6e/dist/homes-vs-hotels.html
 
 `dist/homes-vs-hotels.html` is the whole tool — page, data, map and all — in one 119 KB file.
 Download it and double-click and it works offline, on any laptop, with no web server. Useful

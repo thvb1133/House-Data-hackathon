@@ -7,7 +7,7 @@
 
 **Live tool (no install):** https://thvb1133.github.io/Data-hackathon-/
 **Mirror if Pages is not switched on yet:**
-https://raw.githack.com/thvb1133/Data-hackathon-/main/dist/homes-vs-hotels.html
+https://raw.githack.com/thvb1133/Data-hackathon-/2e0cd6e/dist/homes-vs-hotels.html
 
 **Code:** https://github.com/thvb1133/Data-hackathon-
 **Offline copy:** `dist/homes-vs-hotels.html` — one file, double-click, works with no wifi
