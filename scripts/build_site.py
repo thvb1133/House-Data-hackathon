@@ -217,6 +217,24 @@ def main() -> None:
         }
         for a in priority
     ]
+    # The sharpest illustration of the null result: worst need yet delivering, against
+    # least need yet sitting on the most unstarted consent.
+    delivering = min(tested, key=lambda a: (a["unstarted_per_1000"], -a["per_1000_households"]))
+    idle = max(tested, key=lambda a: (a["unstarted_per_1000"], -a["per_1000_households"]))
+    mismatch["contrast"] = {
+        "delivering": {
+            "name": delivering["name"],
+            "ta_rate": delivering["per_1000_households"],
+            "unstarted_per_1000": delivering["unstarted_per_1000"],
+            "households": delivering["households"],
+        },
+        "idle": {
+            "name": idle["name"],
+            "ta_rate": idle["per_1000_households"],
+            "unstarted_per_1000": idle["unstarted_per_1000"],
+            "unstarted": idle["approved_not_started"],
+        },
+    }
     mismatch["priority_totals"] = {
         "unstarted": sum(a["approved_not_started"] for a in priority),
         "households": sum(a["households"] for a in priority),

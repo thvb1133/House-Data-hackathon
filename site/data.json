@@ -62,6 +62,20 @@
     "unstarted": 3802.0
    }
   ],
+  "contrast": {
+   "delivering": {
+    "name": "Barnet",
+    "ta_rate": 19.2,
+    "unstarted_per_1000": -10.0,
+    "households": 2989.0
+   },
+   "idle": {
+    "name": "Greenwich",
+    "ta_rate": 15.8,
+    "unstarted_per_1000": 111.0,
+    "unstarted": 13363.0
+   }
+  },
   "priority_totals": {
    "unstarted": 37312.0,
    "households": 24585.0,
