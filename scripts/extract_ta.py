@@ -131,6 +131,8 @@ def main() -> None:
         frames.append(frame)
 
     panel = pd.concat(frames, ignore_index=True)
+    # The London region total is listed twice in the published sheets.
+    panel = panel.drop_duplicates(subset=["quarter", "area_code"])
     panel = panel.sort_values(["area_name", "quarter"]).reset_index(drop=True)
     panel.to_csv(OUT / "ta_panel_london.csv", index=False)
     print(f"\nwrote {OUT/'ta_panel_london.csv'}  {panel.shape}")

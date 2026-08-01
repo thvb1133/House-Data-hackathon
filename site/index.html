@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Homes vs Hotels — temporary accommodation in your borough</title>
+<style>
+  :root {
+    --ink: #14161a;
+    --muted: #5c6470;
+    --line: #e2e5ea;
+    --alarm: #c8102e;
+    --paper: #fbfaf8;
+    --accent: #12506b;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font: 17px/1.55 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+    color: var(--ink);
+    background: var(--paper);
+  }
+  main { max-width: 760px; margin: 0 auto; padding: 40px 20px 80px; }
+  h1 { font-size: 40px; line-height: 1.1; margin: 0 0 12px; letter-spacing: -0.02em; }
+  h2 { font-size: 20px; margin: 40px 0 12px; letter-spacing: -0.01em; }
+  .standfirst { font-size: 20px; color: var(--muted); margin: 0 0 8px; }
+  .hero-number { color: var(--alarm); font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+  .picker {
+    display: flex; flex-wrap: wrap; gap: 10px;
+    background: #fff; border: 1px solid var(--line); border-radius: 12px;
+    padding: 16px; margin: 28px 0;
+  }
+  .picker label { flex: 1 1 220px; font-size: 13px; color: var(--muted); }
+  select, input {
+    width: 100%; margin-top: 6px; padding: 11px 12px; font-size: 16px;
+    border: 1px solid var(--line); border-radius: 8px; background: #fff; color: var(--ink);
+  }
+  .hint { flex-basis: 100%; font-size: 13px; color: var(--muted); margin: 0; min-height: 18px; }
+
+  .card { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 24px; }
+  .headline { font-size: 26px; line-height: 1.3; margin: 0 0 20px; }
+  .headline strong { color: var(--alarm); font-variant-numeric: tabular-nums; }
+
+  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 18px; }
+  .stat .value { font-size: 27px; font-weight: 600; font-variant-numeric: tabular-nums; }
+  .stat .label { font-size: 13px; color: var(--muted); }
+  .up { color: var(--alarm); }
+  .down { color: #1a7a4c; }
+
+  figure { margin: 24px 0 0; }
+  figcaption { font-size: 13px; color: var(--muted); margin-top: 6px; }
+  svg { width: 100%; height: auto; display: block; }
+
+  .action { margin-top: 24px; }
+  .btn {
+    display: inline-block; background: var(--accent); color: #fff; text-decoration: none;
+    padding: 13px 20px; border-radius: 8px; font-weight: 600; font-size: 16px;
+  }
+  .btn:hover { background: #0d3d52; }
+
+  details { border-top: 1px solid var(--line); padding: 14px 0; }
+  summary { cursor: pointer; font-weight: 600; }
+  details p, details li { color: var(--muted); font-size: 15px; }
+  table { border-collapse: collapse; width: 100%; font-size: 15px; margin-top: 8px; }
+  th, td { text-align: left; padding: 7px 8px; border-bottom: 1px solid var(--line); }
+  td.n, th.n { text-align: right; font-variant-numeric: tabular-nums; }
+  footer { margin-top: 48px; font-size: 13px; color: var(--muted); }
+  a { color: var(--accent); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Your borough is paying for hotel rooms,<br>not homes.</h1>
+  <p class="standfirst" id="standfirst">Loading the latest official figures…</p>
+
+  <div class="picker">
+    <label>Your borough
+      <select id="area"></select>
+    </label>
+    <label>…or your postcode
+      <input id="postcode" placeholder="e.g. E2 7DG" autocomplete="postal-code">
+    </label>
+    <p class="hint" id="hint"></p>
+  </div>
+
+  <section class="card" id="card" hidden>
+    <p class="headline" id="headline"></p>
+    <div class="stats" id="stats"></div>
+    <figure>
+      <svg id="chart" viewBox="0 0 640 190" role="img" aria-label="Households in temporary accommodation over time"></svg>
+      <figcaption id="chartcap"></figcaption>
+    </figure>
+    <div class="action">
+      <a class="btn" id="email" href="#">Email your councillor about this</a>
+    </div>
+  </section>
+
+  <h2>Where the pressure is worst</h2>
+  <table id="league">
+    <thead><tr>
+      <th>Borough</th><th class="n">Households in TA</th><th class="n">Children</th><th class="n">1 in every…</th><th class="n">Change</th>
+    </tr></thead>
+    <tbody></tbody>
+  </table>
+
+  <h2>How this was made</h2>
+  <details open>
+    <summary>The data</summary>
+    <p>Every figure comes from MHCLG's statutory homelessness detailed local-authority tables (table TA1),
+      the official quarterly return every English council files. Nothing here is modelled or estimated:
+      household counts, children, bed-and-breakfast placements and out-of-borough placements are as published.
+      Figures are snapshots at the end of each December, so seasonal comparison is like-for-like.</p>
+  </details>
+  <details>
+    <summary>What we're less sure about</summary>
+    <ul>
+      <li><strong>Cost is an assumption, not a measurement.</strong> MHCLG does not publish TA spend by
+        borough in this release. Where a daily cost appears it applies a single flat nightly rate across all
+        placement types, shown on the face of the page so you can substitute your own. Real costs vary
+        enormously between council-owned stock and nightly-paid hotel rooms, so treat it as an order of
+        magnitude, not an audited figure.</li>
+      <li><strong>Two boroughs did not return usable data in December 2019</strong>, so their change figure is
+        measured from the first year they did. The baseline year is labelled per borough.</li>
+      <li><strong>A household is not a fixed number of people.</strong> Household and children counts move
+        differently, and neither is a count of individuals in TA.</li>
+      <li><strong>Out-of-borough placements are counted by the placing borough</strong>, so a borough exporting
+        families looks worse on that measure and the receiving borough does not appear at all.</li>
+    </ul>
+  </details>
+  <details>
+    <summary>What would change our conclusion</summary>
+    <p>The claim on this page is narrow: TA caseloads in London are at a record high and rising, and boroughs
+      are absorbing that as a recurring revenue cost. It would be wrong if the rise were driven by better
+      recording rather than more households — worth testing against the underlying homelessness duty-acceptance
+      series — or if boroughs had materially shifted placements into cheaper council-owned stock, which the
+      accommodation-type split in the same table lets you check.</p>
+  </details>
+
+  <footer>
+    <p>Built at House London #0, Newspeak House, 1 August 2026.
+      Source: <a href="https://www.gov.uk/government/statistical-data-sets/live-tables-on-homelessness">MHCLG live tables on homelessness</a>,
+      table TA1. Open data, open code.</p>
+  </footer>
+</main>
+
+<script>
+const fmt = n => n == null ? "—" : n.toLocaleString("en-GB", {maximumFractionDigits: 0});
+let DATA, current;
+
+function quarterLabel(q) {
+  const [y, m] = q.split("-");
+  return {"03": "Mar", "06": "Jun", "09": "Sep", "12": "Dec"}[m] + " " + y;
+}
+
+function drawChart(area) {
+  const svg = document.getElementById("chart");
+  const pts = area.series.filter(p => p.households != null);
+  if (pts.length < 2) { svg.innerHTML = ""; return; }
+  const W = 640, H = 190, pad = {t: 14, r: 14, b: 26, l: 54};
+  const max = Math.max(...pts.map(p => p.households)) * 1.08;
+  const x = i => pad.l + i * (W - pad.l - pad.r) / (pts.length - 1);
+  const y = v => H - pad.b - (v / max) * (H - pad.t - pad.b);
+
+  const line = pts.map((p, i) => `${i ? "L" : "M"}${x(i).toFixed(1)},${y(p.households).toFixed(1)}`).join("");
+  const area_ = `${line}L${x(pts.length - 1).toFixed(1)},${H - pad.b}L${pad.l},${H - pad.b}Z`;
+  const grid = [0, max / 2, max].map(v =>
+    `<line x1="${pad.l}" x2="${W - pad.r}" y1="${y(v)}" y2="${y(v)}" stroke="#e2e5ea"/>
+     <text x="${pad.l - 8}" y="${y(v) + 4}" text-anchor="end" font-size="11" fill="#5c6470">${fmt(v)}</text>`).join("");
+  const dots = pts.map((p, i) =>
+    `<circle cx="${x(i)}" cy="${y(p.households)}" r="3.5" fill="#c8102e"/>`).join("");
+  const labels = pts.map((p, i) =>
+    `<text x="${x(i)}" y="${H - 8}" text-anchor="middle" font-size="11" fill="#5c6470">${p.quarter.slice(0, 4)}</text>`).join("");
+
+  svg.innerHTML = grid +
+    `<path d="${area_}" fill="#c8102e" opacity="0.08"/>` +
+    `<path d="${line}" fill="none" stroke="#c8102e" stroke-width="2.5"/>` + dots + labels;
+  document.getElementById("chartcap").textContent =
+    `Households in temporary accommodation placed by ${area.name}, December each year.`;
+}
+
+function emailBody(a) {
+  const cost = a.households * DATA.nightly_cost_assumption * 365;
+  return encodeURIComponent(
+`Dear Councillor,
+
+I live in ${a.name} and I want to ask what the council is doing about temporary accommodation.
+
+According to MHCLG's own statutory homelessness figures for ${quarterLabel(DATA.latest_quarter)}, ${a.name} has ${fmt(a.households)} households in temporary accommodation, including ${fmt(a.children)} children. That is roughly one in every ${fmt(a.one_in)} households in the borough${a.change_pct != null ? `, and it has changed by ${a.change_pct > 0 ? "+" : ""}${a.change_pct}% since ${quarterLabel(a.baseline_quarter)}` : ""}.
+
+At an illustrative £${DATA.nightly_cost_assumption} per household per night, that is in the order of £${fmt(cost)} a year of recurring spend on accommodation the council does not own.
+
+I would like to know:
+
+1. What did ${a.name} spend on temporary accommodation in the last financial year, and what does it forecast for this one?
+2. How many homes in the borough have planning permission but have not been started?
+3. What is the council doing to move households out of nightly-paid accommodation and into settled homes?
+
+I would be grateful for a response.
+
+Yours,`);
+}
+
+function render(a) {
+  current = a;
+  document.getElementById("card").hidden = false;
+  const dir = a.change_pct == null ? "" : (a.change_pct > 0 ? "up" : "down");
+  const cost = a.households * DATA.nightly_cost_assumption;
+
+  document.getElementById("headline").innerHTML =
+    `In ${a.name}, <strong>${fmt(a.households)} households</strong> are living in temporary accommodation — ` +
+    `including <strong>${fmt(a.children)} children</strong>.`;
+
+  document.getElementById("stats").innerHTML = [
+    [`1 in ${fmt(a.one_in)}`, "of all households in the borough"],
+    [a.change_pct == null ? "—" : `${a.change_pct > 0 ? "+" : ""}${a.change_pct}%`,
+      `since ${quarterLabel(a.baseline_quarter)}`, dir],
+    [fmt(a.placed_out_of_borough), "placed outside the borough"],
+    [`£${fmt(cost)}`, `a day, at an assumed £${DATA.nightly_cost_assumption} per household per night`],
+  ].map(([v, l, cls]) => `<div class="stat"><div class="value ${cls || ""}">${v}</div><div class="label">${l}</div></div>`).join("");
+
+  drawChart(a);
+  document.getElementById("email").href = `mailto:?subject=${encodeURIComponent(
+    `Temporary accommodation in ${a.name}`)}&body=${emailBody(a)}`;
+}
+
+async function lookupPostcode(pc) {
+  const hint = document.getElementById("hint");
+  hint.textContent = "Looking up postcode…";
+  try {
+    const r = await fetch(`https://api.postcodes.io/postcodes/${encodeURIComponent(pc)}`);
+    if (!r.ok) throw new Error("not found");
+    const d = (await r.json()).result;
+    const area = DATA.areas.find(a => a.code === d.codes.admin_district);
+    if (!area) { hint.textContent = `${d.admin_district} is outside London — this tool covers London boroughs only.`; return; }
+    document.getElementById("area").value = area.code;
+    hint.textContent = `${d.postcode} is in ${area.name}.`;
+    render(area);
+  } catch {
+    hint.textContent = "Couldn't find that postcode. Try the borough dropdown instead.";
+  }
+}
+
+fetch("data.json").then(r => r.json()).then(d => {
+  DATA = d;
+  const london = d.areas.find(a => a.code === "E12000007");
+  document.getElementById("standfirst").innerHTML =
+    `<span class="hero-number">${fmt(london.children)} children</span> in London are living in temporary ` +
+    `accommodation — the highest figure on record, as of ${quarterLabel(d.latest_quarter)}. Find your borough.`;
+
+  const sel = document.getElementById("area");
+  sel.innerHTML = `<option value="">Choose a borough…</option>` +
+    d.areas.filter(a => a.is_borough).map(a => `<option value="${a.code}">${a.name}</option>`).join("") +
+    `<option value="E12000007">— London as a whole —</option>`;
+  sel.onchange = e => { if (e.target.value) render(d.areas.find(a => a.code === e.target.value)); };
+
+  const pc = document.getElementById("postcode");
+  pc.onchange = () => pc.value.trim() && lookupPostcode(pc.value.trim());
+
+  const rows = d.areas.filter(a => a.is_borough && a.one_in)
+    .sort((x, y) => x.one_in - y.one_in).slice(0, 10);
+  document.querySelector("#league tbody").innerHTML = rows.map(a =>
+    `<tr><td>${a.name}</td><td class="n">${fmt(a.households)}</td><td class="n">${fmt(a.children)}</td>` +
+    `<td class="n">${fmt(a.one_in)}</td>` +
+    `<td class="n ${a.change_pct > 0 ? "up" : "down"}">${a.change_pct == null ? "—" : (a.change_pct > 0 ? "+" : "") + a.change_pct + "%"}</td></tr>`).join("");
+
+  render(london);
+});
+</script>
+</body>
+</html>

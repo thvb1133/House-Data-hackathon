@@ -1,0 +1,84 @@
+"""Turn the TA panel into the JSON payload the lookup page reads."""
+
+import json
+from pathlib import Path
+
+import pandas as pd
+
+PANEL = Path("data/processed/ta_panel_london.csv")
+OUT = Path("site/data.json")
+
+# MHCLG does not publish TA spend, so the per-night cost is applied as an
+# explicit, user-visible assumption rather than presented as measured data.
+NIGHTLY_COST_ASSUMPTION = 60.0
+
+
+def _num(v):
+    return None if pd.isna(v) else float(v)
+
+
+def main() -> None:
+    panel = pd.read_csv(PANEL).drop_duplicates(subset=["quarter", "area_code"])
+    quarters = sorted(panel["quarter"].unique())
+    latest = quarters[-1]
+
+    areas = []
+    for code, group in panel.groupby("area_code"):
+        group = group.sort_values("quarter")
+        current = group[group["quarter"] == latest]
+        if current.empty:
+            continue
+        current = current.iloc[0]
+
+        series = [
+            {"quarter": r.quarter, "households": _num(r.ta_households), "children": _num(r.ta_children)}
+            for r in group.itertuples()
+        ]
+        observed = [p for p in series if p["households"] is not None]
+        first = observed[0] if observed else None
+
+        households = _num(current.ta_households)
+        stock = _num(current.households_in_area_000s)
+
+        areas.append(
+            {
+                "code": code,
+                "name": current.area_name,
+                "is_borough": code.startswith("E09"),
+                "households": households,
+                "children": _num(current.ta_children),
+                "households_with_children": _num(current.ta_households_with_children),
+                "per_1000_households": round(households / stock, 1) if households and stock else None,
+                "one_in": round(stock * 1000 / households) if households and stock else None,
+                "bb_households": _num(current.bb_households),
+                "nightly_paid_households": _num(current.nightly_paid_households),
+                "placed_out_of_borough": _num(current.in_ta_another_district),
+                "baseline_quarter": first["quarter"] if first else None,
+                "baseline_households": first["households"] if first else None,
+                "change_pct": (
+                    round((households / first["households"] - 1) * 100, 1)
+                    if first and first["households"] and households
+                    else None
+                ),
+                "series": series,
+            }
+        )
+
+    areas.sort(key=lambda a: (not a["is_borough"], a["name"]))
+    payload = {
+        "latest_quarter": latest,
+        "quarters": quarters,
+        "nightly_cost_assumption": NIGHTLY_COST_ASSUMPTION,
+        "source": "MHCLG statutory homelessness detailed local authority tables, table TA1",
+        "areas": areas,
+    }
+
+    OUT.parent.mkdir(parents=True, exist_ok=True)
+    OUT.write_text(json.dumps(payload, indent=1))
+    london = next(a for a in areas if a["code"] == "E12000007")
+    print(f"wrote {OUT} — {len(areas)} areas, latest {latest}")
+    print(f"London: {london['households']:,.0f} households, {london['children']:,.0f} children")
+
+
+if __name__ == "__main__":
+    main()

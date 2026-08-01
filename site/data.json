@@ -1,0 +1,1871 @@
+{
+ "latest_quarter": "2025-12",
+ "quarters": [
+  "2019-12",
+  "2020-12",
+  "2021-12",
+  "2022-12",
+  "2023-12",
+  "2024-12",
+  "2025-12"
+ ],
+ "nightly_cost_assumption": 60.0,
+ "source": "MHCLG statutory homelessness detailed local authority tables, table TA1",
+ "areas": [
+  {
+   "code": "E09000002",
+   "name": "Barking and Dagenham",
+   "is_borough": true,
+   "households": 1020.0,
+   "children": 1632.0,
+   "households_with_children": 775.0,
+   "per_1000_households": 13.4,
+   "one_in": 75,
+   "bb_households": 50.0,
+   "nightly_paid_households": 0.0,
+   "placed_out_of_borough": 87.0,
+   "baseline_quarter": "2019-12",
+   "baseline_households": 1609.0,
+   "change_pct": -36.6,
+   "series": [
+    {
+     "quarter": "2019-12",
+     "households": 1609.0,
+     "children": 3504.0
+    },
+    {
+     "quarter": "2020-12",
+     "households": 1483.0,
+     "children": 2644.0
+    },
+    {
+     "quarter": "2021-12",
+     "households": 1403.0,
+     "children": 2535.0
+    },
+    {
+     "quarter": "2022-12",
+     "households": 1286.0,
+     "children": 2248.0
+    },
+    {
+     "quarter": "2023-12",
+     "households": 1230.0,
+     "children": 2092.0
+    },
+    {
+     "quarter": "2024-12",
+     "households": 1043.0,
+     "children": 1698.0
+    },
+    {
+     "quarter": "2025-12",
+     "households": 1020.0,
+     "children": 1632.0
+    }
+   ]
+  },
+  {
+   "code": "E09000003",
+   "name": "Barnet",
+   "is_borough": true,
+   "households": 2989.0,
+   "children": 3400.0,
+   "households_with_children": 1697.0,
+   "per_1000_households": 19.2,
+   "one_in": 52,
+   "bb_households": 99.0,
+   "nightly_paid_households": 1835.0,
+   "placed_out_of_borough": 1613.0,
+   "baseline_quarter": "2019-12",
+   "baseline_households": 2395.0,
+   "change_pct": 24.8,
+   "series": [
+    {
+     "quarter": "2019-12",
+     "households": 2395.0,
+     "children": 2730.0
+    },
+    {
+     "quarter": "2020-12",
+     "households": 2364.0,
+     "children": 2565.0
+    },
+    {
+     "quarter": "2021-12",
+     "households": 2021.0,
+     "children": 2308.0
+    },
+    {
+     "quarter": "2022-12",
+     "households": 2036.0,
+     "children": 2263.0
+    },
+    {
+     "quarter": "2023-12",
+     "households": 2184.0,
+     "children": 2384.0
+    },
+    {
+     "quarter": "2024-12",
+     "households": 2709.0,
+     "children": 3022.0
+    },
+    {
+     "quarter": "2025-12",
+     "households": 2989.0,
+     "children": 3400.0
+    }
+   ]
+  },
+  {
+   "code": "E09000004",
+   "name": "Bexley",
+   "is_borough": true,
+   "households": 289.0,
+   "children": 560.0,
+   "households_with_children": 243.0,
+   "per_1000_households": 3.0,
+   "one_in": 338,
+   "bb_households": 4.0,
+   "nightly_paid_households": 59.0,
+   "placed_out_of_borough": 25.0,
+   "baseline_quarter": "2021-12",
+   "baseline_households": 1031.0,
+   "change_pct": -72.0,
+   "series": [
+    {
+     "quarter": "2019-12",
+     "households": null,
+     "children": null
+    },
+    {
+     "quarter": "2020-12",
+     "households": null,
+     "children": null
+    },
+    {
+     "quarter": "2021-12",
+     "households": 1031.0,
+     "children": 1455.0
+    },
+    {
+     "quarter": "2022-12",
+     "households": null,
+     "children": null
+    },
+    {
+     "quarter": "2023-12",
+     "households": 589.0,
+     "children": 1027.0
+    },
+    {
+     "quarter": "2024-12",
+     "households": 437.0,
+     "children": 830.0
+    },
+    {
+     "quarter": "2025-12",
+     "households": 289.0,
+     "children": 560.0
+    }
+   ]
+  },
+  {
+   "code": "E09000005",
+   "name": "Brent",
+   "is_borough": true,
+   "households": null,
+   "children": null,
+   "households_with_children": null,
+   "per_1000_households": null,
+   "one_in": null,
+   "bb_households": null,
+   "nightly_paid_households": null,
+   "placed_out_of_borough": null,
+   "baseline_quarter": "2019-12",
+   "baseline_households": 2061.0,
+   "change_pct": null,
+   "series": [
+    {
+     "quarter": "2019-12",
+     "households": 2061.0,
+     "children": 4027.0
+    },
+    {
+     "quarter": "2020-12",
+     "households": 1870.0,
+     "children": 3442.0
+    },
+    {
+     "quarter": "2021-12",
+     "households": null,
+     "children": null
+    },
+    {
+     "quarter": "2022-12",
+     "households": null,
+     "children": null
+    },
+    {
+     "quarter": "2023-12",
+     "households": 1632.0,
+     "children": 2804.0
+    },
+    {
+     "quarter": "2024-12",
+     "households": null,
+     "children": null
+    },
+    {
+     "quarter": "2025-12",
+     "households": null,
+     "children": null
+    }
+   ]
+  },
+  {
+   "code": "E09000006",
+   "name": "Bromley",
+   "is_borough": true,
+   "households": 1691.0,
+   "children": 1712.0,
+   "households_with_children": 944.0,
+   "per_1000_households": 12.3,
+   "one_in": 82,
+   "bb_households": 0.0,
+   "nightly_paid_households": 1509.0,
+   "placed_out_of_borough": 1381.0,
+   "baseline_quarter": "2019-12",
+   "baseline_households": 1567.0,
+   "change_pct": 7.9,
+   "series": [
+    {
+     "quarter": "2019-12",
+     "households": 1567.0,
+     "children": 2144.0
+    },
+    {
+     "quarter": "2020-12",
+     "households": 1795.0,
+     "children": 1758.0
+    },
+    {
+     "quarter": "2021-12",
+     "households": 1709.0,
+     "children": 1950.0
+    },
+    {
+     "quarter": "2022-12",
+     "households": 1543.0,
+     "children": 1806.0
+    },
+    {
+     "quarter": "2023-12",
+     "households": 1566.0,
+     "children": 1697.0
+    },
+    {
+     "quarter": "2024-12",
+     "households": 1845.0,
+     "children": 1832.0
+    },
+    {
+     "quarter": "2025-12",
+     "households": 1691.0,
+     "children": 1712.0
+    }
+   ]
+  },
+  {
+   "code": "E09000007",
+   "name": "Camden",
+   "is_borough": true,
+   "households": 1339.0,
+   "children": 1258.0,
+   "households_with_children": 646.0,
+   "per_1000_households": 13.2,
+   "one_in": 76,
+   "bb_households": 313.0,
+   "nightly_paid_households": 664.0,
+   "placed_out_of_borough": 890.0,
+   "baseline_quarter": "2019-12",
+   "baseline_households": 531.0,
+   "change_pct": 152.2,
+   "series": [
+    {
+     "quarter": "2019-12",
+     "households": 531.0,
+     "children": 618.0
+    },
+    {
+     "quarter": "2020-12",
+     "households": 520.0,
+     "children": 522.0
+    },
+    {
+     "quarter": "2021-12",
+     "households": 541.0,
+     "children": 508.0
+    },
+    {
+     "quarter": "2022-12",
+     "households": 557.0,
+     "children": 525.0
+    },
+    {
+     "quarter": "2023-12",
+     "households": 683.0,
+     "children": 654.0
+    },
+    {
+     "quarter": "2024-12",
+     "households": null,
+     "children": null
+    },
+    {
+     "quarter": "2025-12",
+     "households": 1339.0,
+     "children": 1258.0
+    }
+   ]
+  },
+  {
+   "code": "E09000001",
+   "name": "City of London",
+   "is_borough": true,
+   "households": 33.0,
+   "children": 20.0,
+   "households_with_children": 15.0,
+   "per_1000_households": 4.5,
+   "one_in": 221,
+   "bb_households": 3.0,
+   "nightly_paid_households": 29.0,
+   "placed_out_of_borough": 34.0,
+   "baseline_quarter": "2019-12",
+   "baseline_households": 11.0,
+   "change_pct": 200.0,
+   "series": [
+    {
+     "quarter": "2019-12",
+     "households": 11.0,
+     "children": 11.0
+    },
+    {
+     "quarter": "2020-12",
+     "households": 10.0,
+     "children": 11.0
+    },
+    {
+     "quarter": "2021-12",
+     "households": 4.0,
+     "children": 3.0
+    },
+    {
+     "quarter": "2022-12",
+     "households": 25.0,
+     "children": 18.0
+    },
+    {
+     "quarter": "2023-12",
+     "households": 31.0,
+     "children": 19.0
+    },
+    {
+     "quarter": "2024-12",
+     "households": 33.0,
+     "children": 20.0
+    },
+    {
+     "quarter": "2025-12",
+     "households": 33.0,
+     "children": 20.0
+    }
+   ]
+  },
+  {
+   "code": "E09000008",
+   "name": "Croydon",
+   "is_borough": true,
+   "households": 3272.0,
+   "children": 4610.0,
+   "households_with_children": 2321.0,
+   "per_1000_households": 20.8,
+   "one_in": 48,
+   "bb_households": 12.0,
+   "nightly_paid_households": 1769.0,
+   "placed_out_of_borough": 960.0,
+   "baseline_quarter": "2019-12",
+   "baseline_households": 1980.0,
+   "change_pct": 65.3,
+   "series": [
+    {
+     "quarter": "2019-12",
+     "households": 1980.0,
+     "children": 2863.0
+    },
+    {
+     "quarter": "2020-12",
+     "households": 2096.0,
+     "children": 2866.0
+    },
+    {
+     "quarter": "2021-12",
+     "households": 1996.0,
+     "children": 2784.0
+    },
+    {
+     "quarter": "2022-12",
+     "households": 1935.0,
+     "children": 2589.0
+    },
+    {
+     "quarter": "2023-12",
+     "households": null,
+     "children": null
+    },
+    {
+     "quarter": "2024-12",
+     "households": 3504.0,
+     "children": 3803.0
+    },
+    {
+     "quarter": "2025-12",
+     "households": 3272.0,
+     "children": 4610.0
+    }
+   ]
+  },
+  {
+   "code": "E09000009",
+   "name": "Ealing",
+   "is_borough": true,
+   "households": null,
+   "children": null,
+   "households_with_children": null,
+   "per_1000_households": null,
+   "one_in": null,
+   "bb_households": null,
+   "nightly_paid_households": null,
+   "placed_out_of_borough": null,
+   "baseline_quarter": "2019-12",
+   "baseline_households": 2269.0,
+   "change_pct": null,
+   "series": [
+    {
+     "quarter": "2019-12",
+     "households": 2269.0,
+     "children": 3452.0
+    },
+    {
+     "quarter": "2020-12",
+     "households": 2244.0,
+     "children": 3415.0
+    },
+    {
+     "quarter": "2021-12",
+     "households": 2411.0,
+     "children": 3664.0
+    },
+    {
+     "quarter": "2022-12",
+     "households": 2256.0,
+     "children": 3432.0
+    },
+    {
+     "quarter": "2023-12",
+     "households": 2770.0,
+     "children": 3843.0
+    },
+    {
+     "quarter": "2024-12",
+     "households": 3230.0,
+     "children": 4628.0
+    },
+    {
+     "quarter": "2025-12",
+     "households": null,
+     "children": null
+    }
+   ]
+  },
+  {
+   "code": "E09000010",
+   "name": "Enfield",
+   "is_borough": true,
+   "households": 3090.0,
+   "children": 4709.0,
+   "households_with_children": 2263.0,
+   "per_1000_households": 25.4,
+   "one_in": 39,
+   "bb_households": 10.0,
+   "nightly_paid_households": 1326.0,
+   "placed_out_of_borough": 820.0,
+   "baseline_quarter": "2019-12",
+   "baseline_households": 3458.0,
+   "change_pct": -10.6,
+   "series": [
+    {
+     "quarter": "2019-12",
+     "households": 3458.0,
+     "children": 5667.0
+    },
+    {
+     "quarter": "2020-12",
+     "households": null,
+     "children": null
+    },
+    {
+     "quarter": "2021-12",
+     "households": 3295.0,
+     "children": 1633.0
+    },
+    {
+     "quarter": "2022-12",
+     "households": null,
+     "children": null
+    },
+    {
+     "quarter": "2023-12",
+     "households": 3126.0,
+     "children": 4540.0
+    },
+    {
+     "quarter": "2024-12",
+     "households": 3085.0,
+     "children": 4661.0
+    },
+    {
+     "quarter": "2025-12",
+     "households": 3090.0,
+     "children": 4709.0
+    }
+   ]
+  },
+  {
+   "code": "E09000011",
+   "name": "Greenwich",
+   "is_borough": true,
+   "households": 1902.0,
+   "children": 3055.0,
+   "households_with_children": 1451.0,
+   "per_1000_households": 15.8,
+   "one_in": 63,
+   "bb_households": 89.0,
+   "nightly_paid_households": 893.0,
+   "placed_out_of_borough": 758.0,
+   "baseline_quarter": "2019-12",
+   "baseline_households": 1221.0,
+   "change_pct": 55.8,
+   "series": [
+    {
+     "quarter": "2019-12",
+     "households": 1221.0,
+     "children": 1945.0
+    },
+    {
+     "quarter": "2020-12",
+     "households": 1395.0,
+     "children": 2017.0
+    },
+    {
+     "quarter": "2021-12",
+     "households": 1548.0,
+     "children": 2507.0
+    },
+    {
+     "quarter": "2022-12",
+     "households": 1552.0,
+     "children": 2599.0
+    },
+    {
+     "quarter": "2023-12",
+     "households": 1707.0,
+     "children": 2836.0
+    },
+    {
+     "quarter": "2024-12",
+     "households": 1830.0,
+     "children": 3003.0
+    },
+    {
+     "quarter": "2025-12",
+     "households": 1902.0,
+     "children": 3055.0
+    }
+   ]
+  },
+  {
+   "code": "E09000012",
+   "name": "Hackney",
+   "is_borough": true,
+   "households": 3682.0,
+   "children": 4307.0,
+   "households_with_children": 2301.0,
+   "per_1000_households": 33.1,
+   "one_in": 30,
+   "bb_households": 355.0,
+   "nightly_paid_households": 1747.0,
+   "placed_out_of_borough": 1802.0,
+   "baseline_quarter": "2019-12",
+   "baseline_households": 3223.0,
+   "change_pct": 14.2,
+   "series": [
+    {
+     "quarter": "2019-12",
+     "households": 3223.0,
+     "children": 3923.0
+    },
+    {
+     "quarter": "2020-12",
+     "households": null,
+     "children": null
+    },
+    {
+     "quarter": "2021-12",
+     "households": null,
+     "children": null
+    },
+    {
+     "quarter": "2022-12",
+     "households": 3004.0,
+     "children": 3827.0
+    },
+    {
+     "quarter": "2023-12",
+     "households": 3169.0,
+     "children": 4105.0
+    },
+    {
+     "quarter": "2024-12",
+     "households": 3506.0,
+     "children": 4161.0
+    },
+    {
+     "quarter": "2025-12",
+     "households": 3682.0,
+     "children": 4307.0
+    }
+   ]
+  },
+  {
+   "code": "E09000013",
+   "name": "Hammersmith and Fulham",
+   "is_borough": true,
+   "households": 1451.0,
+   "children": 1862.0,
+   "households_with_children": 1019.0,
+   "per_1000_households": 17.1,
+   "one_in": 58,
+   "bb_households": 113.0,
+   "nightly_paid_households": 336.0,
+   "placed_out_of_borough": 967.0,
+   "baseline_quarter": "2019-12",
+   "baseline_households": 1230.0,
+   "change_pct": 18.0,
+   "series": [
+    {
+     "quarter": "2019-12",
+     "households": 1230.0,
+     "children": 1884.0
+    },
+    {
+     "quarter": "2020-12",
+     "households": 1096.0,
+     "children": 1694.0
+    },
+    {
+     "quarter": "2021-12",
+     "households": 1067.0,
+     "children": 1583.0
+    },
+    {
+     "quarter": "2022-12",
+     "households": 1122.0,
+     "children": 1595.0
+    },
+    {
+     "quarter": "2023-12",
+     "households": 1323.0,
+     "children": 1815.0
+    },
+    {
+     "quarter": "2024-12",
+     "households": 1421.0,
+     "children": 1895.0
+    },
+    {
+     "quarter": "2025-12",
+     "households": 1451.0,
+     "children": 1862.0
+    }
+   ]
+  },
+  {
+   "code": "E09000014",
+   "name": "Haringey",
+   "is_borough": true,
+   "households": 2648.0,
+   "children": 3733.0,
+   "households_with_children": 1909.0,
+   "per_1000_households": 24.8,
+   "one_in": 40,
+   "bb_households": 113.0,
+   "nightly_paid_households": 1789.0,
+   "placed_out_of_borough": 1421.0,
+   "baseline_quarter": "2019-12",
+   "baseline_households": 2904.0,
+   "change_pct": -8.8,
+   "series": [
+    {
+     "quarter": "2019-12",
+     "households": 2904.0,
+     "children": 5319.0
+    },
+    {
+     "quarter": "2020-12",
+     "households": 2966.0,
+     "children": 4954.0
+    },
+    {
+     "quarter": "2021-12",
+     "households": 2681.0,
+     "children": 4553.0
+    },
+    {
+     "quarter": "2022-12",
+     "households": 2468.0,
+     "children": 4149.0
+    },
+    {
+     "quarter": "2023-12",
+     "households": 2579.0,
+     "children": 4070.0
+    },
+    {
+     "quarter": "2024-12",
+     "households": 2643.0,
+     "children": 3968.0
+    },
+    {
+     "quarter": "2025-12",
+     "households": 2648.0,
+     "children": 3733.0
+    }
+   ]
+  },
+  {
+   "code": "E09000015",
+   "name": "Harrow",
+   "is_borough": true,
+   "households": 1436.0,
+   "children": 2483.0,
+   "households_with_children": 1081.0,
+   "per_1000_households": 15.5,
+   "one_in": 65,
+   "bb_households": 73.0,
+   "nightly_paid_households": 578.0,
+   "placed_out_of_borough": 612.0,
+   "baseline_quarter": "2019-12",
+   "baseline_households": 1180.0,
+   "change_pct": 21.7,
+   "series": [
+    {
+     "quarter": "2019-12",
+     "households": 1180.0,
+     "children": 1815.0
+    },
+    {
+     "quarter": "2020-12",
+     "households": 1114.0,
+     "children": 1948.0
+    },
+    {
+     "quarter": "2021-12",
+     "households": 1055.0,
+     "children": 1947.0
+    },
+    {
+     "quarter": "2022-12",
+     "households": 1082.0,
+     "children": 1941.0
+    },
+    {
+     "quarter": "2023-12",
+     "households": 1082.0,
+     "children": 1914.0
+    },
+    {
+     "quarter": "2024-12",
+     "households": 1320.0,
+     "children": 2235.0
+    },
+    {
+     "quarter": "2025-12",
+     "households": 1436.0,
+     "children": 2483.0
+    }
+   ]
+  },
+  {
+   "code": "E09000016",
+   "name": "Havering",
+   "is_borough": true,
+   "households": 1307.0,
+   "children": 1839.0,
+   "households_with_children": 928.0,
+   "per_1000_households": 12.6,
+   "one_in": 80,
+   "bb_households": 72.0,
+   "nightly_paid_households": 250.0,
+   "placed_out_of_borough": 201.0,
+   "baseline_quarter": "2019-12",
+   "baseline_households": 805.0,
+   "change_pct": 62.4,
+   "series": [
+    {
+     "quarter": "2019-12",
+     "households": 805.0,
+     "children": 1184.0
+    },
+    {
+     "quarter": "2020-12",
+     "households": 861.0,
+     "children": 1111.0
+    },
+    {
+     "quarter": "2021-12",
+     "households": 866.0,
+     "children": 1087.0
+    },
+    {
+     "quarter": "2022-12",
+     "households": 982.0,
+     "children": 1262.0
+    },
+    {
+     "quarter": "2023-12",
+     "households": 1161.0,
+     "children": 1515.0
+    },
+    {
+     "quarter": "2024-12",
+     "households": 1303.0,
+     "children": 1820.0
+    },
+    {
+     "quarter": "2025-12",
+     "households": 1307.0,
+     "children": 1839.0
+    }
+   ]
+  },
+  {
+   "code": "E09000017",
+   "name": "Hillingdon",
+   "is_borough": true,
+   "households": 1793.0,
+   "children": 2708.0,
+   "households_with_children": 1234.0,
+   "per_1000_households": 15.5,
+   "one_in": 65,
+   "bb_households": 67.0,
+   "nightly_paid_households": 1084.0,
+   "placed_out_of_borough": 671.0,
+   "baseline_quarter": "2019-12",
+   "baseline_households": 447.0,
+   "change_pct": 301.1,
+   "series": [
+    {
+     "quarter": "2019-12",
+     "households": 447.0,
+     "children": 736.0
+    },
+    {
+     "quarter": "2020-12",
+     "households": 425.0,
+     "children": 565.0
+    },
+    {
+     "quarter": "2021-12",
+     "households": 456.0,
+     "children": 635.0
+    },
+    {
+     "quarter": "2022-12",
+     "households": 754.0,
+     "children": 998.0
+    },
+    {
+     "quarter": "2023-12",
+     "households": 1161.0,
+     "children": 1632.0
+    },
+    {
+     "quarter": "2024-12",
+     "households": 1412.0,
+     "children": 1849.0
+    },
+    {
+     "quarter": "2025-12",
+     "households": 1793.0,
+     "children": 2708.0
+    }
+   ]
+  },
+  {
+   "code": "E09000018",
+   "name": "Hounslow",
+   "is_borough": true,
+   "households": 474.0,
+   "children": 888.0,
+   "households_with_children": 335.0,
+   "per_1000_households": 4.4,
+   "one_in": 227,
+   "bb_households": 44.0,
+   "nightly_paid_households": 84.0,
+   "placed_out_of_borough": 164.0,
+   "baseline_quarter": "2019-12",
+   "baseline_households": 683.0,
+   "change_pct": -30.6,
+   "series": [
+    {
+     "quarter": "2019-12",
+     "households": 683.0,
+     "children": 971.0
+    },
+    {
+     "quarter": "2020-12",
+     "households": null,
+     "children": null
+    },
+    {
+     "quarter": "2021-12",
+     "households": null,
+     "children": null
+    },
+    {
+     "quarter": "2022-12",
+     "households": null,
+     "children": null
+    },
+    {
+     "quarter": "2023-12",
+     "households": 647.0,
+     "children": 735.0
+    },
+    {
+     "quarter": "2024-12",
+     "households": 585.0,
+     "children": 760.0
+    },
+    {
+     "quarter": "2025-12",
+     "households": 474.0,
+     "children": 888.0
+    }
+   ]
+  },
+  {
+   "code": "E09000019",
+   "name": "Islington",
+   "is_borough": true,
+   "households": 1908.0,
+   "children": 1839.0,
+   "households_with_children": 1112.0,
+   "per_1000_households": 18.7,
+   "one_in": 54,
+   "bb_households": 2.0,
+   "nightly_paid_households": 1146.0,
+   "placed_out_of_borough": 1173.0,
+   "baseline_quarter": "2020-12",
+   "baseline_households": 483.0,
+   "change_pct": 295.0,
+   "series": [
+    {
+     "quarter": "2019-12",
+     "households": null,
+     "children": null
+    },
+    {
+     "quarter": "2020-12",
+     "households": 483.0,
+     "children": 411.0
+    },
+    {
+     "quarter": "2021-12",
+     "households": 855.0,
+     "children": 798.0
+    },
+    {
+     "quarter": "2022-12",
+     "households": 932.0,
+     "children": 904.0
+    },
+    {
+     "quarter": "2023-12",
+     "households": 1109.0,
+     "children": 1128.0
+    },
+    {
+     "quarter": "2024-12",
+     "households": 1622.0,
+     "children": 1592.0
+    },
+    {
+     "quarter": "2025-12",
+     "households": 1908.0,
+     "children": 1839.0
+    }
+   ]
+  },
+  {
+   "code": "E09000020",
+   "name": "Kensington and Chelsea",
+   "is_borough": true,
+   "households": 1814.0,
+   "children": 2296.0,
+   "households_with_children": 1259.0,
+   "per_1000_households": 25.6,
+   "one_in": 39,
+   "bb_households": 139.0,
+   "nightly_paid_households": 67.0,
+   "placed_out_of_borough": 427.0,
+   "baseline_quarter": "2019-12",
+   "baseline_households": 2232.0,
+   "change_pct": -18.7,
+   "series": [
+    {
+     "quarter": "2019-12",
+     "households": 2232.0,
+     "children": 2566.0
+    },
+    {
+     "quarter": "2020-12",
+     "households": 2244.0,
+     "children": 2603.0
+    },
+    {
+     "quarter": "2021-12",
+     "households": null,
+     "children": null
+    },
+    {
+     "quarter": "2022-12",
+     "households": null,
+     "children": null
+    },
+    {
+     "quarter": "2023-12",
+     "households": null,
+     "children": null
+    },
+    {
+     "quarter": "2024-12",
+     "households": 1970.0,
+     "children": 2444.0
+    },
+    {
+     "quarter": "2025-12",
+     "households": 1814.0,
+     "children": 2296.0
+    }
+   ]
+  },
+  {
+   "code": "E09000021",
+   "name": "Kingston upon Thames",
+   "is_borough": true,
+   "households": 890.0,
+   "children": 1113.0,
+   "households_with_children": 601.0,
+   "per_1000_households": 13.1,
+   "one_in": 76,
+   "bb_households": 71.0,
+   "nightly_paid_households": 400.0,
+   "placed_out_of_borough": 361.0,
+   "baseline_quarter": "2019-12",
+   "baseline_households": 862.0,
+   "change_pct": 3.2,
+   "series": [
+    {
+     "quarter": "2019-12",
+     "households": 862.0,
+     "children": 1295.0
+    },
+    {
+     "quarter": "2020-12",
+     "households": 921.0,
+     "children": 1364.0
+    },
+    {
+     "quarter": "2021-12",
+     "households": null,
+     "children": null
+    },
+    {
+     "quarter": "2022-12",
+     "households": 893.0,
+     "children": 1095.0
+    },
+    {
+     "quarter": "2023-12",
+     "households": 868.0,
+     "children": 1071.0
+    },
+    {
+     "quarter": "2024-12",
+     "households": null,
+     "children": null
+    },
+    {
+     "quarter": "2025-12",
+     "households": 890.0,
+     "children": 1113.0
+    }
+   ]
+  },
+  {
+   "code": "E09000022",
+   "name": "Lambeth",
+   "is_borough": true,
+   "households": 4425.0,
+   "children": 5842.0,
+   "households_with_children": 3064.0,
+   "per_1000_households": 32.3,
+   "one_in": 31,
+   "bb_households": 1.0,
+   "nightly_paid_households": 3187.0,
+   "placed_out_of_borough": 2722.0,
+   "baseline_quarter": "2019-12",
+   "baseline_households": 2478.0,
+   "change_pct": 78.6,
+   "series": [
+    {
+     "quarter": "2019-12",
+     "households": 2478.0,
+     "children": 3898.0
+    },
+    {
+     "quarter": "2020-12",
+     "households": 2767.0,
+     "children": 4104.0
+    },
+    {
+     "quarter": "2021-12",
+     "households": null,
+     "children": null
+    },
+    {
+     "quarter": "2022-12",
+     "households": null,
+     "children": null
+    },
+    {
+     "quarter": "2023-12",
+     "households": null,
+     "children": null
+    },
+    {
+     "quarter": "2024-12",
+     "households": null,
+     "children": null
+    },
+    {
+     "quarter": "2025-12",
+     "households": 4425.0,
+     "children": 5842.0
+    }
+   ]
+  },
+  {
+   "code": "E09000023",
+   "name": "Lewisham",
+   "is_borough": true,
+   "households": 2363.0,
+   "children": 3665.0,
+   "households_with_children": 1932.0,
+   "per_1000_households": 18.9,
+   "one_in": 53,
+   "bb_households": 6.0,
+   "nightly_paid_households": 1023.0,
+   "placed_out_of_borough": 1090.0,
+   "baseline_quarter": "2019-12",
+   "baseline_households": 2370.0,
+   "change_pct": -0.3,
+   "series": [
+    {
+     "quarter": "2019-12",
+     "households": 2370.0,
+     "children": 4820.0
+    },
+    {
+     "quarter": "2020-12",
+     "households": null,
+     "children": null
+    },
+    {
+     "quarter": "2021-12",
+     "households": 2530.0,
+     "children": 3832.0
+    },
+    {
+     "quarter": "2022-12",
+     "households": 2661.0,
+     "children": 3897.0
+    },
+    {
+     "quarter": "2023-12",
+     "households": 2715.0,
+     "children": 3900.0
+    },
+    {
+     "quarter": "2024-12",
+     "households": null,
+     "children": null
+    },
+    {
+     "quarter": "2025-12",
+     "households": 2363.0,
+     "children": 3665.0
+    }
+   ]
+  },
+  {
+   "code": "E09000024",
+   "name": "Merton",
+   "is_borough": true,
+   "households": 746.0,
+   "children": 1137.0,
+   "households_with_children": 547.0,
+   "per_1000_households": 8.9,
+   "one_in": 112,
+   "bb_households": 31.0,
+   "nightly_paid_households": 686.0,
+   "placed_out_of_borough": 569.0,
+   "baseline_quarter": "2019-12",
+   "baseline_households": 183.0,
+   "change_pct": 307.7,
+   "series": [
+    {
+     "quarter": "2019-12",
+     "households": 183.0,
+     "children": 310.0
+    },
+    {
+     "quarter": "2020-12",
+     "households": 193.0,
+     "children": 254.0
+    },
+    {
+     "quarter": "2021-12",
+     "households": 216.0,
+     "children": 280.0
+    },
+    {
+     "quarter": "2022-12",
+     "households": 325.0,
+     "children": 430.0
+    },
+    {
+     "quarter": "2023-12",
+     "households": 465.0,
+     "children": 677.0
+    },
+    {
+     "quarter": "2024-12",
+     "households": 654.0,
+     "children": 971.0
+    },
+    {
+     "quarter": "2025-12",
+     "households": 746.0,
+     "children": 1137.0
+    }
+   ]
+  },
+  {
+   "code": "E09000025",
+   "name": "Newham",
+   "is_borough": true,
+   "households": 7412.0,
+   "children": 10708.0,
+   "households_with_children": 5320.0,
+   "per_1000_households": 59.0,
+   "one_in": 17,
+   "bb_households": 126.0,
+   "nightly_paid_households": 4140.0,
+   "placed_out_of_borough": 3070.0,
+   "baseline_quarter": "2019-12",
+   "baseline_households": 5280.0,
+   "change_pct": 40.4,
+   "series": [
+    {
+     "quarter": "2019-12",
+     "households": 5280.0,
+     "children": 7842.0
+    },
+    {
+     "quarter": "2020-12",
+     "households": 5664.0,
+     "children": 7895.0
+    },
+    {
+     "quarter": "2021-12",
+     "households": 5645.0,
+     "children": 8376.0
+    },
+    {
+     "quarter": "2022-12",
+     "households": null,
+     "children": null
+    },
+    {
+     "quarter": "2023-12",
+     "households": 6269.0,
+     "children": 9034.0
+    },
+    {
+     "quarter": "2024-12",
+     "households": 6933.0,
+     "children": 10093.0
+    },
+    {
+     "quarter": "2025-12",
+     "households": 7412.0,
+     "children": 10708.0
+    }
+   ]
+  },
+  {
+   "code": "E09000026",
+   "name": "Redbridge",
+   "is_borough": true,
+   "households": 2874.0,
+   "children": 4432.0,
+   "households_with_children": 2047.0,
+   "per_1000_households": 26.8,
+   "one_in": 37,
+   "bb_households": 428.0,
+   "nightly_paid_households": 713.0,
+   "placed_out_of_borough": 1432.0,
+   "baseline_quarter": "2020-12",
+   "baseline_households": 2865.0,
+   "change_pct": 0.3,
+   "series": [
+    {
+     "quarter": "2019-12",
+     "households": null,
+     "children": null
+    },
+    {
+     "quarter": "2020-12",
+     "households": 2865.0,
+     "children": 3878.0
+    },
+    {
+     "quarter": "2021-12",
+     "households": 2648.0,
+     "children": 3967.0
+    },
+    {
+     "quarter": "2022-12",
+     "households": 2872.0,
+     "children": 4225.0
+    },
+    {
+     "quarter": "2023-12",
+     "households": 2993.0,
+     "children": 4479.0
+    },
+    {
+     "quarter": "2024-12",
+     "households": 2797.0,
+     "children": 4260.0
+    },
+    {
+     "quarter": "2025-12",
+     "households": 2874.0,
+     "children": 4432.0
+    }
+   ]
+  },
+  {
+   "code": "E09000027",
+   "name": "Richmond upon Thames",
+   "is_borough": true,
+   "households": 681.0,
+   "children": 717.0,
+   "households_with_children": 374.0,
+   "per_1000_households": 8.3,
+   "one_in": 121,
+   "bb_households": 12.0,
+   "nightly_paid_households": 480.0,
+   "placed_out_of_borough": 506.0,
+   "baseline_quarter": "2020-12",
+   "baseline_households": 258.0,
+   "change_pct": 164.0,
+   "series": [
+    {
+     "quarter": "2019-12",
+     "households": null,
+     "children": null
+    },
+    {
+     "quarter": "2020-12",
+     "households": 258.0,
+     "children": 263.0
+    },
+    {
+     "quarter": "2021-12",
+     "households": 295.0,
+     "children": 294.0
+    },
+    {
+     "quarter": "2022-12",
+     "households": 465.0,
+     "children": 453.0
+    },
+    {
+     "quarter": "2023-12",
+     "households": 532.0,
+     "children": 554.0
+    },
+    {
+     "quarter": "2024-12",
+     "households": 566.0,
+     "children": 600.0
+    },
+    {
+     "quarter": "2025-12",
+     "households": 681.0,
+     "children": 717.0
+    }
+   ]
+  },
+  {
+   "code": "E09000028",
+   "name": "Southwark",
+   "is_borough": true,
+   "households": 4163.0,
+   "children": 5686.0,
+   "households_with_children": 2920.0,
+   "per_1000_households": 29.9,
+   "one_in": 33,
+   "bb_households": 52.0,
+   "nightly_paid_households": 1451.0,
+   "placed_out_of_borough": 2012.0,
+   "baseline_quarter": "2019-12",
+   "baseline_households": 2668.0,
+   "change_pct": 56.0,
+   "series": [
+    {
+     "quarter": "2019-12",
+     "households": 2668.0,
+     "children": 3166.0
+    },
+    {
+     "quarter": "2020-12",
+     "households": 2820.0,
+     "children": 2171.0
+    },
+    {
+     "quarter": "2021-12",
+     "households": 3142.0,
+     "children": 2643.0
+    },
+    {
+     "quarter": "2022-12",
+     "households": 3490.0,
+     "children": 2878.0
+    },
+    {
+     "quarter": "2023-12",
+     "households": 3712.0,
+     "children": 3258.0
+    },
+    {
+     "quarter": "2024-12",
+     "households": 3997.0,
+     "children": 3611.0
+    },
+    {
+     "quarter": "2025-12",
+     "households": 4163.0,
+     "children": 5686.0
+    }
+   ]
+  },
+  {
+   "code": "E09000029",
+   "name": "Sutton",
+   "is_borough": true,
+   "households": 1081.0,
+   "children": 1480.0,
+   "households_with_children": 784.0,
+   "per_1000_households": 12.8,
+   "one_in": 78,
+   "bb_households": 36.0,
+   "nightly_paid_households": 527.0,
+   "placed_out_of_borough": 386.0,
+   "baseline_quarter": "2019-12",
+   "baseline_households": 704.0,
+   "change_pct": 53.6,
+   "series": [
+    {
+     "quarter": "2019-12",
+     "households": 704.0,
+     "children": 884.0
+    },
+    {
+     "quarter": "2020-12",
+     "households": 848.0,
+     "children": 846.0
+    },
+    {
+     "quarter": "2021-12",
+     "households": 882.0,
+     "children": 959.0
+    },
+    {
+     "quarter": "2022-12",
+     "households": 866.0,
+     "children": 1004.0
+    },
+    {
+     "quarter": "2023-12",
+     "households": 987.0,
+     "children": 1239.0
+    },
+    {
+     "quarter": "2024-12",
+     "households": 1054.0,
+     "children": 1340.0
+    },
+    {
+     "quarter": "2025-12",
+     "households": 1081.0,
+     "children": 1480.0
+    }
+   ]
+  },
+  {
+   "code": "E09000030",
+   "name": "Tower Hamlets",
+   "is_borough": true,
+   "households": 3096.0,
+   "children": 4880.0,
+   "households_with_children": 2406.0,
+   "per_1000_households": 22.4,
+   "one_in": 45,
+   "bb_households": 204.0,
+   "nightly_paid_households": 1336.0,
+   "placed_out_of_borough": 1400.0,
+   "baseline_quarter": "2019-12",
+   "baseline_households": 2647.0,
+   "change_pct": 17.0,
+   "series": [
+    {
+     "quarter": "2019-12",
+     "households": 2647.0,
+     "children": 4543.0
+    },
+    {
+     "quarter": "2020-12",
+     "households": 2853.0,
+     "children": 4513.0
+    },
+    {
+     "quarter": "2021-12",
+     "households": null,
+     "children": null
+    },
+    {
+     "quarter": "2022-12",
+     "households": null,
+     "children": null
+    },
+    {
+     "quarter": "2023-12",
+     "households": 2815.0,
+     "children": 4094.0
+    },
+    {
+     "quarter": "2024-12",
+     "households": 3191.0,
+     "children": 4477.0
+    },
+    {
+     "quarter": "2025-12",
+     "households": 3096.0,
+     "children": 4880.0
+    }
+   ]
+  },
+  {
+   "code": "E09000031",
+   "name": "Waltham Forest",
+   "is_borough": true,
+   "households": 1657.0,
+   "children": 2481.0,
+   "households_with_children": 1129.0,
+   "per_1000_households": 15.7,
+   "one_in": 64,
+   "bb_households": 175.0,
+   "nightly_paid_households": 666.0,
+   "placed_out_of_borough": 886.0,
+   "baseline_quarter": "2019-12",
+   "baseline_households": 2064.0,
+   "change_pct": -19.7,
+   "series": [
+    {
+     "quarter": "2019-12",
+     "households": 2064.0,
+     "children": 3626.0
+    },
+    {
+     "quarter": "2020-12",
+     "households": 1603.0,
+     "children": 2677.0
+    },
+    {
+     "quarter": "2021-12",
+     "households": 1046.0,
+     "children": 1968.0
+    },
+    {
+     "quarter": "2022-12",
+     "households": 915.0,
+     "children": 1730.0
+    },
+    {
+     "quarter": "2023-12",
+     "households": 1083.0,
+     "children": 1776.0
+    },
+    {
+     "quarter": "2024-12",
+     "households": 1546.0,
+     "children": 2350.0
+    },
+    {
+     "quarter": "2025-12",
+     "households": 1657.0,
+     "children": 2481.0
+    }
+   ]
+  },
+  {
+   "code": "E09000032",
+   "name": "Wandsworth",
+   "is_borough": true,
+   "households": 4176.0,
+   "children": 4297.0,
+   "households_with_children": 2261.0,
+   "per_1000_households": 29.3,
+   "one_in": 34,
+   "bb_households": 66.0,
+   "nightly_paid_households": 2089.0,
+   "placed_out_of_borough": 2006.0,
+   "baseline_quarter": "2020-12",
+   "baseline_households": 2227.0,
+   "change_pct": 87.5,
+   "series": [
+    {
+     "quarter": "2019-12",
+     "households": null,
+     "children": null
+    },
+    {
+     "quarter": "2020-12",
+     "households": 2227.0,
+     "children": 2825.0
+    },
+    {
+     "quarter": "2021-12",
+     "households": 2726.0,
+     "children": 3164.0
+    },
+    {
+     "quarter": "2022-12",
+     "households": 3209.0,
+     "children": 3426.0
+    },
+    {
+     "quarter": "2023-12",
+     "households": 3354.0,
+     "children": 3503.0
+    },
+    {
+     "quarter": "2024-12",
+     "households": 3575.0,
+     "children": 3644.0
+    },
+    {
+     "quarter": "2025-12",
+     "households": 4176.0,
+     "children": 4297.0
+    }
+   ]
+  },
+  {
+   "code": "E09000033",
+   "name": "Westminster",
+   "is_borough": true,
+   "households": 4732.0,
+   "children": 3959.0,
+   "households_with_children": 2229.0,
+   "per_1000_households": 45.9,
+   "one_in": 22,
+   "bb_households": 836.0,
+   "nightly_paid_households": 2127.0,
+   "placed_out_of_borough": 3065.0,
+   "baseline_quarter": "2019-12",
+   "baseline_households": 2635.0,
+   "change_pct": 79.6,
+   "series": [
+    {
+     "quarter": "2019-12",
+     "households": 2635.0,
+     "children": 3707.0
+    },
+    {
+     "quarter": "2020-12",
+     "households": null,
+     "children": null
+    },
+    {
+     "quarter": "2021-12",
+     "households": null,
+     "children": null
+    },
+    {
+     "quarter": "2022-12",
+     "households": 2901.0,
+     "children": 3638.0
+    },
+    {
+     "quarter": "2023-12",
+     "households": 3132.0,
+     "children": 3241.0
+    },
+    {
+     "quarter": "2024-12",
+     "households": 3996.0,
+     "children": 3541.0
+    },
+    {
+     "quarter": "2025-12",
+     "households": 4732.0,
+     "children": 3959.0
+    }
+   ]
+  },
+  {
+   "code": "E92000001",
+   "name": "ENGLAND",
+   "is_borough": false,
+   "households": 134210.0,
+   "children": 176130.0,
+   "households_with_children": 85800.0,
+   "per_1000_households": 5.5,
+   "one_in": 182,
+   "bb_households": 12550.0,
+   "nightly_paid_households": 50410.0,
+   "placed_out_of_borough": 43040.0,
+   "baseline_quarter": "2019-12",
+   "baseline_households": 88310.0,
+   "change_pct": 52.0,
+   "series": [
+    {
+     "quarter": "2019-12",
+     "households": 88310.0,
+     "children": 128310.0
+    },
+    {
+     "quarter": "2020-12",
+     "households": 95100.0,
+     "children": 120870.0
+    },
+    {
+     "quarter": "2021-12",
+     "households": 96280.0,
+     "children": 118730.0
+    },
+    {
+     "quarter": "2022-12",
+     "households": 100510.0,
+     "children": 126340.0
+    },
+    {
+     "quarter": "2023-12",
+     "households": 112610.0,
+     "children": 145780.0
+    },
+    {
+     "quarter": "2024-12",
+     "households": 127820.0,
+     "children": 165450.0
+    },
+    {
+     "quarter": "2025-12",
+     "households": 134210.0,
+     "children": 176130.0
+    }
+   ]
+  },
+  {
+   "code": "E12000007",
+   "name": "London",
+   "is_borough": false,
+   "households": 75600.0,
+   "children": 100930.0,
+   "households_with_children": 50910.0,
+   "per_1000_households": 21.1,
+   "one_in": 47,
+   "bb_households": 3960.0,
+   "nightly_paid_households": 35610.0,
+   "placed_out_of_borough": 35410.0,
+   "baseline_quarter": "2019-12",
+   "baseline_households": 58670.0,
+   "change_pct": 28.9,
+   "series": [
+    {
+     "quarter": "2019-12",
+     "households": 58670.0,
+     "children": 90080.0
+    },
+    {
+     "quarter": "2020-12",
+     "households": 60440.0,
+     "children": 85020.0
+    },
+    {
+     "quarter": "2021-12",
+     "households": 59100.0,
+     "children": 76470.0
+    },
+    {
+     "quarter": "2022-12",
+     "households": 57490.0,
+     "children": 74830.0
+    },
+    {
+     "quarter": "2023-12",
+     "households": 63200.0,
+     "children": 84920.0
+    },
+    {
+     "quarter": "2024-12",
+     "households": 72130.0,
+     "children": 93870.0
+    },
+    {
+     "quarter": "2025-12",
+     "households": 75600.0,
+     "children": 100930.0
+    }
+   ]
+  }
+ ]
+}
