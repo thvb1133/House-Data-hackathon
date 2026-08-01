@@ -70,6 +70,7 @@ def main() -> None:
 
     wide = panel.pivot_table(index="borough", columns="metric", values="five_year_total")
     wide["approved_not_completed"] = wide["approvals"] - wide["completions"]
+    wide["approved_not_started"] = wide["approvals"] - wide["starts"]
     wide["completion_rate_pct"] = (wide["completions"] / wide["approvals"] * 100).round(1)
     wide = wide.sort_values("approved_not_completed", ascending=False)
 

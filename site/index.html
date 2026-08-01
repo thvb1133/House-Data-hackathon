@@ -194,6 +194,12 @@
         costs are far larger but are substantially offset by housing benefit subsidy. Net is what a council
         actually carries on its own budget, which is the figure that drives financial distress. Only the
         build cost in the comparison above is an assumption, and it is a slider.</li>
+      <li><strong>"Spendable reserves" is our definition, not a statutory one.</strong> It is
+        unallocated reserves plus other earmarked reserves at the year end, excluding schools,
+        dedicated schools grant and public health, which are ring-fenced and cannot be spent on
+        homelessness. Comparing an annual cost to a one-off stock of reserves is a rough gauge of
+        exposure, not an accounting statement — a borough spending more than its reserves each year
+        is not thereby insolvent, it is funding the cost from revenue.</li>
       <li><strong>The spending series starts at 2021-22.</strong> Earlier revenue outturn releases exist,
         but most boroughs leave the homelessness component lines blank before then, so a longer run would
         compare against gaps rather than against genuinely smaller numbers.</li>
@@ -311,7 +317,7 @@ I live in ${a.name} and I want to ask what the council is doing about temporary 
 
 According to MHCLG's own statutory homelessness figures for ${quarterLabel(DATA.latest_quarter)}, ${a.name} has ${fmt(a.households)} households in temporary accommodation, including ${fmt(a.children)} children. That is roughly one in every ${fmt(a.one_in)} households in the borough${a.change_pct != null ? `, and it has changed by ${a.change_pct > 0 ? "+" : ""}${a.change_pct}% since ${quarterLabel(a.baseline_quarter)}` : ""}.
 
-${a.spend ? `In ${DATA.latest_spend_year} the council reported net spending of £${fmt(a.spend.ta / 1e6)}m on temporary accommodation — ${a.spend.ta_share_pct}% of its entire homelessness budget, after a rise of ${a.spend.ta_change_pct}% in three years.` : ""}
+${a.spend ? `In ${DATA.latest_spend_year} the council reported net spending of £${fmt(a.spend.ta / 1e6)}m on temporary accommodation — ${a.spend.ta_share_pct}% of its entire homelessness budget, and ${a.spend.ta_vs_reserves_pct}% of its spendable reserves, after a rise of ${a.spend.ta_change_pct}% in three years.` : ""}
 
 I would like to know:
 
@@ -345,7 +351,10 @@ function render(a) {
     a.spend && a.spend.ta_share_pct
       ? [`${a.spend.ta_share_pct}%`, "of its homelessness budget goes on it", "up"]
       : [`£${fmt(cost * 365 / 1e6)}m`, "a year, at the assumed nightly rate"],
-  ].map(([v, l, cls]) => `<div class="stat"><div class="value ${cls || ""}">${v}</div><div class="label">${l}</div></div>`).join("");
+    a.spend && a.spend.ta_vs_reserves_pct
+      ? [`${a.spend.ta_vs_reserves_pct}%`, "of its spendable reserves, every year", "up"]
+      : null,
+  ].filter(Boolean).map(([v, l, cls]) => `<div class="stat"><div class="value ${cls || ""}">${v}</div><div class="label">${l}</div></div>`).join("");
 
   const cp = document.getElementById("counterpunch");
   if (a.approvals) {
@@ -357,8 +366,9 @@ function render(a) {
     cp.hidden = false;
     cp.innerHTML = gap > 0
       ? `${opening} — a shortfall of <strong>${fmt(gap)}</strong>, a ${a.completion_rate_pct}% completion ` +
-        `rate. That gap is ${(gap / a.households).toFixed(1)}× the number of households ${subject} ` +
-        `currently has in temporary accommodation.`
+        `rate. <strong>${fmt(a.approved_not_started)}</strong> of those homes were never even started. ` +
+        `That is ${(a.approved_not_started / a.households).toFixed(1)}× the number of households ` +
+        `${subject} currently has in temporary accommodation.`
       : `${opening} — completing <strong>${fmt(-gap)} more</strong> than it approved, by working through ` +
         `consents granted before this window. One of the few London boroughs where delivery ran ahead of ` +
         `new permission.`;

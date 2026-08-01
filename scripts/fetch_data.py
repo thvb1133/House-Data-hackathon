@@ -35,6 +35,9 @@ FILES = {
     "RO4_2022-23.ods": f"{GOV}/686be46a81dd8f70f5de3c19/RO4_2022-23_data_by_LA.ods",
     "RO4_2023-24.ods": f"{GOV}/6a29120f3b15d05a7ce31ff7/RO4_2023-24_data_by_LA.ods",
     "RO4_2024-25.ods": f"{GOV}/6a291b65e371d9d2c0052b83/RO4_LA_Data_2024-25_data_by_LA.ods",
+    # MHCLG revenue summary RS — reserve levels, for sizing the TA bill against
+    # the money a council could actually reach for.
+    "RS_2024-25.ods": f"{GOV}/6a2aca48a3674dfd3eb50749/RS_LA_Data_2024-25_data_by_LA.ods",
     # Borough boundaries — ONS Open Geography, super-generalised and clipped,
     # carrying the same E09 codes the statistical tables use.
     "london_boroughs.geojson": (

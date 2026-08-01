@@ -113,6 +113,51 @@ def extract(year: str) -> pd.DataFrame:
     return out.reset_index(drop=True)
 
 
+RESERVES_YEAR = "2024-25"
+RESERVES_OUT = Path("data/processed/reserves_london.csv")
+
+# "Spendable" excludes schools, dedicated schools grant and public health reserves,
+# which are ring-fenced and cannot be used to plug a homelessness budget.
+RESERVE_COLUMNS = {
+    "earmarked_reserves": "estimated other earmarked financial reserves level at 31 march",
+    "unallocated_reserves": "estimated unallocated financial reserves level at 31 march",
+}
+
+
+def extract_reserves(year: str) -> pd.DataFrame:
+    path = RAW / f"RS_{year}.ods"
+    book = pd.ExcelFile(path, engine="odf")
+    sheet = next(s for s in book.sheet_names if s.upper().startswith("RS_LA"))
+    df = book.parse(sheet, header=None)
+
+    head = _header_row(df)
+    headers = df.iloc[head].astype(str)
+    code_col = next(
+        c for c in df.columns if str(headers[c]).strip().lower() in {"ons code", "ons_code"}
+    )
+
+    wanted = {}
+    for col, raw_header in headers.items():
+        text = str(raw_header).strip().lower()
+        for label, needle in RESERVE_COLUMNS.items():
+            if needle in text and label not in wanted:
+                wanted[label] = col
+
+    body = df.iloc[head + 1 :]
+    london = body[body[code_col].astype(str).str.match(r"^E09\d{6}$", na=False)]
+
+    out = pd.DataFrame(
+        {
+            "area_code": london[code_col].astype(str).str.strip(),
+            "borough": london.iloc[:, 2].astype(str).str.strip().str.replace(" & ", " and "),
+        }
+    )
+    for label, col in wanted.items():
+        out[label] = london[col].map(_to_number).astype("Float64") * 1000
+    out["spendable_reserves"] = out[list(RESERVE_COLUMNS)].sum(axis=1, min_count=1)
+    return out.reset_index(drop=True)
+
+
 def main() -> None:
     frames = []
     for year in YEARS:
@@ -128,6 +173,14 @@ def main() -> None:
     OUT.parent.mkdir(parents=True, exist_ok=True)
     panel.to_csv(OUT, index=False)
     print(f"\nwrote {OUT}  {panel.shape}")
+
+    if (RAW / f"RS_{RESERVES_YEAR}.ods").exists():
+        reserves = extract_reserves(RESERVES_YEAR)
+        reserves.to_csv(RESERVES_OUT, index=False)
+        print(
+            f"wrote {RESERVES_OUT}  {reserves.shape} — London spendable reserves "
+            f"£{reserves.spendable_reserves.sum()/1e9:,.1f}bn"
+        )
 
     totals = panel.groupby("year")[["ta_total", "prevention"]].sum()
     first, last = totals.index[0], totals.index[-1]

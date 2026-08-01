@@ -78,6 +78,8 @@
     }
    ],
    "spend": {
+    "reserves": 129547000.0,
+    "ta_vs_reserves_pct": 2,
     "series": [
      {
       "year": "2021-22",
@@ -113,6 +115,8 @@
    "approvals": 10565.0,
    "completions": 5780.0,
    "approved_not_completed": 4785.0,
+   "approved_not_started": 5398.0,
+   "starts": 5167.0,
    "completion_rate_pct": 54.7
   },
   {
@@ -168,6 +172,8 @@
     }
    ],
    "spend": {
+    "reserves": 62517540.0,
+    "ta_vs_reserves_pct": 18,
     "series": [
      {
       "year": "2021-22",
@@ -203,6 +209,8 @@
    "approvals": 17580.0,
    "completions": 10727.0,
    "approved_not_completed": 6853.0,
+   "approved_not_started": -1563.0,
+   "starts": 19143.0,
    "completion_rate_pct": 61.0
   },
   {
@@ -258,6 +266,8 @@
     }
    ],
    "spend": {
+    "reserves": 56497000.0,
+    "ta_vs_reserves_pct": 10,
     "series": [
      {
       "year": "2021-22",
@@ -293,6 +303,8 @@
    "approvals": 3646.0,
    "completions": 2765.0,
    "approved_not_completed": 881.0,
+   "approved_not_started": 1736.0,
+   "starts": 1910.0,
    "completion_rate_pct": 75.8
   },
   {
@@ -348,6 +360,8 @@
     }
    ],
    "spend": {
+    "reserves": 141243000.0,
+    "ta_vs_reserves_pct": 23,
     "series": [
      {
       "year": "2021-22",
@@ -383,6 +397,8 @@
    "approvals": 19278.0,
    "completions": 10613.0,
    "approved_not_completed": 8665.0,
+   "approved_not_started": 8275.0,
+   "starts": 11003.0,
    "completion_rate_pct": 55.1
   },
   {
@@ -438,6 +454,8 @@
     }
    ],
    "spend": {
+    "reserves": 209610000.0,
+    "ta_vs_reserves_pct": 10,
     "series": [
      {
       "year": "2021-22",
@@ -473,6 +491,8 @@
    "approvals": 4670.0,
    "completions": 2311.0,
    "approved_not_completed": 2359.0,
+   "approved_not_started": 2088.0,
+   "starts": 2582.0,
    "completion_rate_pct": 49.5
   },
   {
@@ -528,6 +548,8 @@
     }
    ],
    "spend": {
+    "reserves": 159858000.0,
+    "ta_vs_reserves_pct": 14,
     "series": [
      {
       "year": "2021-22",
@@ -563,6 +585,8 @@
    "approvals": 2299.0,
    "completions": 3096.0,
    "approved_not_completed": -797.0,
+   "approved_not_started": 1083.0,
+   "starts": 1216.0,
    "completion_rate_pct": 134.7
   },
   {
@@ -618,6 +642,8 @@
     }
    ],
    "spend": {
+    "reserves": 367072000.0,
+    "ta_vs_reserves_pct": 0,
     "series": [
      {
       "year": "2021-22",
@@ -653,6 +679,8 @@
    "approvals": 646.0,
    "completions": 645.0,
    "approved_not_completed": 1.0,
+   "approved_not_started": 620.0,
+   "starts": 26.0,
    "completion_rate_pct": 99.8
   },
   {
@@ -708,6 +736,8 @@
     }
    ],
    "spend": {
+    "reserves": 133594000.0,
+    "ta_vs_reserves_pct": 26,
     "series": [
      {
       "year": "2021-22",
@@ -743,6 +773,8 @@
    "approvals": 9024.0,
    "completions": 11233.0,
    "approved_not_completed": -2209.0,
+   "approved_not_started": -256.0,
+   "starts": 9280.0,
    "completion_rate_pct": 124.5
   },
   {
@@ -798,6 +830,8 @@
     }
    ],
    "spend": {
+    "reserves": 127571000.0,
+    "ta_vs_reserves_pct": 10,
     "series": [
      {
       "year": "2021-22",
@@ -833,6 +867,8 @@
    "approvals": 22558.0,
    "completions": 7963.0,
    "approved_not_completed": 14595.0,
+   "approved_not_started": 10269.0,
+   "starts": 12289.0,
    "completion_rate_pct": 35.3
   },
   {
@@ -888,6 +924,8 @@
     }
    ],
    "spend": {
+    "reserves": 76153000.0,
+    "ta_vs_reserves_pct": 38,
     "series": [
      {
       "year": "2021-22",
@@ -923,6 +961,8 @@
    "approvals": 10946.0,
    "completions": 3477.0,
    "approved_not_completed": 7469.0,
+   "approved_not_started": 5892.0,
+   "starts": 5054.0,
    "completion_rate_pct": 31.8
   },
   {
@@ -978,6 +1018,8 @@
     }
    ],
    "spend": {
+    "reserves": 189442000.0,
+    "ta_vs_reserves_pct": 4,
     "series": [
      {
       "year": "2021-22",
@@ -1013,6 +1055,8 @@
    "approvals": 24694.0,
    "completions": 6625.0,
    "approved_not_completed": 18069.0,
+   "approved_not_started": 13363.0,
+   "starts": 11331.0,
    "completion_rate_pct": 26.8
   },
   {
@@ -1068,6 +1112,8 @@
     }
    ],
    "spend": {
+    "reserves": 103970000.0,
+    "ta_vs_reserves_pct": 30,
     "series": [
      {
       "year": "2021-22",
@@ -1103,6 +1149,8 @@
    "approvals": 2120.0,
    "completions": 4553.0,
    "approved_not_completed": -2433.0,
+   "approved_not_started": -878.0,
+   "starts": 2998.0,
    "completion_rate_pct": 214.8
   },
   {
@@ -1158,6 +1206,8 @@
     }
    ],
    "spend": {
+    "reserves": 197499000.0,
+    "ta_vs_reserves_pct": 9,
     "series": [
      {
       "year": "2021-22",
@@ -1193,6 +1243,8 @@
    "approvals": 6968.0,
    "completions": 5917.0,
    "approved_not_completed": 1051.0,
+   "approved_not_started": 554.0,
+   "starts": 6414.0,
    "completion_rate_pct": 84.9
   },
   {
@@ -1248,6 +1300,8 @@
     }
    ],
    "spend": {
+    "reserves": 52244000.0,
+    "ta_vs_reserves_pct": 48,
     "series": [
      {
       "year": "2021-22",
@@ -1283,6 +1337,8 @@
    "approvals": 9259.0,
    "completions": 5586.0,
    "approved_not_completed": 3673.0,
+   "approved_not_started": 5022.0,
+   "starts": 4237.0,
    "completion_rate_pct": 60.3
   },
   {
@@ -1338,6 +1394,8 @@
     }
    ],
    "spend": {
+    "reserves": 78079000.0,
+    "ta_vs_reserves_pct": 11,
     "series": [
      {
       "year": "2021-22",
@@ -1373,6 +1431,8 @@
    "approvals": 5089.0,
    "completions": 4184.0,
    "approved_not_completed": 905.0,
+   "approved_not_started": -754.0,
+   "starts": 5843.0,
    "completion_rate_pct": 82.2
   },
   {
@@ -1428,6 +1488,8 @@
     }
    ],
    "spend": {
+    "reserves": 53013000.0,
+    "ta_vs_reserves_pct": 20,
     "series": [
      {
       "year": "2021-22",
@@ -1463,6 +1525,8 @@
    "approvals": 7300.0,
    "completions": 4067.0,
    "approved_not_completed": 3233.0,
+   "approved_not_started": 4064.0,
+   "starts": 3236.0,
    "completion_rate_pct": 55.7
   },
   {
@@ -1518,6 +1582,8 @@
     }
    ],
    "spend": {
+    "reserves": 4442020.0,
+    "ta_vs_reserves_pct": 287,
     "series": [
      {
       "year": "2021-22",
@@ -1553,6 +1619,8 @@
    "approvals": 10260.0,
    "completions": 4923.0,
    "approved_not_completed": 5337.0,
+   "approved_not_started": 5138.0,
+   "starts": 5122.0,
    "completion_rate_pct": 48.0
   },
   {
@@ -1608,6 +1676,8 @@
     }
    ],
    "spend": {
+    "reserves": 128643000.0,
+    "ta_vs_reserves_pct": 8,
     "series": [
      {
       "year": "2021-22",
@@ -1643,6 +1713,8 @@
    "approvals": 13860.0,
    "completions": 6558.0,
    "approved_not_completed": 7302.0,
+   "approved_not_started": 9433.0,
+   "starts": 4427.0,
    "completion_rate_pct": 47.3
   },
   {
@@ -1698,6 +1770,8 @@
     }
    ],
    "spend": {
+    "reserves": 140246000.0,
+    "ta_vs_reserves_pct": 8,
     "series": [
      {
       "year": "2021-22",
@@ -1733,6 +1807,8 @@
    "approvals": 2506.0,
    "completions": 3338.0,
    "approved_not_completed": -832.0,
+   "approved_not_started": 427.0,
+   "starts": 2079.0,
    "completion_rate_pct": 133.2
   },
   {
@@ -1788,6 +1864,8 @@
     }
    ],
    "spend": {
+    "reserves": 87260000.0,
+    "ta_vs_reserves_pct": 18,
     "series": [
      {
       "year": "2021-22",
@@ -1823,6 +1901,8 @@
    "approvals": 1316.0,
    "completions": 1946.0,
    "approved_not_completed": -630.0,
+   "approved_not_started": 228.0,
+   "starts": 1088.0,
    "completion_rate_pct": 147.9
   },
   {
@@ -1878,6 +1958,8 @@
     }
    ],
    "spend": {
+    "reserves": 56570000.0,
+    "ta_vs_reserves_pct": 24,
     "series": [
      {
       "year": "2021-22",
@@ -1913,6 +1995,8 @@
    "approvals": 5783.0,
    "completions": 2349.0,
    "approved_not_completed": 3434.0,
+   "approved_not_started": 1900.0,
+   "starts": 3883.0,
    "completion_rate_pct": 40.6
   },
   {
@@ -1968,6 +2052,8 @@
     }
    ],
    "spend": {
+    "reserves": 122007000.0,
+    "ta_vs_reserves_pct": 59,
     "series": [
      {
       "year": "2021-22",
@@ -2003,6 +2089,8 @@
    "approvals": 7601.0,
    "completions": 3527.0,
    "approved_not_completed": 4074.0,
+   "approved_not_started": 468.0,
+   "starts": 7133.0,
    "completion_rate_pct": 46.4
   },
   {
@@ -2058,6 +2146,8 @@
     }
    ],
    "spend": {
+    "reserves": 230766000.0,
+    "ta_vs_reserves_pct": 17,
     "series": [
      {
       "year": "2021-22",
@@ -2093,6 +2183,8 @@
    "approvals": 7768.0,
    "completions": 2818.0,
    "approved_not_completed": 4950.0,
+   "approved_not_started": -377.0,
+   "starts": 8145.0,
    "completion_rate_pct": 36.3
   },
   {
@@ -2148,6 +2240,8 @@
     }
    ],
    "spend": {
+    "reserves": 134689000.0,
+    "ta_vs_reserves_pct": 7,
     "series": [
      {
       "year": "2021-22",
@@ -2183,6 +2277,8 @@
    "approvals": 5303.0,
    "completions": 2600.0,
    "approved_not_completed": 2703.0,
+   "approved_not_started": 1974.0,
+   "starts": 3329.0,
    "completion_rate_pct": 49.0
   },
   {
@@ -2238,6 +2334,8 @@
     }
    ],
    "spend": {
+    "reserves": 131480000.0,
+    "ta_vs_reserves_pct": 52,
     "series": [
      {
       "year": "2021-22",
@@ -2273,6 +2371,8 @@
    "approvals": 19485.0,
    "completions": 10460.0,
    "approved_not_completed": 9025.0,
+   "approved_not_started": 7191.0,
+   "starts": 12294.0,
    "completion_rate_pct": 53.7
   },
   {
@@ -2328,6 +2428,8 @@
     }
    ],
    "spend": {
+    "reserves": 49774000.0,
+    "ta_vs_reserves_pct": 43,
     "series": [
      {
       "year": "2021-22",
@@ -2363,6 +2465,8 @@
    "approvals": 6753.0,
    "completions": 2318.0,
    "approved_not_completed": 4435.0,
+   "approved_not_started": 1651.0,
+   "starts": 5102.0,
    "completion_rate_pct": 34.3
   },
   {
@@ -2418,6 +2522,8 @@
     }
    ],
    "spend": {
+    "reserves": 112862000.0,
+    "ta_vs_reserves_pct": 7,
     "series": [
      {
       "year": "2021-22",
@@ -2453,6 +2559,8 @@
    "approvals": 1792.0,
    "completions": 1057.0,
    "approved_not_completed": 735.0,
+   "approved_not_started": 669.0,
+   "starts": 1123.0,
    "completion_rate_pct": 59.0
   },
   {
@@ -2508,6 +2616,8 @@
     }
    ],
    "spend": {
+    "reserves": 246196740.0,
+    "ta_vs_reserves_pct": 14,
     "series": [
      {
       "year": "2021-22",
@@ -2543,6 +2653,8 @@
    "approvals": 13395.0,
    "completions": 8551.0,
    "approved_not_completed": 4844.0,
+   "approved_not_started": 5709.0,
+   "starts": 7686.0,
    "completion_rate_pct": 63.8
   },
   {
@@ -2598,6 +2710,8 @@
     }
    ],
    "spend": {
+    "reserves": 37605000.0,
+    "ta_vs_reserves_pct": 21,
     "series": [
      {
       "year": "2021-22",
@@ -2633,6 +2747,8 @@
    "approvals": 3037.0,
    "completions": 2220.0,
    "approved_not_completed": 817.0,
+   "approved_not_started": 1891.0,
+   "starts": 1146.0,
    "completion_rate_pct": 73.1
   },
   {
@@ -2688,6 +2804,8 @@
     }
    ],
    "spend": {
+    "reserves": 147143000.0,
+    "ta_vs_reserves_pct": 12,
     "series": [
      {
       "year": "2021-22",
@@ -2723,6 +2841,8 @@
    "approvals": 21400.0,
    "completions": 13890.0,
    "approved_not_completed": 7510.0,
+   "approved_not_started": 9696.0,
+   "starts": 11704.0,
    "completion_rate_pct": 64.9
   },
   {
@@ -2778,6 +2898,8 @@
     }
    ],
    "spend": {
+    "reserves": 73739000.0,
+    "ta_vs_reserves_pct": 31,
     "series": [
      {
       "year": "2021-22",
@@ -2813,6 +2935,8 @@
    "approvals": 8652.0,
    "completions": 5585.0,
    "approved_not_completed": 3067.0,
+   "approved_not_started": 3607.0,
+   "starts": 5045.0,
    "completion_rate_pct": 64.6
   },
   {
@@ -2868,6 +2992,8 @@
     }
    ],
    "spend": {
+    "reserves": 376752000.0,
+    "ta_vs_reserves_pct": 8,
     "series": [
      {
       "year": "2021-22",
@@ -2903,6 +3029,8 @@
    "approvals": 17159.0,
    "completions": 9541.0,
    "approved_not_completed": 7618.0,
+   "approved_not_started": 3802.0,
+   "starts": 13357.0,
    "completion_rate_pct": 55.6
   },
   {
@@ -2958,6 +3086,8 @@
     }
    ],
    "spend": {
+    "reserves": 339197000.0,
+    "ta_vs_reserves_pct": 21,
     "series": [
      {
       "year": "2021-22",
@@ -2993,6 +3123,8 @@
    "approvals": 4225.0,
    "completions": 3327.0,
    "approved_not_completed": 898.0,
+   "approved_not_started": 880.0,
+   "starts": 3345.0,
    "completion_rate_pct": 78.7
   },
   {
@@ -3051,6 +3183,8 @@
    "approvals": null,
    "completions": null,
    "approved_not_completed": null,
+   "approved_not_started": null,
+   "starts": null,
    "completion_rate_pct": null
   },
   {
@@ -3106,6 +3240,8 @@
     }
    ],
    "spend": {
+    "reserves": 4557281300.0,
+    "ta_vs_reserves_pct": 16,
     "series": [
      {
       "year": "2021-22",
@@ -3141,6 +3277,8 @@
    "approvals": 320203.0,
    "completions": 184169.0,
    "approved_not_completed": 136034.0,
+   "approved_not_started": 112104.0,
+   "starts": 208099.0,
    "completion_rate_pct": 57.5
   }
  ]

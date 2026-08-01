@@ -25,6 +25,7 @@ Briefs: **PD** (is temporary accommodation bankrupting London's boroughs?) cross
 | Cumulative since 2021-22 | £1.8bn, about 6,000 homes' worth |
 | Homes approved, 2019/20–2023/24 | 320,203 |
 | Homes completed, same period | 184,169 |
+| Never even started | 112,104 |
 | Completion rate | 57.5% |
 
 Two numbers worth sitting with. The select committee evidence widely quoted this year put
@@ -141,6 +142,13 @@ The page says this in full, but the short version:
   assumption on the page is what a home costs to build, and that is a slider.
 - **The spending series starts at 2021-22**, because most boroughs leave the homelessness
   component lines blank in earlier revenue outturn releases.
+- **"Spendable reserves" is our definition**, not a statutory one: unallocated plus other
+  earmarked reserves at year end, excluding ring-fenced schools, dedicated schools grant and
+  public health. Setting an annual cost against a stock of reserves gauges exposure; it is not an
+  accounting statement, and a borough above 100% is funding the cost from revenue, not insolvent.
+- **Not done: time-since-permission.** Showing how long the oldest unstarted permission has sat
+  needs site-level records from the London Development Database, whose public extract is frozen at
+  2020. The approvals-minus-starts figure above is the aggregate version of the same question.
 - **Two development corporations** (Old Oak and Park Royal, London Legacy) are the planning
   authority for parts of several boroughs, so their consents are missing from those boroughs' rows.
 - **Two boroughs did not return usable TA data in December 2019**, so their change figure runs from

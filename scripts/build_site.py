@@ -8,6 +8,7 @@ import pandas as pd
 PANEL = Path("data/processed/ta_panel_london.csv")
 PIPELINE = Path("data/processed/pipeline_london.csv")
 SPEND = Path("data/processed/spend_london.csv")
+RESERVES = Path("data/processed/reserves_london.csv")
 OUT = Path("site/data.json")
 
 # The AMR names two boroughs in short form and adds two development corporations,
@@ -40,6 +41,9 @@ def main() -> None:
     by_area = {code: g.sort_values("year") for code, g in spend.groupby("area_code")}
     london_spend = spend.groupby("year")[["ta_total", "prevention", "total_homelessness"]].sum()
 
+    reserves = pd.read_csv(RESERVES).set_index("area_code")["spendable_reserves"]
+    london_reserves = float(reserves.sum())
+
     def spend_block(code):
         if code == "E12000007":
             rows = [
@@ -59,7 +63,12 @@ def main() -> None:
             return None
         latest = rows[-1]
         first = rows[0]
+        pot = london_reserves if code == "E12000007" else reserves.get(code)
         return {
+            "reserves": _num(pot) if pot is not None else None,
+            "ta_vs_reserves_pct": (
+                round(latest["ta"] / pot * 100) if pot and latest["ta"] else None
+            ),
             "series": rows,
             "ta": latest["ta"],
             "prevention": latest["prevention"],
@@ -77,6 +86,8 @@ def main() -> None:
         "approvals": float(pipe["approvals"].sum()),
         "completions": float(pipe["completions"].sum()),
         "approved_not_completed": float(pipe["approved_not_completed"].sum()),
+        "approved_not_started": float(pipe["approved_not_started"].sum()),
+        "starts": float(pipe["starts"].sum()),
     }
     london_pipeline["completion_rate_pct"] = round(
         london_pipeline["completions"] / london_pipeline["approvals"] * 100, 1
@@ -126,6 +137,8 @@ def main() -> None:
                 "approvals": _num(pl["approvals"]) if pl else None,
                 "completions": _num(pl["completions"]) if pl else None,
                 "approved_not_completed": _num(pl["approved_not_completed"]) if pl else None,
+                "approved_not_started": _num(pl["approved_not_started"]) if pl else None,
+                "starts": _num(pl["starts"]) if pl else None,
                 "completion_rate_pct": _num(pl["completion_rate_pct"]) if pl else None,
             }
         )

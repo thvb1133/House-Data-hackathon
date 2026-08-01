@@ -23,6 +23,10 @@ spends on homelessness — squeezing the prevention budget that would stop the n
 arriving. Newham is the extreme: **88%** of its homelessness spending goes on temporary
 accommodation, leaving barely £5 million for prevention.
 
+And it is not a rounding error against what councils have in the bank. Hillingdon's annual
+temporary accommodation bill is **287% of its entire spendable reserves** — nearly three times
+over, every year. Lambeth is at 59%, Newham 52%.
+
 That is the doom loop, and it is the chart to leave on screen.
 
 ## 1:10 — The counterpunch
@@ -30,7 +34,8 @@ That is the doom loop, and it is the chart to leave on screen.
 Here is the part that makes it unforgivable.
 
 Over the five years to 2023/24, London granted planning permission for **320,203 homes**. It
-completed **184,169**. A **57% completion rate** — a gap of **136,034 homes**.
+completed **184,169**. A **57% completion rate** — a gap of **136,034 homes**. And
+**112,104 of them were never even started**. Not delayed on site. Never begun.
 
 We are renting hotel rooms at scale, in the same boroughs that approved homes and did not build
 them. Greenwich is the extreme: a **27% completion rate**, and a permission gap **nine times**
@@ -96,8 +101,10 @@ The data to argue for fixing this already exists. We just made it typeable.
 | Same figure, 2021-22 | £243m (+204%) |
 | Share of all homelessness spend | 71% (Newham 88%) |
 | Cumulative since 2021-22 | £1.8bn — about 6,000 homes |
+| TA bill vs spendable reserves | Hillingdon 287%, Lambeth 59%, Newham 52% |
 | Homes approved 2019/20–2023/24 | 320,203 |
 | Homes completed | 184,169 |
+| Never even started | 112,104 |
 | Completion rate | 57.5% |
 | Biggest gap | Greenwich — 18,069 homes, 27% completion rate |
 
@@ -115,6 +122,16 @@ like-for-like.
 authority revenue outturn — what each council reported it actually spent. We use net current
 expenditure rather than gross, because housing benefit subsidy offsets most of the gross figure
 and net is what genuinely lands on the borough's budget.
+
+**"287% of reserves — is that borough bankrupt?"** No, and we do not claim it is. It funds the
+cost from revenue, not by draining reserves. The comparison is a gauge of how large the bill has
+become relative to the money a council could reach for in an emergency, not an accounting
+statement. Our definition of spendable excludes schools, dedicated schools grant and public
+health reserves, which are ring-fenced.
+
+**"How do you know they were never started?"** The GLA reports approvals, starts and completions
+separately. Never started is approvals minus starts over the same five years — a stronger claim
+than not completed, because build-out time cannot explain a scheme that never broke ground.
 
 **"Why does the spending chart only start in 2021-22?"** Earlier releases exist, but most
 boroughs leave the homelessness component lines blank before then. A longer chart would be
