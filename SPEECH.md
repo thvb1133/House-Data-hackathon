@@ -1,84 +1,83 @@
 # Beejal — 3 minute pitch
 
-Read top to bottom. Short lines on purpose. **Bold in brackets** is what you DO, not what you say.
+Short sentences on purpose. Say them slowly.
+**Bold in brackets** is what you DO, not what you say.
 
-**Before you go up:** tool already open on screen, showing London. Do not load it in front of
-the room.
-
----
-
-**[STAND. LOOK AT THE ROOM. WAIT ONE SECOND. THEN START.]**
-
-I'm Beejal. I worked alone today. This is **Homes vs Hotels**.
+**Before you go up:** have the tool already open on screen, showing London.
 
 ---
 
-**[0:08 — slowly. Let the room picture it.]**
+**[STAND. LOOK UP. WAIT ONE SECOND.]**
 
-Picture one room. A family of five in it.
+I'm Beejal. I worked on this alone today.
 
-The council pays for that room tonight. And tomorrow night. And every night after that.
+Two numbers.
 
-At the end of the year it has spent a fortune — and it owns nothing.
+One hundred thousand children.
 
-**[pause]**
+One hundred and twelve thousand homes.
 
-Now multiply that room.
+Let me tell you what they are.
+
+---
+
+**[0:15]**
 
 Tonight, **one hundred thousand, nine hundred and thirty** children in London are living in
-temporary accommodation.
+temporary accommodation. Hotels. Hostels. Not homes.
 
-That is the highest number ever recorded. Most people still say eighty-five thousand.
-London crossed one hundred thousand, and nobody announced it.
+It is the highest number ever recorded.
+
+Most people still say eighty-five thousand. That number is out of date. London passed one
+hundred thousand, and nobody announced it.
 
 ---
 
-**[0:45 — SCROLL TO THE RED AND GREEN CHART. POINT.]**
+**[0:40 — SCROLL TO THE RED AND GREEN CHART. POINT.]**
 
-Last year, boroughs spent **seven hundred and forty million pounds** on this. Three years ago,
-two hundred and forty three million. It tripled.
+And it is bankrupting boroughs.
 
-Red is hotel rooms. Green is prevention — the money that stops the next family arriving.
+Last year London spent **seven hundred and forty million pounds** on temporary accommodation.
+Three years ago, two hundred and forty three million. It tripled.
 
-Red runs. Green is flat.
+Red is hotels. Green is prevention — the money that stops the next family needing help.
 
-**Seventy-one percent** of London's homelessness budget now goes on accommodation nobody owns.
+Red runs away. Green is flat.
 
-And these are not my estimates. This is what the councils reported to government.
+**Seventy-one percent** of London's homelessness budget now goes on temporary accommodation.
+
+These are not my estimates. These are the councils' own returns to government.
 
 ---
 
 **[1:15]**
 
-Meanwhile.
+Now the second number.
 
-In five years London approved **three hundred and twenty thousand** homes. It finished one
-hundred and eighty four thousand.
+In five years, London approved three hundred and twenty thousand homes.
 
-**One hundred and twelve thousand were never even started.**
+**One hundred and twelve thousand were never even started.** Not delayed. Never started.
 
-So London is renting rooms it will never own — and not building the homes it already said yes to.
+So London is renting hotel rooms, while sitting on permission it never used.
 
 ---
 
-**[1:40 — SCROLL TO THE SCATTER. Slow down here. This is the moment.]**
+**[1:40 — SCROLL TO THE SCATTER PLOT. Slow down here.]**
 
-I came here to prove a story.
+Then I tested the obvious explanation. And I was wrong.
 
-That the boroughs crying poverty are the same boroughs sitting on permissions.
-
-I tested all thirty-one.
-
-**It isn't true.** There is no relationship at all.
+I assumed the boroughs with the worst crisis were the ones failing to build. I checked all
+thirty-one. **There is no relationship at all.**
 
 **[POINT AT BARNET, THEN GREENWICH]**
 
-Barnet — heavy pressure, and it still built more than it approved.
-Greenwich — light pressure, and thirteen thousand homes that never broke ground.
+Barnet has worse than average pressure — and built more homes than it approved.
 
-So it isn't hypocrisy. It's **aim**.
+Greenwich has less pressure — and thirteen thousand homes that never broke ground.
 
-London is building. Just not where the people are.
+So it is not lazy councils. It is worse.
+
+**London is building in the wrong places.**
 
 ---
 
@@ -90,41 +89,35 @@ So I built this, so anyone can check their own area. Shout me a borough.
 
 Households. Children. How many were sent out of the borough. What it costs.
 
-**[POINT AT THE EMAIL BUTTON — DO NOT CLICK]**
-
-And a ready-written email to your councillor, with those numbers already in it.
+And a ready-written email to your councillor, with your own numbers already in it.
 
 ---
 
 **[2:30 — SCROLL TO "SO BUILD HERE FIRST"]**
 
-And because it is an aiming problem, I can tell you where to aim.
+And because the homes are in the wrong places, I can say where to start.
 
-Six boroughs, where the need is worst **and** the permission already exists.
+Six boroughs. Need is worst, and permission already granted.
 
 Tower Hamlets. Newham. Enfield. Southwark. Haringey. Wandsworth.
 
 Thirty-seven thousand approved homes, never started. Twenty-four thousand families waiting.
 
-Enough consent to house every one of them, one and a half times over.
+The permission to house all of them — one and a half times over — already exists.
 Nobody has to approve anything new.
 
 ---
 
-**[2:48 — DO NOT SKIP]**
+**[2:50 — LOOK UP AT THE ROOM. Do not rush the last four lines.]**
 
-Two honest limits. Unbuilt is not proof of land banking — some of it is normal build time.
-And my result is a null result: with thirty-one boroughs I could only catch a strong link.
+Two honest caveats. Unbuilt is not proof of land banking — some of it is normal build time.
+And my correlation is a null result; with thirty-one boroughs I could only detect a strong link.
 
----
+All open government data. One command rebuilds the whole thing.
 
-**[2:58 — LOOK UP. SLOW. LAST THREE LINES.]**
+One hundred thousand children. One hundred and twelve thousand empty permissions.
 
-Every number here is open government data.
-
-London already has permission to fix this.
-
-It is just written for the wrong postcodes.
+They are not in the same places. That is the problem — and now you can see it.
 
 Thank you.
 
@@ -132,25 +125,17 @@ Thank you.
 
 # Cheat sheet
 
-## Five actions only
+## Five actions, nothing else
 
 | When | Do |
 |---|---|
-| 0:45 | Scroll to red/green chart. Point. |
+| 0:40 | Scroll to red/green chart. Point. |
 | 1:40 | Scroll to scatter. Point at Barnet, then Greenwich. |
 | 2:10 | Ask for a borough. Click it **on the map**. |
-| 2:20 | Point at the email button. **Do not click.** |
+| 2:20 | Point at the email button. **Do not click it.** |
 | 2:30 | Scroll to "So build here first". |
 
-## The three lines that win it
-
-Say these exactly. Everything else can wobble.
-
-1. "It has spent a fortune — and it owns nothing."
-2. "So it isn't hypocrisy. It's aim."
-3. "London already has permission to fix this. It is just written for the wrong postcodes."
-
-## Six numbers, no notes
+## Six numbers to know cold
 
 - 100,930 children
 - £740 million, tripled in three years
@@ -159,36 +144,37 @@ Say these exactly. Everything else can wobble.
 - No link between need and failure to build
 - 6 boroughs, 37,000 homes already approved
 
-## If it goes wrong
+## If something goes wrong
 
-**Wifi dies.** Double-click `homes-vs-hotels.html` on the laptop. All works except the postcode box.
+**Wifi dies.** Double-click `homes-vs-hotels.html` on the laptop. Works offline except the
+postcode box.
 
-**A borough shows a minus.** Real, not a bug: "that one is actually delivering — working through
-older permissions."
+**A borough shows a minus number.** Real, not a bug. Say: "that one is actually delivering — it
+is working through older permissions."
 
-**You lose your place.** Jump to the six boroughs. Land it and stop.
+**You lose your place.** Jump to the six boroughs. That is the ending. Say it and stop.
 
-**Running out of time.** Cut the demo, never the ending.
+**Running out of time.** Skip the demo, never the ending.
 
-## The four questions
+## The four questions you will get
 
-**"A null result isn't a finding."**
+**"A null result is not a finding."**
 > "It is, when the whole room assumes the opposite. Everyone believes councils cry poverty while
-> sitting on permissions. At borough level that's not true — and it changes what you'd do.
-> Target the pipeline instead of blaming councils."
+> sitting on permissions. At borough level that is not true. And it changes what you would do —
+> target the pipeline instead of blaming councils."
 
 **"Where do the cost numbers come from?"**
-> "Form RO4 of the government's revenue outturn — what each council reported it actually spent.
-> Net, not gross, because housing benefit covers most of the gross. Net is what lands on the
-> borough's own budget."
+> "Form RO4 of the government's revenue outturn. What each council reported it actually spent.
+> Net, not gross, because housing benefit covers most of the gross figure. Net is what lands on
+> the borough's own budget."
 
-**"Isn't the unbuilt gap just normal build time?"**
-> "Partly, for completions, and I say so on the page. But a hundred and twelve thousand homes
-> never broke ground at all. Build time doesn't explain a site that never started."
+**"Isn't the unbuilt gap just normal building time?"**
+> "Partly, for the completions gap, and I say so on the page. But a hundred and twelve thousand
+> homes never broke ground at all. Building time does not explain a site that never started."
 
 **"Hillingdon at 287% of reserves — is it bankrupt?"**
-> "No, and I don't claim it. It pays from revenue, not reserves. It shows how big the bill has
-> got next to the money it could reach for in an emergency."
+> "No, and I don't claim that. It pays from revenue, not reserves. It shows how big the bill has
+> become next to the money it could reach for in an emergency."
 
 ## Practise
 
