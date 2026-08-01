@@ -28,6 +28,16 @@ Two numbers worth sitting with. The select committee evidence widely quoted this
 Newham is the sharpest case: **one in every 17 households** in the borough is in temporary
 accommodation.
 
+## Just look at it
+
+No install, no terminal, nothing to run:
+
+**https://raw.githack.com/thvb1133/Data-hackathon-/cursor/homes-vs-hotels-f5eb/dist/homes-vs-hotels.html**
+
+`dist/homes-vs-hotels.html` is the whole tool — page, data, map and all — bundled into one
+87 KB file. Download it and double-click it and it works offline, on any laptop, with no web
+server. Useful when the venue wifi dies five minutes before a demo.
+
 ## Run it
 
 You need no data files of your own. Every dataset is downloaded automatically from
