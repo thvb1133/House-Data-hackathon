@@ -10,10 +10,19 @@
   "2025-12"
  ],
  "nightly_cost_assumption": 60.0,
+ "build_cost_assumption": 300000.0,
  "pipeline_years": "2019/20 to 2023/24",
+ "spend_years": [
+  "2021-22",
+  "2022-23",
+  "2023-24",
+  "2024-25"
+ ],
+ "latest_spend_year": "2024-25",
  "sources": [
   "MHCLG statutory homelessness detailed local authority tables, table TA1",
-  "GLA London Plan Annual Monitoring Report 21 (January 2026), chapter 2 housing tables"
+  "GLA London Plan Annual Monitoring Report 21 (January 2026), chapter 2 housing tables",
+  "MHCLG local authority revenue outturn RO4 (housing services), net current expenditure"
  ],
  "areas": [
   {
@@ -68,6 +77,39 @@
      "children": 1632.0
     }
    ],
+   "spend": {
+    "series": [
+     {
+      "year": "2021-22",
+      "ta": 288000.0,
+      "prevention": 309000.0,
+      "total": 4564000.0
+     },
+     {
+      "year": "2022-23",
+      "ta": 1493000.0,
+      "prevention": 3134000.0,
+      "total": 7733000.0
+     },
+     {
+      "year": "2023-24",
+      "ta": 2006000.0,
+      "prevention": 2608000.0,
+      "total": 7494000.0
+     },
+     {
+      "year": "2024-25",
+      "ta": 2604000.0,
+      "prevention": 3895000.0,
+      "total": 9355000.0
+     }
+    ],
+    "ta": 2604000.0,
+    "prevention": 3895000.0,
+    "total": 9355000.0,
+    "ta_share_pct": 27.8,
+    "ta_change_pct": 804
+   },
    "approvals": 10565.0,
    "completions": 5780.0,
    "approved_not_completed": 4785.0,
@@ -125,6 +167,39 @@
      "children": 3400.0
     }
    ],
+   "spend": {
+    "series": [
+     {
+      "year": "2021-22",
+      "ta": 4264000.0,
+      "prevention": 4861000.0,
+      "total": 9180000.0
+     },
+     {
+      "year": "2022-23",
+      "ta": 4853000.0,
+      "prevention": 4501000.0,
+      "total": 9599000.0
+     },
+     {
+      "year": "2023-24",
+      "ta": 7173000.0,
+      "prevention": 6174000.0,
+      "total": 13346000.0
+     },
+     {
+      "year": "2024-25",
+      "ta": 11420770.0,
+      "prevention": 8845250.0,
+      "total": 20266020.0
+     }
+    ],
+    "ta": 11420770.0,
+    "prevention": 8845250.0,
+    "total": 20266020.0,
+    "ta_share_pct": 56.4,
+    "ta_change_pct": 168
+   },
    "approvals": 17580.0,
    "completions": 10727.0,
    "approved_not_completed": 6853.0,
@@ -182,6 +257,39 @@
      "children": 560.0
     }
    ],
+   "spend": {
+    "series": [
+     {
+      "year": "2021-22",
+      "ta": 10243000.0,
+      "prevention": 267000.0,
+      "total": 11116000.0
+     },
+     {
+      "year": "2022-23",
+      "ta": 8876000.0,
+      "prevention": 0.0,
+      "total": 10985000.0
+     },
+     {
+      "year": "2023-24",
+      "ta": 5501000.0,
+      "prevention": 0.0,
+      "total": 11072000.0
+     },
+     {
+      "year": "2024-25",
+      "ta": 5448000.0,
+      "prevention": 41000.0,
+      "total": 8222000.0
+     }
+    ],
+    "ta": 5448000.0,
+    "prevention": 41000.0,
+    "total": 8222000.0,
+    "ta_share_pct": 66.3,
+    "ta_change_pct": -47
+   },
    "approvals": 3646.0,
    "completions": 2765.0,
    "approved_not_completed": 881.0,
@@ -239,6 +347,39 @@
      "children": null
     }
    ],
+   "spend": {
+    "series": [
+     {
+      "year": "2021-22",
+      "ta": 13465000.0,
+      "prevention": 0.0,
+      "total": 22640000.0
+     },
+     {
+      "year": "2022-23",
+      "ta": 3629000.0,
+      "prevention": 19912000.0,
+      "total": 23541000.0
+     },
+     {
+      "year": "2023-24",
+      "ta": 33097000.0,
+      "prevention": 15981000.0,
+      "total": 49078000.0
+     },
+     {
+      "year": "2024-25",
+      "ta": 32539000.0,
+      "prevention": 18631000.0,
+      "total": 51170000.0
+     }
+    ],
+    "ta": 32539000.0,
+    "prevention": 18631000.0,
+    "total": 51170000.0,
+    "ta_share_pct": 63.6,
+    "ta_change_pct": 142
+   },
    "approvals": 19278.0,
    "completions": 10613.0,
    "approved_not_completed": 8665.0,
@@ -296,6 +437,39 @@
      "children": 1712.0
     }
    ],
+   "spend": {
+    "series": [
+     {
+      "year": "2021-22",
+      "ta": 9495000.0,
+      "prevention": 768000.0,
+      "total": 15915000.0
+     },
+     {
+      "year": "2022-23",
+      "ta": 9859000.0,
+      "prevention": 633000.0,
+      "total": 15691000.0
+     },
+     {
+      "year": "2023-24",
+      "ta": 14324000.0,
+      "prevention": 1228000.0,
+      "total": 21741000.0
+     },
+     {
+      "year": "2024-25",
+      "ta": 20279000.0,
+      "prevention": 1237000.0,
+      "total": 28483000.0
+     }
+    ],
+    "ta": 20279000.0,
+    "prevention": 1237000.0,
+    "total": 28483000.0,
+    "ta_share_pct": 71.2,
+    "ta_change_pct": 114
+   },
    "approvals": 4670.0,
    "completions": 2311.0,
    "approved_not_completed": 2359.0,
@@ -353,6 +527,39 @@
      "children": 1258.0
     }
    ],
+   "spend": {
+    "series": [
+     {
+      "year": "2021-22",
+      "ta": 10253000.0,
+      "prevention": 0.0,
+      "total": 16624000.0
+     },
+     {
+      "year": "2022-23",
+      "ta": 11193000.0,
+      "prevention": 0.0,
+      "total": 16650000.0
+     },
+     {
+      "year": "2023-24",
+      "ta": 20764000.0,
+      "prevention": 0.0,
+      "total": 27851000.0
+     },
+     {
+      "year": "2024-25",
+      "ta": 21730000.0,
+      "prevention": 3719000.0,
+      "total": 33564000.0
+     }
+    ],
+    "ta": 21730000.0,
+    "prevention": 3719000.0,
+    "total": 33564000.0,
+    "ta_share_pct": 64.7,
+    "ta_change_pct": 112
+   },
    "approvals": 2299.0,
    "completions": 3096.0,
    "approved_not_completed": -797.0,
@@ -410,6 +617,39 @@
      "children": 20.0
     }
    ],
+   "spend": {
+    "series": [
+     {
+      "year": "2021-22",
+      "ta": 204000.0,
+      "prevention": 4160000.0,
+      "total": 4364000.0
+     },
+     {
+      "year": "2022-23",
+      "ta": 377000.0,
+      "prevention": 4102000.0,
+      "total": 4479000.0
+     },
+     {
+      "year": "2023-24",
+      "ta": 423000.0,
+      "prevention": 4971000.0,
+      "total": 5394000.0
+     },
+     {
+      "year": "2024-25",
+      "ta": -252000.0,
+      "prevention": 5468000.0,
+      "total": 5216000.0
+     }
+    ],
+    "ta": -252000.0,
+    "prevention": 5468000.0,
+    "total": 5216000.0,
+    "ta_share_pct": -4.8,
+    "ta_change_pct": -224
+   },
    "approvals": 646.0,
    "completions": 645.0,
    "approved_not_completed": 1.0,
@@ -467,6 +707,39 @@
      "children": 4610.0
     }
    ],
+   "spend": {
+    "series": [
+     {
+      "year": "2021-22",
+      "ta": 9392000.0,
+      "prevention": 5839000.0,
+      "total": 15232000.0
+     },
+     {
+      "year": "2022-23",
+      "ta": 12061000.0,
+      "prevention": 4771000.0,
+      "total": 18731000.0
+     },
+     {
+      "year": "2023-24",
+      "ta": 20638000.0,
+      "prevention": 5053000.0,
+      "total": 27571000.0
+     },
+     {
+      "year": "2024-25",
+      "ta": 34387480.0,
+      "prevention": 5725040.0,
+      "total": 43030320.0
+     }
+    ],
+    "ta": 34387480.0,
+    "prevention": 5725040.0,
+    "total": 43030320.0,
+    "ta_share_pct": 79.9,
+    "ta_change_pct": 266
+   },
    "approvals": 9024.0,
    "completions": 11233.0,
    "approved_not_completed": -2209.0,
@@ -524,6 +797,39 @@
      "children": null
     }
    ],
+   "spend": {
+    "series": [
+     {
+      "year": "2021-22",
+      "ta": 9483000.0,
+      "prevention": 9664000.0,
+      "total": 19147000.0
+     },
+     {
+      "year": "2022-23",
+      "ta": 12154000.0,
+      "prevention": 9644000.0,
+      "total": 21798000.0
+     },
+     {
+      "year": "2023-24",
+      "ta": 8909000.0,
+      "prevention": 14743000.0,
+      "total": 23652000.0
+     },
+     {
+      "year": "2024-25",
+      "ta": 12759920.0,
+      "prevention": 11357020.0,
+      "total": 28687440.0
+     }
+    ],
+    "ta": 12759920.0,
+    "prevention": 11357020.0,
+    "total": 28687440.0,
+    "ta_share_pct": 44.5,
+    "ta_change_pct": 35
+   },
    "approvals": 22558.0,
    "completions": 7963.0,
    "approved_not_completed": 14595.0,
@@ -581,6 +887,39 @@
      "children": 4709.0
     }
    ],
+   "spend": {
+    "series": [
+     {
+      "year": "2021-22",
+      "ta": 10465000.0,
+      "prevention": 1746000.0,
+      "total": 13570000.0
+     },
+     {
+      "year": "2022-23",
+      "ta": 8650000.0,
+      "prevention": 6137000.0,
+      "total": 16683000.0
+     },
+     {
+      "year": "2023-24",
+      "ta": 25844000.0,
+      "prevention": 2386000.0,
+      "total": 32228000.0
+     },
+     {
+      "year": "2024-25",
+      "ta": 29272160.0,
+      "prevention": 7537000.0,
+      "total": 39609990.0
+     }
+    ],
+    "ta": 29272160.0,
+    "prevention": 7537000.0,
+    "total": 39609990.0,
+    "ta_share_pct": 73.9,
+    "ta_change_pct": 180
+   },
    "approvals": 10946.0,
    "completions": 3477.0,
    "approved_not_completed": 7469.0,
@@ -638,6 +977,39 @@
      "children": 3055.0
     }
    ],
+   "spend": {
+    "series": [
+     {
+      "year": "2021-22",
+      "ta": 3476000.0,
+      "prevention": 2760000.0,
+      "total": 7916000.0
+     },
+     {
+      "year": "2022-23",
+      "ta": 5128000.0,
+      "prevention": 2271000.0,
+      "total": 9473000.0
+     },
+     {
+      "year": "2023-24",
+      "ta": 12241000.0,
+      "prevention": 1923000.0,
+      "total": 16499000.0
+     },
+     {
+      "year": "2024-25",
+      "ta": 7914000.0,
+      "prevention": 1914000.0,
+      "total": 11833000.0
+     }
+    ],
+    "ta": 7914000.0,
+    "prevention": 1914000.0,
+    "total": 11833000.0,
+    "ta_share_pct": 66.9,
+    "ta_change_pct": 128
+   },
    "approvals": 24694.0,
    "completions": 6625.0,
    "approved_not_completed": 18069.0,
@@ -695,6 +1067,39 @@
      "children": 4307.0
     }
    ],
+   "spend": {
+    "series": [
+     {
+      "year": "2021-22",
+      "ta": 14692000.0,
+      "prevention": 11042000.0,
+      "total": 25734000.0
+     },
+     {
+      "year": "2022-23",
+      "ta": 14319000.0,
+      "prevention": 9529000.0,
+      "total": 23848000.0
+     },
+     {
+      "year": "2023-24",
+      "ta": 20264000.0,
+      "prevention": 12712000.0,
+      "total": 34620000.0
+     },
+     {
+      "year": "2024-25",
+      "ta": 31133000.0,
+      "prevention": 14540000.0,
+      "total": 46819000.0
+     }
+    ],
+    "ta": 31133000.0,
+    "prevention": 14540000.0,
+    "total": 46819000.0,
+    "ta_share_pct": 66.5,
+    "ta_change_pct": 112
+   },
    "approvals": 2120.0,
    "completions": 4553.0,
    "approved_not_completed": -2433.0,
@@ -752,6 +1157,39 @@
      "children": 1862.0
     }
    ],
+   "spend": {
+    "series": [
+     {
+      "year": "2021-22",
+      "ta": 8103000.0,
+      "prevention": 3440000.0,
+      "total": 13513000.0
+     },
+     {
+      "year": "2022-23",
+      "ta": 6207000.0,
+      "prevention": 4084000.0,
+      "total": 12435000.0
+     },
+     {
+      "year": "2023-24",
+      "ta": 11410000.0,
+      "prevention": 4342000.0,
+      "total": 18505000.0
+     },
+     {
+      "year": "2024-25",
+      "ta": 18232000.0,
+      "prevention": 3897000.0,
+      "total": 25141000.0
+     }
+    ],
+    "ta": 18232000.0,
+    "prevention": 3897000.0,
+    "total": 25141000.0,
+    "ta_share_pct": 72.5,
+    "ta_change_pct": 125
+   },
    "approvals": 6968.0,
    "completions": 5917.0,
    "approved_not_completed": 1051.0,
@@ -809,6 +1247,39 @@
      "children": 3733.0
     }
    ],
+   "spend": {
+    "series": [
+     {
+      "year": "2021-22",
+      "ta": 8248000.0,
+      "prevention": 0.0,
+      "total": 20030000.0
+     },
+     {
+      "year": "2022-23",
+      "ta": 5256000.0,
+      "prevention": 252000.0,
+      "total": 18296000.0
+     },
+     {
+      "year": "2023-24",
+      "ta": 16926000.0,
+      "prevention": 812000.0,
+      "total": 23214000.0
+     },
+     {
+      "year": "2024-25",
+      "ta": 25167000.0,
+      "prevention": 883000.0,
+      "total": 36653000.0
+     }
+    ],
+    "ta": 25167000.0,
+    "prevention": 883000.0,
+    "total": 36653000.0,
+    "ta_share_pct": 68.7,
+    "ta_change_pct": 205
+   },
    "approvals": 9259.0,
    "completions": 5586.0,
    "approved_not_completed": 3673.0,
@@ -866,6 +1337,39 @@
      "children": 2483.0
     }
    ],
+   "spend": {
+    "series": [
+     {
+      "year": "2021-22",
+      "ta": 2254000.0,
+      "prevention": 0.0,
+      "total": 5320000.0
+     },
+     {
+      "year": "2022-23",
+      "ta": 763000.0,
+      "prevention": 2696000.0,
+      "total": 4914000.0
+     },
+     {
+      "year": "2023-24",
+      "ta": 3481000.0,
+      "prevention": 3423000.0,
+      "total": 8430000.0
+     },
+     {
+      "year": "2024-25",
+      "ta": 8524000.0,
+      "prevention": 3637000.0,
+      "total": 13735000.0
+     }
+    ],
+    "ta": 8524000.0,
+    "prevention": 3637000.0,
+    "total": 13735000.0,
+    "ta_share_pct": 62.1,
+    "ta_change_pct": 278
+   },
    "approvals": 5089.0,
    "completions": 4184.0,
    "approved_not_completed": 905.0,
@@ -923,6 +1427,39 @@
      "children": 1839.0
     }
    ],
+   "spend": {
+    "series": [
+     {
+      "year": "2021-22",
+      "ta": 3942000.0,
+      "prevention": 3387000.0,
+      "total": 7893000.0
+     },
+     {
+      "year": "2022-23",
+      "ta": 6795000.0,
+      "prevention": 2997000.0,
+      "total": 10439000.0
+     },
+     {
+      "year": "2023-24",
+      "ta": 9468000.0,
+      "prevention": 6035000.0,
+      "total": 17760000.0
+     },
+     {
+      "year": "2024-25",
+      "ta": 10471000.0,
+      "prevention": 8050000.0,
+      "total": 20445000.0
+     }
+    ],
+    "ta": 10471000.0,
+    "prevention": 8050000.0,
+    "total": 20445000.0,
+    "ta_share_pct": 51.2,
+    "ta_change_pct": 166
+   },
    "approvals": 7300.0,
    "completions": 4067.0,
    "approved_not_completed": 3233.0,
@@ -980,6 +1517,39 @@
      "children": 2708.0
     }
    ],
+   "spend": {
+    "series": [
+     {
+      "year": "2021-22",
+      "ta": 1858000.0,
+      "prevention": 4020000.0,
+      "total": 9364000.0
+     },
+     {
+      "year": "2022-23",
+      "ta": 2966000.0,
+      "prevention": 3167000.0,
+      "total": 11108000.0
+     },
+     {
+      "year": "2023-24",
+      "ta": 8861000.0,
+      "prevention": 3187000.0,
+      "total": 15513000.0
+     },
+     {
+      "year": "2024-25",
+      "ta": 12767000.0,
+      "prevention": 3847000.0,
+      "total": 20574000.0
+     }
+    ],
+    "ta": 12767000.0,
+    "prevention": 3847000.0,
+    "total": 20574000.0,
+    "ta_share_pct": 62.1,
+    "ta_change_pct": 587
+   },
    "approvals": 10260.0,
    "completions": 4923.0,
    "approved_not_completed": 5337.0,
@@ -1037,6 +1607,39 @@
      "children": 888.0
     }
    ],
+   "spend": {
+    "series": [
+     {
+      "year": "2021-22",
+      "ta": 3545000.0,
+      "prevention": 1381000.0,
+      "total": 10792000.0
+     },
+     {
+      "year": "2022-23",
+      "ta": 8737000.0,
+      "prevention": -315000.0,
+      "total": 11625000.0
+     },
+     {
+      "year": "2023-24",
+      "ta": 5905000.0,
+      "prevention": -339000.0,
+      "total": 10361000.0
+     },
+     {
+      "year": "2024-25",
+      "ta": 9715000.0,
+      "prevention": -17000.0,
+      "total": 17303000.0
+     }
+    ],
+    "ta": 9715000.0,
+    "prevention": -17000.0,
+    "total": 17303000.0,
+    "ta_share_pct": 56.1,
+    "ta_change_pct": 174
+   },
    "approvals": 13860.0,
    "completions": 6558.0,
    "approved_not_completed": 7302.0,
@@ -1094,6 +1697,39 @@
      "children": 1839.0
     }
    ],
+   "spend": {
+    "series": [
+     {
+      "year": "2021-22",
+      "ta": 2659000.0,
+      "prevention": 1724000.0,
+      "total": 5541000.0
+     },
+     {
+      "year": "2022-23",
+      "ta": 2660000.0,
+      "prevention": 2214000.0,
+      "total": 5855000.0
+     },
+     {
+      "year": "2023-24",
+      "ta": 4730000.0,
+      "prevention": 2663000.0,
+      "total": 8397000.0
+     },
+     {
+      "year": "2024-25",
+      "ta": 11149800.0,
+      "prevention": 2712110.0,
+      "total": 15827180.0
+     }
+    ],
+    "ta": 11149800.0,
+    "prevention": 2712110.0,
+    "total": 15827180.0,
+    "ta_share_pct": 70.4,
+    "ta_change_pct": 319
+   },
    "approvals": 2506.0,
    "completions": 3338.0,
    "approved_not_completed": -832.0,
@@ -1151,6 +1787,39 @@
      "children": 2296.0
     }
    ],
+   "spend": {
+    "series": [
+     {
+      "year": "2021-22",
+      "ta": 8897000.0,
+      "prevention": 6574000.0,
+      "total": 19591000.0
+     },
+     {
+      "year": "2022-23",
+      "ta": 12238000.0,
+      "prevention": 7181000.0,
+      "total": 23962000.0
+     },
+     {
+      "year": "2023-24",
+      "ta": 14893000.0,
+      "prevention": 7677000.0,
+      "total": 27562000.0
+     },
+     {
+      "year": "2024-25",
+      "ta": 15377000.0,
+      "prevention": 7964000.0,
+      "total": 30820000.0
+     }
+    ],
+    "ta": 15377000.0,
+    "prevention": 7964000.0,
+    "total": 30820000.0,
+    "ta_share_pct": 49.9,
+    "ta_change_pct": 73
+   },
    "approvals": 1316.0,
    "completions": 1946.0,
    "approved_not_completed": -630.0,
@@ -1208,6 +1877,39 @@
      "children": 1113.0
     }
    ],
+   "spend": {
+    "series": [
+     {
+      "year": "2021-22",
+      "ta": 7120000.0,
+      "prevention": 0.0,
+      "total": 7781000.0
+     },
+     {
+      "year": "2022-23",
+      "ta": 6881000.0,
+      "prevention": 0.0,
+      "total": 7331000.0
+     },
+     {
+      "year": "2023-24",
+      "ta": 11526000.0,
+      "prevention": 0.0,
+      "total": 12331000.0
+     },
+     {
+      "year": "2024-25",
+      "ta": 13561000.0,
+      "prevention": 8000.0,
+      "total": 15062000.0
+     }
+    ],
+    "ta": 13561000.0,
+    "prevention": 8000.0,
+    "total": 15062000.0,
+    "ta_share_pct": 90.0,
+    "ta_change_pct": 90
+   },
    "approvals": 5783.0,
    "completions": 2349.0,
    "approved_not_completed": 3434.0,
@@ -1265,6 +1967,39 @@
      "children": 5842.0
     }
    ],
+   "spend": {
+    "series": [
+     {
+      "year": "2021-22",
+      "ta": 23047000.0,
+      "prevention": 4967000.0,
+      "total": 28014000.0
+     },
+     {
+      "year": "2022-23",
+      "ta": 33285000.0,
+      "prevention": 4104000.0,
+      "total": 37389000.0
+     },
+     {
+      "year": "2023-24",
+      "ta": 46783000.0,
+      "prevention": 5129000.0,
+      "total": 51912000.0
+     },
+     {
+      "year": "2024-25",
+      "ta": 71557720.0,
+      "prevention": 6242320.0,
+      "total": 79839390.0
+     }
+    ],
+    "ta": 71557720.0,
+    "prevention": 6242320.0,
+    "total": 79839390.0,
+    "ta_share_pct": 89.6,
+    "ta_change_pct": 210
+   },
    "approvals": 7601.0,
    "completions": 3527.0,
    "approved_not_completed": 4074.0,
@@ -1322,6 +2057,39 @@
      "children": 3665.0
     }
    ],
+   "spend": {
+    "series": [
+     {
+      "year": "2021-22",
+      "ta": 9034000.0,
+      "prevention": 3340000.0,
+      "total": 12374000.0
+     },
+     {
+      "year": "2022-23",
+      "ta": 18827000.0,
+      "prevention": 3278000.0,
+      "total": 22105000.0
+     },
+     {
+      "year": "2023-24",
+      "ta": 28904000.0,
+      "prevention": 2953000.0,
+      "total": 31857000.0
+     },
+     {
+      "year": "2024-25",
+      "ta": 38129000.0,
+      "prevention": 2969000.0,
+      "total": 41098000.0
+     }
+    ],
+    "ta": 38129000.0,
+    "prevention": 2969000.0,
+    "total": 41098000.0,
+    "ta_share_pct": 92.8,
+    "ta_change_pct": 322
+   },
    "approvals": 7768.0,
    "completions": 2818.0,
    "approved_not_completed": 4950.0,
@@ -1379,6 +2147,39 @@
      "children": 1137.0
     }
    ],
+   "spend": {
+    "series": [
+     {
+      "year": "2021-22",
+      "ta": 2070000.0,
+      "prevention": 0.0,
+      "total": 2665000.0
+     },
+     {
+      "year": "2022-23",
+      "ta": 3203000.0,
+      "prevention": 427000.0,
+      "total": 3630000.0
+     },
+     {
+      "year": "2023-24",
+      "ta": 5153000.0,
+      "prevention": 707000.0,
+      "total": 5860000.0
+     },
+     {
+      "year": "2024-25",
+      "ta": 9688360.0,
+      "prevention": 656750.0,
+      "total": 10345110.0
+     }
+    ],
+    "ta": 9688360.0,
+    "prevention": 656750.0,
+    "total": 10345110.0,
+    "ta_share_pct": 93.7,
+    "ta_change_pct": 368
+   },
    "approvals": 5303.0,
    "completions": 2600.0,
    "approved_not_completed": 2703.0,
@@ -1436,6 +2237,39 @@
      "children": 10708.0
     }
    ],
+   "spend": {
+    "series": [
+     {
+      "year": "2021-22",
+      "ta": 18306000.0,
+      "prevention": 266000.0,
+      "total": 25681000.0
+     },
+     {
+      "year": "2022-23",
+      "ta": 16411000.0,
+      "prevention": 4163000.0,
+      "total": 24339000.0
+     },
+     {
+      "year": "2023-24",
+      "ta": 47848000.0,
+      "prevention": 4902000.0,
+      "total": 56555000.0
+     },
+     {
+      "year": "2024-25",
+      "ta": 68012000.0,
+      "prevention": 5282000.0,
+      "total": 76856000.0
+     }
+    ],
+    "ta": 68012000.0,
+    "prevention": 5282000.0,
+    "total": 76856000.0,
+    "ta_share_pct": 88.5,
+    "ta_change_pct": 272
+   },
    "approvals": 19485.0,
    "completions": 10460.0,
    "approved_not_completed": 9025.0,
@@ -1493,6 +2327,39 @@
      "children": 4432.0
     }
    ],
+   "spend": {
+    "series": [
+     {
+      "year": "2021-22",
+      "ta": 11792000.0,
+      "prevention": 3125000.0,
+      "total": 21164000.0
+     },
+     {
+      "year": "2022-23",
+      "ta": 10759000.0,
+      "prevention": 7043000.0,
+      "total": 21965000.0
+     },
+     {
+      "year": "2023-24",
+      "ta": 23524000.0,
+      "prevention": 8561000.0,
+      "total": 37267000.0
+     },
+     {
+      "year": "2024-25",
+      "ta": 21614000.0,
+      "prevention": 10355000.0,
+      "total": 35902000.0
+     }
+    ],
+    "ta": 21614000.0,
+    "prevention": 10355000.0,
+    "total": 35902000.0,
+    "ta_share_pct": 60.2,
+    "ta_change_pct": 83
+   },
    "approvals": 6753.0,
    "completions": 2318.0,
    "approved_not_completed": 4435.0,
@@ -1550,6 +2417,39 @@
      "children": 717.0
     }
    ],
+   "spend": {
+    "series": [
+     {
+      "year": "2021-22",
+      "ta": 2212000.0,
+      "prevention": 1710000.0,
+      "total": 6713000.0
+     },
+     {
+      "year": "2022-23",
+      "ta": 3929000.0,
+      "prevention": 1665000.0,
+      "total": 8308000.0
+     },
+     {
+      "year": "2023-24",
+      "ta": 7142000.0,
+      "prevention": 2212000.0,
+      "total": 12028000.0
+     },
+     {
+      "year": "2024-25",
+      "ta": 8448000.0,
+      "prevention": 2321000.0,
+      "total": 13702000.0
+     }
+    ],
+    "ta": 8448000.0,
+    "prevention": 2321000.0,
+    "total": 13702000.0,
+    "ta_share_pct": 61.7,
+    "ta_change_pct": 282
+   },
    "approvals": 1792.0,
    "completions": 1057.0,
    "approved_not_completed": 735.0,
@@ -1607,6 +2507,39 @@
      "children": 5686.0
     }
    ],
+   "spend": {
+    "series": [
+     {
+      "year": "2021-22",
+      "ta": 17468000.0,
+      "prevention": 0.0,
+      "total": 26768000.0
+     },
+     {
+      "year": "2022-23",
+      "ta": 14742000.0,
+      "prevention": 9000.0,
+      "total": 23305000.0
+     },
+     {
+      "year": "2023-24",
+      "ta": 21437000.0,
+      "prevention": -87000.0,
+      "total": 31406000.0
+     },
+     {
+      "year": "2024-25",
+      "ta": 35692000.0,
+      "prevention": 86050.0,
+      "total": 47048530.0
+     }
+    ],
+    "ta": 35692000.0,
+    "prevention": 86050.0,
+    "total": 47048530.0,
+    "ta_share_pct": 75.9,
+    "ta_change_pct": 104
+   },
    "approvals": 13395.0,
    "completions": 8551.0,
    "approved_not_completed": 4844.0,
@@ -1664,6 +2597,39 @@
      "children": 1480.0
     }
    ],
+   "spend": {
+    "series": [
+     {
+      "year": "2021-22",
+      "ta": 1331000.0,
+      "prevention": 1600000.0,
+      "total": 3400000.0
+     },
+     {
+      "year": "2022-23",
+      "ta": 3900000.0,
+      "prevention": 0.0,
+      "total": 3900000.0
+     },
+     {
+      "year": "2023-24",
+      "ta": 4728000.0,
+      "prevention": 0.0,
+      "total": 4728000.0
+     },
+     {
+      "year": "2024-25",
+      "ta": 8011000.0,
+      "prevention": 0.0,
+      "total": 12895000.0
+     }
+    ],
+    "ta": 8011000.0,
+    "prevention": 0.0,
+    "total": 12895000.0,
+    "ta_share_pct": 62.1,
+    "ta_change_pct": 502
+   },
    "approvals": 3037.0,
    "completions": 2220.0,
    "approved_not_completed": 817.0,
@@ -1721,6 +2687,39 @@
      "children": 4880.0
     }
    ],
+   "spend": {
+    "series": [
+     {
+      "year": "2021-22",
+      "ta": -4707000.0,
+      "prevention": 4385000.0,
+      "total": 2609000.0
+     },
+     {
+      "year": "2022-23",
+      "ta": 5637000.0,
+      "prevention": 6777000.0,
+      "total": 15961000.0
+     },
+     {
+      "year": "2023-24",
+      "ta": -3754000.0,
+      "prevention": 5497000.0,
+      "total": 12258000.0
+     },
+     {
+      "year": "2024-25",
+      "ta": 18011000.0,
+      "prevention": 10950000.0,
+      "total": 35296000.0
+     }
+    ],
+    "ta": 18011000.0,
+    "prevention": 10950000.0,
+    "total": 35296000.0,
+    "ta_share_pct": 51.0,
+    "ta_change_pct": -483
+   },
    "approvals": 21400.0,
    "completions": 13890.0,
    "approved_not_completed": 7510.0,
@@ -1778,6 +2777,39 @@
      "children": 2481.0
     }
    ],
+   "spend": {
+    "series": [
+     {
+      "year": "2021-22",
+      "ta": 8693000.0,
+      "prevention": 4645000.0,
+      "total": 14730000.0
+     },
+     {
+      "year": "2022-23",
+      "ta": 6455000.0,
+      "prevention": 5019000.0,
+      "total": 12990000.0
+     },
+     {
+      "year": "2023-24",
+      "ta": 11776000.0,
+      "prevention": 5985000.0,
+      "total": 19213000.0
+     },
+     {
+      "year": "2024-25",
+      "ta": 23021000.0,
+      "prevention": 5197000.0,
+      "total": 29649000.0
+     }
+    ],
+    "ta": 23021000.0,
+    "prevention": 5197000.0,
+    "total": 29649000.0,
+    "ta_share_pct": 77.6,
+    "ta_change_pct": 165
+   },
    "approvals": 8652.0,
    "completions": 5585.0,
    "approved_not_completed": 3067.0,
@@ -1835,6 +2867,39 @@
      "children": 4297.0
     }
    ],
+   "spend": {
+    "series": [
+     {
+      "year": "2021-22",
+      "ta": 10472000.0,
+      "prevention": 2853000.0,
+      "total": 15354000.0
+     },
+     {
+      "year": "2022-23",
+      "ta": 15850000.0,
+      "prevention": 3469000.0,
+      "total": 21987000.0
+     },
+     {
+      "year": "2023-24",
+      "ta": 23802000.0,
+      "prevention": 16000.0,
+      "total": 30638000.0
+     },
+     {
+      "year": "2024-25",
+      "ta": 31014000.0,
+      "prevention": 146000.0,
+      "total": 39977000.0
+     }
+    ],
+    "ta": 31014000.0,
+    "prevention": 146000.0,
+    "total": 39977000.0,
+    "ta_share_pct": 77.6,
+    "ta_change_pct": 196
+   },
    "approvals": 17159.0,
    "completions": 9541.0,
    "approved_not_completed": 7618.0,
@@ -1892,6 +2957,39 @@
      "children": 3959.0
     }
    ],
+   "spend": {
+    "series": [
+     {
+      "year": "2021-22",
+      "ta": 1136000.0,
+      "prevention": 0.0,
+      "total": 8963000.0
+     },
+     {
+      "year": "2022-23",
+      "ta": 15916000.0,
+      "prevention": 0.0,
+      "total": 23912000.0
+     },
+     {
+      "year": "2023-24",
+      "ta": 43542000.0,
+      "prevention": 0.0,
+      "total": 52494000.0
+     },
+     {
+      "year": "2024-25",
+      "ta": 72491400.0,
+      "prevention": 14557390.0,
+      "total": 102036620.0
+     }
+    ],
+    "ta": 72491400.0,
+    "prevention": 14557390.0,
+    "total": 102036620.0,
+    "ta_share_pct": 71.0,
+    "ta_change_pct": 6281
+   },
    "approvals": 4225.0,
    "completions": 3327.0,
    "approved_not_completed": 898.0,
@@ -1949,6 +3047,7 @@
      "children": 176130.0
     }
    ],
+   "spend": null,
    "approvals": null,
    "completions": null,
    "approved_not_completed": null,
@@ -2006,6 +3105,39 @@
      "children": 100930.0
     }
    ],
+   "spend": {
+    "series": [
+     {
+      "year": "2021-22",
+      "ta": 243200000.0,
+      "prevention": 88833000.0,
+      "total": 434262000.0
+     },
+     {
+      "year": "2022-23",
+      "ta": 294009000.0,
+      "prevention": 122864000.0,
+      "total": 504967000.0
+     },
+     {
+      "year": "2023-24",
+      "ta": 519269000.0,
+      "prevention": 131454000.0,
+      "total": 758835000.0
+     },
+     {
+      "year": "2024-25",
+      "ta": 739888610.0,
+      "prevention": 172652930.0,
+      "total": 1046460600.0
+     }
+    ],
+    "ta": 739888610.0,
+    "prevention": 172652930.0,
+    "total": 1046460600.0,
+    "ta_share_pct": 70.7,
+    "ta_change_pct": 204
+   },
    "approvals": 320203.0,
    "completions": 184169.0,
    "approved_not_completed": 136034.0,

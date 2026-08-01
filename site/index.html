@@ -49,6 +49,13 @@
   .up { color: var(--alarm); }
   .down { color: #1a7a4c; }
 
+  .punchline {
+    margin: 24px 0 0; font-size: 21px; line-height: 1.4; font-weight: 500;
+    padding: 18px 20px; background: #14161a; color: #fff; border-radius: 10px;
+  }
+  .punchline strong { color: #ff8a7a; font-variant-numeric: tabular-nums; }
+
+  .sliders { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 18px; }
   .assumption { margin-top: 22px; padding-top: 18px; border-top: 1px dashed var(--line); }
   .assumption label { font-size: 14px; color: var(--muted); display: block; }
   .assumption output { font-weight: 600; color: var(--ink); font-variant-numeric: tabular-nums; }
@@ -115,18 +122,23 @@
   <section class="card" id="card" hidden>
     <p class="headline" id="headline"></p>
     <div class="stats" id="stats"></div>
+    <p class="punchline" id="punchline"></p>
+
     <div class="assumption">
-      <label for="rate">Assumed cost per household per night
-        <output id="rateout"></output>
-      </label>
-      <input type="range" id="rate" min="20" max="200" step="5">
-      <p>Not a measured figure. MHCLG does not publish temporary accommodation spend by borough in
-        this release, so move the slider to your own estimate and every cost on this page follows it.</p>
+      <label for="build">Cost to build one home <output id="buildout"></output></label>
+      <input type="range" id="build" min="150000" max="600000" step="10000">
+      <p>The spending figures above are what the council actually reported to MHCLG. Only the
+        build cost is an assumption, because it varies hugely by site — move the slider to your
+        own estimate and the comparison follows it.</p>
     </div>
     <p class="counterpunch" id="counterpunch"></p>
     <figure>
       <svg id="chart" viewBox="0 0 640 190" role="img" aria-label="Households in temporary accommodation over time"></svg>
       <figcaption id="chartcap"></figcaption>
+    </figure>
+    <figure id="doomfig">
+      <svg id="doom" viewBox="0 0 640 200" role="img" aria-label="Temporary accommodation spending against prevention spending"></svg>
+      <figcaption id="doomcap"></figcaption>
     </figure>
     <div class="action">
       <a class="btn" id="email" href="#">Email your councillor about this</a>
@@ -161,6 +173,10 @@
       as published. Figures are snapshots at the end of each December, so seasonal comparison is like-for-like.</p>
     <p>Approvals and completions come from the GLA's London Plan Annual Monitoring Report 21 (January 2026),
       chapter 2, covering the five years 2019/20 to 2023/24 — the most recent published window.</p>
+    <p>Spending comes from MHCLG's local authority revenue outturn, form RO4 (housing services), which is
+      what each council actually reported it spent. Temporary accommodation is the sum of the six placement
+      categories; prevention is the Homelessness Reduction Act administration, prevention, relief and
+      support line.</p>
   </details>
   <details>
     <summary>What we're less sure about</summary>
@@ -174,11 +190,13 @@
       <li><strong>Two development corporations are excluded.</strong> The Old Oak and Park Royal and London
         Legacy corporations are the planning authority for parts of several boroughs, so consents inside their
         areas are missing from those boroughs' figures and their homes are counted in the London total only.</li>
-      <li><strong>Cost is an assumption, not a measurement.</strong> MHCLG does not publish TA spend by
-        borough in this release. Where a daily cost appears it applies a single flat nightly rate across all
-        placement types, shown on the face of the page so you can substitute your own. Real costs vary
-        enormously between council-owned stock and nightly-paid hotel rooms, so treat it as an order of
-        magnitude, not an audited figure.</li>
+      <li><strong>Spending is net current expenditure, not gross.</strong> Gross temporary accommodation
+        costs are far larger but are substantially offset by housing benefit subsidy. Net is what a council
+        actually carries on its own budget, which is the figure that drives financial distress. Only the
+        build cost in the comparison above is an assumption, and it is a slider.</li>
+      <li><strong>The spending series starts at 2021-22.</strong> Earlier revenue outturn releases exist,
+        but most boroughs leave the homelessness component lines blank before then, so a longer run would
+        compare against gaps rather than against genuinely smaller numbers.</li>
       <li><strong>Two boroughs did not return usable data in December 2019</strong>, so their change figure is
         measured from the first year they did. The baseline year is labelled per borough.</li>
       <li><strong>A household is not a fixed number of people.</strong> Household and children counts move
@@ -212,7 +230,7 @@
 const EMBEDDED = window.__EMBEDDED__ || null;
 const loadJSON = name => EMBEDDED ? Promise.resolve(EMBEDDED[name]) : fetch(name).then(r => r.json());
 const fmt = n => n == null ? "—" : n.toLocaleString("en-GB", {maximumFractionDigits: 0});
-let DATA, current, nightlyRate;
+let DATA, current, nightlyRate, buildCost;
 
 function quarterLabel(q) {
   const [y, m] = q.split("-");
@@ -245,6 +263,45 @@ function drawChart(area) {
     `Households in temporary accommodation placed by ${area.name}, December each year.`;
 }
 
+function drawDoom(a) {
+  const fig = document.getElementById("doomfig");
+  const pts = (a.spend && a.spend.series || []).filter(p => p.ta != null && p.prevention != null);
+  if (pts.length < 2) { fig.hidden = true; return; }
+  fig.hidden = false;
+
+  const svg = document.getElementById("doom");
+  const W = 640, H = 200, pad = {t: 16, r: 14, b: 40, l: 60};
+  const max = Math.max(...pts.map(p => Math.max(p.ta, p.prevention))) * 1.12;
+  const x = i => pad.l + i * (W - pad.l - pad.r) / (pts.length - 1);
+  const y = v => H - pad.b - (v / max) * (H - pad.t - pad.b);
+  const money = v => "£" + fmt(v / 1e6) + "m";
+
+  const line = (key, colour) => {
+    const d = pts.map((p, i) => `${i ? "L" : "M"}${x(i).toFixed(1)},${y(p[key]).toFixed(1)}`).join("");
+    const dots = pts.map((p, i) => `<circle cx="${x(i)}" cy="${y(p[key])}" r="3.5" fill="${colour}"/>`).join("");
+    return `<path d="${d}" fill="none" stroke="${colour}" stroke-width="2.5"/>${dots}` +
+      `<text x="${x(pts.length - 1)}" y="${y(pts[pts.length - 1][key]) - 10}" text-anchor="end" ` +
+      `font-size="12" font-weight="600" fill="${colour}">${money(pts[pts.length - 1][key])}</text>`;
+  };
+
+  const grid = [0, max / 2, max].map(v =>
+    `<line x1="${pad.l}" x2="${W - pad.r}" y1="${y(v)}" y2="${y(v)}" stroke="#e2e5ea"/>
+     <text x="${pad.l - 8}" y="${y(v) + 4}" text-anchor="end" font-size="11" fill="#5c6470">${money(v)}</text>`).join("");
+  const labels = pts.map((p, i) =>
+    `<text x="${x(i)}" y="${H - 22}" text-anchor="middle" font-size="11" fill="#5c6470">${p.year}</text>`).join("");
+
+  svg.innerHTML = grid + labels +
+    line("ta", "#c8102e") + line("prevention", "#1a7a4c") +
+    `<text x="${pad.l}" y="${H - 4}" font-size="12" fill="#c8102e" font-weight="600">Temporary accommodation</text>` +
+    `<text x="${pad.l + 190}" y="${H - 4}" font-size="12" fill="#1a7a4c" font-weight="600">Prevention and relief</text>`;
+
+  document.getElementById("doomcap").innerHTML =
+    `Net current expenditure by ${a.name}, as reported to MHCLG. Temporary accommodation now takes ` +
+    `<strong>${a.spend.ta_share_pct}%</strong> of all homelessness spending here` +
+    (a.spend.ta_change_pct != null
+      ? `, after rising ${a.spend.ta_change_pct}% in three years.` : ".");
+}
+
 function emailBody(a) {
   const cost = a.households * nightlyRate * 365;
   return encodeURIComponent(
@@ -254,7 +311,7 @@ I live in ${a.name} and I want to ask what the council is doing about temporary 
 
 According to MHCLG's own statutory homelessness figures for ${quarterLabel(DATA.latest_quarter)}, ${a.name} has ${fmt(a.households)} households in temporary accommodation, including ${fmt(a.children)} children. That is roughly one in every ${fmt(a.one_in)} households in the borough${a.change_pct != null ? `, and it has changed by ${a.change_pct > 0 ? "+" : ""}${a.change_pct}% since ${quarterLabel(a.baseline_quarter)}` : ""}.
 
-At an illustrative £${nightlyRate} per household per night, that is in the order of £${fmt(cost)} a year of recurring spend on accommodation the council does not own.
+${a.spend ? `In ${DATA.latest_spend_year} the council reported net spending of £${fmt(a.spend.ta / 1e6)}m on temporary accommodation — ${a.spend.ta_share_pct}% of its entire homelessness budget, after a rise of ${a.spend.ta_change_pct}% in three years.` : ""}
 
 I would like to know:
 
@@ -282,8 +339,12 @@ function render(a) {
     [a.change_pct == null ? "—" : `${a.change_pct > 0 ? "+" : ""}${a.change_pct}%`,
       `since ${quarterLabel(a.baseline_quarter)}`, dir],
     [fmt(a.placed_out_of_borough), "placed outside the borough"],
-    [`£${fmt(cost)}`, `a day on accommodation the council does not own`],
-    [`£${fmt(cost * 365 / 1e6)}m`, "a year, at the assumed nightly rate"],
+    a.spend
+      ? [`£${fmt(a.spend.ta / 1e6)}m`, `a year on temporary accommodation, ${DATA.latest_spend_year}`, "up"]
+      : [`£${fmt(cost)}`, "a day on accommodation the council does not own"],
+    a.spend && a.spend.ta_share_pct
+      ? [`${a.spend.ta_share_pct}%`, "of its homelessness budget goes on it", "up"]
+      : [`£${fmt(cost * 365 / 1e6)}m`, "a year, at the assumed nightly rate"],
   ].map(([v, l, cls]) => `<div class="stat"><div class="value ${cls || ""}">${v}</div><div class="label">${l}</div></div>`).join("");
 
   const cp = document.getElementById("counterpunch");
@@ -305,7 +366,18 @@ function render(a) {
     cp.hidden = true;
   }
 
+  const annual = a.spend ? a.spend.ta : a.households * nightlyRate * 365;
+  const homes = annual / buildCost;
+  document.getElementById("punchline").innerHTML =
+    `One year of ${a.name}'s temporary accommodation bill — <strong>£${fmt(annual / 1e6)}m</strong> — ` +
+    `would build about <strong>${fmt(homes)} homes</strong>` +
+    (a.approved_not_completed > 0
+      ? `, roughly <strong>${Math.round(homes / a.approved_not_completed * 100)}%</strong> of the homes ` +
+        `it granted permission for and never completed.`
+      : ".");
+
   drawChart(a);
+  drawDoom(a);
   drawMap();
   document.getElementById("email").href = `mailto:?subject=${encodeURIComponent(
     `Temporary accommodation in ${a.name}`)}&body=${emailBody(a)}`;
@@ -376,6 +448,7 @@ async function lookupPostcode(pc) {
 loadJSON("data.json").then(d => {
   DATA = d;
   nightlyRate = d.nightly_cost_assumption;
+  buildCost = d.build_cost_assumption;
   const london = d.areas.find(a => a.code === "E12000007");
   document.getElementById("standfirst").innerHTML =
     `<span class="hero-number">${fmt(london.children)} children</span> in London are living in temporary ` +
@@ -390,15 +463,18 @@ loadJSON("data.json").then(d => {
   const pc = document.getElementById("postcode");
   pc.onchange = () => pc.value.trim() && lookupPostcode(pc.value.trim());
 
-  const rate = document.getElementById("rate");
-  rate.value = nightlyRate = d.nightly_cost_assumption;
-  const showRate = () => document.getElementById("rateout").textContent = `£${nightlyRate}`;
-  showRate();
-  rate.oninput = () => {
-    nightlyRate = Number(rate.value);
-    showRate();
-    if (current) render(current);
+  const slider = (id, outId, get, set, format) => {
+    const el = document.getElementById(id), out = document.getElementById(outId);
+    el.value = get();
+    out.textContent = format(get());
+    el.oninput = () => {
+      set(Number(el.value));
+      out.textContent = format(get());
+      if (current) render(current);
+    };
   };
+  slider("build", "buildout", () => buildCost, v => buildCost = v,
+         v => `£${(v / 1000).toFixed(0)}k`);
 
   const rows = d.areas.filter(a => a.is_borough && a.one_in)
     .sort((x, y) => x.one_in - y.one_in).slice(0, 10);

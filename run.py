@@ -22,6 +22,7 @@ STEPS = [
     ("Downloading official data (skips anything already downloaded)", "fetch_data.py"),
     ("Reading the homelessness spreadsheets (about a minute)", "extract_ta.py"),
     ("Reading the housing delivery spreadsheet", "extract_pipeline.py"),
+    ("Reading the council spending returns", "extract_spend.py"),
     ("Building the map", "build_map.py"),
     ("Building the page", "build_site.py"),
     ("Bundling the double-clickable single file", "build_standalone.py"),

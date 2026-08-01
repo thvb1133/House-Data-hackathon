@@ -15,6 +15,7 @@ python3 scripts/fetch_data.py
 echo "==> 3/5  Reading the government spreadsheets (this takes about a minute)"
 python3 scripts/extract_ta.py
 python3 scripts/extract_pipeline.py
+python3 scripts/extract_spend.py
 
 echo "==> 4/5  Building the site"
 python3 scripts/build_map.py

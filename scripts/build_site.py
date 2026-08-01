@@ -7,6 +7,7 @@ import pandas as pd
 
 PANEL = Path("data/processed/ta_panel_london.csv")
 PIPELINE = Path("data/processed/pipeline_london.csv")
+SPEND = Path("data/processed/spend_london.csv")
 OUT = Path("site/data.json")
 
 # The AMR names two boroughs in short form and adds two development corporations,
@@ -16,6 +17,10 @@ PIPELINE_ALIASES = {"Kingston": "Kingston upon Thames", "Richmond": "Richmond up
 # MHCLG does not publish TA spend, so the per-night cost is applied as an
 # explicit, user-visible assumption rather than presented as measured data.
 NIGHTLY_COST_ASSUMPTION = 60.0
+
+# Likewise the build cost. Both are exposed as sliders on the page so the
+# comparison can be re-run against the reader's own numbers.
+BUILD_COST_ASSUMPTION = 300_000.0
 
 
 def _num(v):
@@ -28,6 +33,42 @@ def main() -> None:
     panel = pd.read_csv(PANEL).drop_duplicates(subset=["quarter", "area_code"])
     quarters = sorted(panel["quarter"].unique())
     latest = quarters[-1]
+
+    spend = pd.read_csv(SPEND)
+    spend_years = sorted(spend["year"].unique())
+    latest_spend_year = spend_years[-1]
+    by_area = {code: g.sort_values("year") for code, g in spend.groupby("area_code")}
+    london_spend = spend.groupby("year")[["ta_total", "prevention", "total_homelessness"]].sum()
+
+    def spend_block(code):
+        if code == "E12000007":
+            rows = [
+                {"year": y, "ta": float(london_spend.ta_total[y]),
+                 "prevention": float(london_spend.prevention[y]),
+                 "total": float(london_spend.total_homelessness[y])}
+                for y in spend_years
+            ]
+        elif code in by_area:
+            g = by_area[code]
+            rows = [
+                {"year": r.year, "ta": _num(r.ta_total),
+                 "prevention": _num(r.prevention), "total": _num(r.total_homelessness)}
+                for r in g.itertuples()
+            ]
+        else:
+            return None
+        latest = rows[-1]
+        first = rows[0]
+        return {
+            "series": rows,
+            "ta": latest["ta"],
+            "prevention": latest["prevention"],
+            "total": latest["total"],
+            "ta_share_pct": round(latest["ta"] / latest["total"] * 100, 1) if latest["total"] else None,
+            "ta_change_pct": (
+                round((latest["ta"] / first["ta"] - 1) * 100) if first["ta"] else None
+            ),
+        }
 
     pipe = pd.read_csv(PIPELINE)
     pipe["borough"] = pipe["borough"].replace(PIPELINE_ALIASES)
@@ -81,6 +122,7 @@ def main() -> None:
                     else None
                 ),
                 "series": series,
+                "spend": spend_block(code),
                 "approvals": _num(pl["approvals"]) if pl else None,
                 "completions": _num(pl["completions"]) if pl else None,
                 "approved_not_completed": _num(pl["approved_not_completed"]) if pl else None,
@@ -93,10 +135,14 @@ def main() -> None:
         "latest_quarter": latest,
         "quarters": quarters,
         "nightly_cost_assumption": NIGHTLY_COST_ASSUMPTION,
+        "build_cost_assumption": BUILD_COST_ASSUMPTION,
         "pipeline_years": "2019/20 to 2023/24",
+        "spend_years": spend_years,
+        "latest_spend_year": latest_spend_year,
         "sources": [
             "MHCLG statutory homelessness detailed local authority tables, table TA1",
             "GLA London Plan Annual Monitoring Report 21 (January 2026), chapter 2 housing tables",
+            "MHCLG local authority revenue outturn RO4 (housing services), net current expenditure",
         ],
         "areas": areas,
     }

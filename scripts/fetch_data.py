@@ -26,6 +26,15 @@ FILES = {
     # GLA London Plan Annual Monitoring Report 21 (January 2026), chapter 2.
     "AMR21_Housing.xlsx": "https://data.london.gov.uk/download/2rjko/0yx/AMR%2021%20Chapter%202%20Housing%20Tables.xlsx",
     # Borough boundaries, generalised, WGS84.
+    # MHCLG local authority revenue outturn, RO4 (housing services) — carries the
+    # actual homelessness and temporary accommodation spend each council reported.
+    "RO4_2018-19.ods": f"{GOV}/66573b9e0c8f88e868d33335/RO4_2018-19_data_by_LA.ods",
+    "RO4_2019-20.ods": f"{GOV}/6656f573dc15efdddf1a84bd/RO4_2019-20_data_by_LA.ods",
+    "RO4_2020-21.ods": f"{GOV}/67dc26a2cb8c6838d74b4fd5/RO4_2020-21_data_by_LA_March_2025.ods",
+    "RO4_2021-22.ods": f"{GOV}/6825a5e47293a87b6c75ec90/RO4_2021-22_data_by_LA_Live.ods",
+    "RO4_2022-23.ods": f"{GOV}/686be46a81dd8f70f5de3c19/RO4_2022-23_data_by_LA.ods",
+    "RO4_2023-24.ods": f"{GOV}/6a29120f3b15d05a7ce31ff7/RO4_2023-24_data_by_LA.ods",
+    "RO4_2024-25.ods": f"{GOV}/6a291b65e371d9d2c0052b83/RO4_LA_Data_2024-25_data_by_LA.ods",
     # Borough boundaries — ONS Open Geography, super-generalised and clipped,
     # carrying the same E09 codes the statistical tables use.
     "london_boroughs.geojson": (
