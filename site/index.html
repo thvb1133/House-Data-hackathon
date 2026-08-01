@@ -106,7 +106,7 @@
   <h2>Where the pressure is worst</h2>
   <table id="league">
     <thead><tr>
-      <th>Borough</th><th class="n">Households in TA</th><th class="n">Children</th><th class="n">1 in every…</th><th class="n">Change</th><th class="n">Approved, not built</th>
+      <th>Borough</th><th class="n">Households in TA</th><th class="n">Children</th><th class="n">1 in every…</th><th class="n">Change</th><th class="n">Approved, not built<br><span style="font-weight:400">5 yrs to 2023/24</span></th>
     </tr></thead>
     <tbody></tbody>
   </table>
@@ -214,7 +214,7 @@ At an illustrative £${DATA.nightly_cost_assumption} per household per night, th
 I would like to know:
 
 1. What did ${a.name} spend on temporary accommodation in the last financial year, and what does it forecast for this one?
-2. Over the five years to 2023/24, the GLA's London Plan Annual Monitoring Report records ${fmt(a.approvals)} homes approved in ${a.name} and ${fmt(a.completions)} completed. What is the council doing about the ${fmt(a.approved_not_completed)}-home gap between consent and delivery?
+2. Over the five years to 2023/24, the GLA's London Plan Annual Monitoring Report records ${fmt(a.approvals)} homes approved in ${a.name} and ${fmt(a.completions)} completed${a.approved_not_completed > 0 ? `. What is the council doing about the ${fmt(a.approved_not_completed)}-home gap between consent and delivery?` : `. How is the council keeping that delivery rate up as older consents run out?`}
 3. What is the council doing to move households out of nightly-paid accommodation and into settled homes?
 
 I would be grateful for a response.
@@ -241,14 +241,20 @@ function render(a) {
   ].map(([v, l, cls]) => `<div class="stat"><div class="value ${cls || ""}">${v}</div><div class="label">${l}</div></div>`).join("");
 
   const cp = document.getElementById("counterpunch");
-  if (a.approved_not_completed) {
-    cp.hidden = false;
-    cp.innerHTML =
+  if (a.approvals) {
+    const gap = a.approved_not_completed;
+    const subject = a.is_borough ? "the borough" : "the city";
+    const opening =
       `Meanwhile, over the five years to 2023/24 ${a.name} granted planning permission for ` +
-      `<strong>${fmt(a.approvals)} homes</strong> and completed <strong>${fmt(a.completions)}</strong> — ` +
-      `a shortfall of <strong>${fmt(a.approved_not_completed)}</strong>, or a ${a.completion_rate_pct}% ` +
-      `completion rate. That is ${(a.approved_not_completed / a.households).toFixed(1)}× the number of ` +
-      `households the borough currently has in temporary accommodation.`;
+      `<strong>${fmt(a.approvals)} homes</strong> and completed <strong>${fmt(a.completions)}</strong>`;
+    cp.hidden = false;
+    cp.innerHTML = gap > 0
+      ? `${opening} — a shortfall of <strong>${fmt(gap)}</strong>, a ${a.completion_rate_pct}% completion ` +
+        `rate. That gap is ${(gap / a.households).toFixed(1)}× the number of households ${subject} ` +
+        `currently has in temporary accommodation.`
+      : `${opening} — completing <strong>${fmt(-gap)} more</strong> than it approved, by working through ` +
+        `consents granted before this window. One of the few London boroughs where delivery ran ahead of ` +
+        `new permission.`;
   } else {
     cp.hidden = true;
   }
@@ -297,7 +303,7 @@ fetch("data.json").then(r => r.json()).then(d => {
     `<tr><td>${a.name}</td><td class="n">${fmt(a.households)}</td><td class="n">${fmt(a.children)}</td>` +
     `<td class="n">${fmt(a.one_in)}</td>` +
     `<td class="n ${a.change_pct > 0 ? "up" : "down"}">${a.change_pct == null ? "—" : (a.change_pct > 0 ? "+" : "") + a.change_pct + "%"}</td>` +
-    `<td class="n">${fmt(a.approved_not_completed)}</td></tr>`).join("");
+    `<td class="n ${a.approved_not_completed < 0 ? "down" : ""}">${fmt(a.approved_not_completed)}</td></tr>`).join("");
 
   render(london);
 });
