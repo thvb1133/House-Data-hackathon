@@ -367,15 +367,20 @@ function render(a) {
     cp.hidden = true;
   }
 
-  const annual = a.spend ? a.spend.ta : a.households * nightlyRate * 365;
-  const homes = annual / buildCost;
-  document.getElementById("punchline").innerHTML =
-    `One year of ${a.name}'s temporary accommodation bill — <strong>£${fmt(annual / 1e6)}m</strong> — ` +
-    `would build about <strong>${fmt(homes)} homes</strong>` +
-    (a.approved_not_completed > 0
-      ? `, roughly <strong>${Math.round(homes / a.approved_not_completed * 100)}%</strong> of the homes ` +
-        `it granted permission for and never completed.`
-      : ".");
+  const punch = document.getElementById("punchline");
+  if (a.spend) {
+    const cumulative = a.spend.series.reduce((t, p) => t + (p.ta || 0), 0);
+    const first = a.spend.series[0].year;
+    punch.innerHTML =
+      `Since ${first}, ${a.name} has spent <strong>£${fmt(cumulative / 1e6)}m</strong> of its own budget ` +
+      `on temporary accommodation — enough to have built about ` +
+      `<strong>${fmt(cumulative / buildCost)} homes</strong>. It owns none of it.`;
+  } else {
+    const annual = a.households * nightlyRate * 365;
+    punch.innerHTML =
+      `One year of ${a.name}'s temporary accommodation bill — <strong>£${fmt(annual / 1e6)}m</strong> — ` +
+      `would build about <strong>${fmt(annual / buildCost)} homes</strong>.`;
+  }
 
   drawChart(a);
   drawDoom(a);

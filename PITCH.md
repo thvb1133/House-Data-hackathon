@@ -14,10 +14,16 @@ hundred thousand and rising. London crossed six figures and nobody announced it.
 
 ## 0:40 — The fiscal turn
 
-This is not only a housing story. Boroughs pay for these rooms out of revenue budgets, every
-night, forever, and they own none of it at the end. It is the fastest-growing line item pushing
-London councils toward financial distress, and it crowds out exactly the prevention spending that
-would stop the next family arriving.
+This is not only a housing story, and we are not estimating this part. These are the figures
+councils themselves reported to government.
+
+In 2024-25 London boroughs spent **£740 million** net on temporary accommodation. Three years
+earlier it was £243 million. It has **tripled**, and it now eats **71%** of everything London
+spends on homelessness — squeezing the prevention budget that would stop the next family
+arriving. Newham is the extreme: **88%** of its homelessness spending goes on temporary
+accommodation, leaving barely £5 million for prevention.
+
+That is the doom loop, and it is the chart to leave on screen.
 
 ## 1:10 — The counterpunch
 
@@ -29,6 +35,10 @@ completed **184,169**. A **57% completion rate** — a gap of **136,034 homes**.
 We are renting hotel rooms at scale, in the same boroughs that approved homes and did not build
 them. Greenwich is the extreme: a **27% completion rate**, and a permission gap **nine times**
 the number of households it currently has in temporary accommodation.
+
+Put the two halves together. Since 2021-22 London has spent **£1.8 billion** of its own money on
+temporary accommodation. At £300,000 a home that is roughly **6,000 homes** — and the city owns
+none of it.
 
 ## 1:45 — Demo, live
 
@@ -58,10 +68,11 @@ The honest bit. The approvals gap is **not** proof of land banking. Homes approv
 could not have completed by 2023/24, so some of that gap is ordinary build-out time. We show the
 two numbers side by side and we do not claim one causes the other. Splitting build-out lag from
 genuine stalling needs site-level permission dates from the London Development Database — that is
-the next build, and it is a week of work, not a day.
+the next build.
 
-The cost figure is an assumption, not a measurement, and we put the rate on the face of the page
-so you can substitute your own.
+The spending is net, not gross, because housing benefit subsidy offsets most of the gross cost
+and net is what actually lands on a council's budget. The only assumption left on the page is
+what a home costs to build, and that is a slider.
 
 ## 2:50 — Close
 
@@ -81,6 +92,10 @@ The data to argue for fixing this already exists. We just made it typeable.
 | Households in TA, London | 75,600 |
 | Growth since Dec 2019 | +28.9% |
 | Worst borough | Newham — 1 in every 17 households |
+| Net TA spend, London, 2024-25 | £740m |
+| Same figure, 2021-22 | £243m (+204%) |
+| Share of all homelessness spend | 71% (Newham 88%) |
+| Cumulative since 2021-22 | £1.8bn — about 6,000 homes |
 | Homes approved 2019/20–2023/24 | 320,203 |
 | Homes completed | 184,169 |
 | Completion rate | 57.5% |
@@ -96,9 +111,14 @@ explained by lag, because they all face the same construction timelines.
 **"Why December snapshots?"** TA counts are seasonal. Comparing December to December keeps it
 like-for-like.
 
-**"Where does the cost figure come from?"** An assumption, stated openly. MHCLG does not publish
-borough TA spend in this release. We would rather show a labelled assumption than launder it into
-a headline.
+**"Where does the cost figure come from?"** Not from us. It is form RO4 of MHCLG's local
+authority revenue outturn — what each council reported it actually spent. We use net current
+expenditure rather than gross, because housing benefit subsidy offsets most of the gross figure
+and net is what genuinely lands on the borough's budget.
+
+**"Why does the spending chart only start in 2021-22?"** Earlier releases exist, but most
+boroughs leave the homelessness component lines blank before then. A longer chart would be
+comparing against missing data rather than against smaller numbers.
 
 **"Hackney is negative — is that a bug?"** No. A few boroughs completed more than they approved in
 this window, working through older consents. The page says so in words rather than showing a

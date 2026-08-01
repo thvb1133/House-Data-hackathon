@@ -1,7 +1,9 @@
 # Homes vs Hotels
 
 **London has 100,930 children living in temporary accommodation — the highest figure on record.
-Over the same period, the city granted permission for 320,203 homes and completed 184,169.**
+Boroughs now spend £740m a year of their own money housing them, triple what they spent three
+years ago. Over the same period the city granted permission for 320,203 homes and completed
+184,169.**
 
 A borough-by-borough lookup built at House London #0, Newspeak House, 1 August 2026.
 Type in a postcode, see what your borough is spending on accommodation it does not own, see the
@@ -17,6 +19,10 @@ Briefs: **PD** (is temporary accommodation bankrupting London's boroughs?) cross
 | Households in temporary accommodation | 75,600 |
 | Children in temporary accommodation | 100,930 |
 | Change since December 2019 | +28.9% |
+| Net spend on temporary accommodation, 2024-25 | £740m |
+| Same figure, 2021-22 | £243m |
+| Share of all homelessness spending | 70.7% |
+| Cumulative since 2021-22 | £1.8bn, about 6,000 homes' worth |
 | Homes approved, 2019/20–2023/24 | 320,203 |
 | Homes completed, same period | 184,169 |
 | Completion rate | 57.5% |
@@ -99,8 +105,8 @@ build step and no runtime dependencies, so it can be published to GitHub Pages a
 - **A clickable choropleth of all 33 boroughs**, switchable between temporary accommodation
   pressure and the homes approved but not built. Boundaries are projected and simplified into
   SVG paths at build time, so the map needs no mapping library and adds 35 KB.
-- **An adjustable cost assumption.** The nightly rate is a slider, not a fixed number, because
-  MHCLG does not publish borough TA spend. Every cost on the page follows it.
+- **Reported spending, not estimates** — what each borough actually told MHCLG it spent, with a
+  second chart setting temporary accommodation against prevention and relief.
 - **A trend chart** per borough, December to December.
 - **A pre-written email to your councillor** carrying that borough's own figures and three
   questions a council has to answer in writing.
@@ -112,6 +118,9 @@ build step and no runtime dependencies, so it can be published to GitHub Pages a
 - [GLA London Plan Annual Monitoring Report 21](https://data.london.gov.uk/dataset/london-plan-amr-21-data-tables)
   (January 2026), chapter 2 housing tables — approvals, starts and completions by planning authority,
   2019/20 to 2023/24.
+- [MHCLG local authority revenue expenditure and financing](https://www.gov.uk/government/collections/local-authority-revenue-expenditure-and-financing) —
+  form RO4 (housing services), net current expenditure on each temporary accommodation category and
+  on Homelessness Reduction Act prevention, 2021-22 to 2024-25.
 - [ONS Open Geography](https://geoportal.statistics.gov.uk) — local authority district boundaries,
   December 2025, super-generalised and clipped, carrying the same E09 codes as the statistics.
 - [postcodes.io](https://postcodes.io) — postcode to borough lookup, client-side.
@@ -127,9 +136,11 @@ The page says this in full, but the short version:
   completed by 2023/24, so part of the gap is ordinary build-out time. It measures consent running
   ahead of delivery over a fixed window — not sites deliberately sat on. Separating the two needs
   site-level permission dates from the London Development Database.
-- **Cost is an assumption.** MHCLG does not publish TA spend by borough in this release, so the
-  daily figure applies one flat nightly rate, exposed as a slider rather than buried. Order of
-  magnitude only.
+- **Spending is net current expenditure, not gross.** Gross costs are far larger but largely
+  offset by housing benefit subsidy; net is what the borough actually carries. The only remaining
+  assumption on the page is what a home costs to build, and that is a slider.
+- **The spending series starts at 2021-22**, because most boroughs leave the homelessness
+  component lines blank in earlier revenue outturn releases.
 - **Two development corporations** (Old Oak and Park Royal, London Legacy) are the planning
   authority for parts of several boroughs, so their consents are missing from those boroughs' rows.
 - **Two boroughs did not return usable TA data in December 2019**, so their change figure runs from
