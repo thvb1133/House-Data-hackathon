@@ -197,6 +197,32 @@ def main() -> None:
         "median_unstarted": round(pd.Series([a["unstarted_per_1000"] for a in tested]).median(), 1),
     }
 
+    # Boroughs above the median on both measures: the need is already acute and the
+    # permissions already exist, so delivery there relieves the most pressure soonest.
+    priority = sorted(
+        (
+            a for a in tested
+            if a["per_1000_households"] > mismatch["median_ta"]
+            and a["unstarted_per_1000"] > mismatch["median_unstarted"]
+        ),
+        key=lambda a: -a["approved_not_started"],
+    )
+    mismatch["priority"] = [
+        {
+            "name": a["name"],
+            "code": a["code"],
+            "households": a["households"],
+            "children": a["children"],
+            "unstarted": a["approved_not_started"],
+        }
+        for a in priority
+    ]
+    mismatch["priority_totals"] = {
+        "unstarted": sum(a["approved_not_started"] for a in priority),
+        "households": sum(a["households"] for a in priority),
+        "children": sum(a["children"] for a in priority),
+    }
+
     areas.sort(key=lambda a: (not a["is_borough"], a["name"]))
     payload = {
         "latest_quarter": latest,

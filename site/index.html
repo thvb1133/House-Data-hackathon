@@ -94,6 +94,11 @@
   .legend .swatches i { flex: 1; height: 9px; display: block; }
   .maphint { font-size: 13px; color: var(--muted); margin: 8px 4px 0; }
   .lede { font-size: 18px; color: var(--ink); margin: 0 0 14px; }
+  .asks { padding-left: 22px; }
+  .asks li { margin-bottom: 14px; }
+  tfoot td { font-weight: 600; border-top: 2px solid var(--ink); border-bottom: 0; }
+  #priority tbody tr { cursor: pointer; }
+  #priority tbody tr:hover { background: #f2f7f9; }
   .lede strong { color: var(--alarm); }
   #scatter circle { cursor: pointer; }
   #scatter circle.sel { stroke: var(--ink); stroke-width: 2.5; }
@@ -168,6 +173,33 @@
       aria-label="Temporary accommodation pressure against homes approved but never started"></svg>
     <p class="maphint">Each dot is a borough. Lines are the London medians. Click a dot to load that borough.</p>
   </div>
+
+  <h2>So build here first</h2>
+  <p class="lede" id="prioritylede"></p>
+  <table id="priority">
+    <thead><tr>
+      <th>Borough</th><th class="n">Households in TA</th><th class="n">Children</th>
+      <th class="n">Approved, never started</th>
+    </tr></thead>
+    <tbody></tbody>
+    <tfoot></tfoot>
+  </table>
+
+  <h2>What should change</h2>
+  <ol class="asks">
+    <li><strong>Target build-out support at these six boroughs.</strong> They are where acute need
+      and unstarted permissions already coincide. Nothing here requires a new planning decision —
+      the consent exists. This is the one intervention the mismatch finding actually supports,
+      because London's problem is not a shortage of permissions but their location.</li>
+    <li><strong>Put a floor under prevention spending.</strong> Temporary accommodation has gone
+      from 56% to 71% of London's homelessness budget in three years. Every pound it takes is a
+      pound not spent stopping the next family needing it, which is what makes this a loop rather
+      than a line.</li>
+    <li><strong>Publish time-since-permission on unstarted sites.</strong> We could not tell you
+      how long these 112,104 homes have been sitting, because the only site-level source is frozen
+      at a 2020 extract. Without it nobody can distinguish a scheme waiting on finance from one
+      being sat on, and every land-banking argument stays an argument.</li>
+  </ol>
 
   <h2>Where the pressure is worst</h2>
   <table id="league">
@@ -582,6 +614,28 @@ loadJSON("data.json").then(d => {
     `turn permissions into homes. <strong>They are not.</strong> Across ${m.n} boroughs the two ` +
     `measures are unrelated — rank correlation ${m.rho}, p = ${m.p}, which is no relationship at ` +
     `all. London's unbuilt permissions sit in different places from London's housing need.`;
+
+  const t = m.priority_totals;
+  document.getElementById("prioritylede").innerHTML =
+    `Six boroughs sit above the London median on both measures: the need is already acute and the ` +
+    `permissions already exist. Between them they hold <strong>${fmt(t.unstarted)} approved homes ` +
+    `that were never started</strong> and <strong>${fmt(t.households)} households</strong> in ` +
+    `temporary accommodation, including ${fmt(t.children)} children. The consent to house every one ` +
+    `of those families <strong>${(t.unstarted / t.households).toFixed(1)} times over</strong> has ` +
+    `already been granted.`;
+
+  document.querySelector("#priority tbody").innerHTML = m.priority.map(p =>
+    `<tr data-code="${p.code}"><td>${p.name}</td><td class="n">${fmt(p.households)}</td>` +
+    `<td class="n">${fmt(p.children)}</td><td class="n">${fmt(p.unstarted)}</td></tr>`).join("");
+  document.querySelector("#priority tfoot").innerHTML =
+    `<tr><td>Together</td><td class="n">${fmt(t.households)}</td><td class="n">${fmt(t.children)}</td>` +
+    `<td class="n">${fmt(t.unstarted)}</td></tr>`;
+  document.querySelectorAll("#priority tbody tr").forEach(row => row.onclick = () => {
+    const a = DATA.areas.find(z => z.code === row.dataset.code);
+    document.getElementById("area").value = a.code;
+    render(a);
+    document.getElementById("card").scrollIntoView({behavior: "smooth", block: "start"});
+  });
 
   render(london);
   loadJSON("boroughs.json").then(g => { GEO = g; drawMap(); });

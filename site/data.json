@@ -17,7 +17,56 @@
   "rho": -0.21,
   "p": 0.251,
   "median_ta": 17.1,
-  "median_unstarted": 22.4
+  "median_unstarted": 22.4,
+  "priority": [
+   {
+    "name": "Tower Hamlets",
+    "code": "E09000030",
+    "households": 3096.0,
+    "children": 4880.0,
+    "unstarted": 9696.0
+   },
+   {
+    "name": "Newham",
+    "code": "E09000025",
+    "households": 7412.0,
+    "children": 10708.0,
+    "unstarted": 7191.0
+   },
+   {
+    "name": "Enfield",
+    "code": "E09000010",
+    "households": 3090.0,
+    "children": 4709.0,
+    "unstarted": 5892.0
+   },
+   {
+    "name": "Southwark",
+    "code": "E09000028",
+    "households": 4163.0,
+    "children": 5686.0,
+    "unstarted": 5709.0
+   },
+   {
+    "name": "Haringey",
+    "code": "E09000014",
+    "households": 2648.0,
+    "children": 3733.0,
+    "unstarted": 5022.0
+   },
+   {
+    "name": "Wandsworth",
+    "code": "E09000032",
+    "households": 4176.0,
+    "children": 4297.0,
+    "unstarted": 3802.0
+   }
+  ],
+  "priority_totals": {
+   "unstarted": 37312.0,
+   "households": 24585.0,
+   "children": 34013.0
+  }
  },
  "spend_years": [
   "2021-22",
