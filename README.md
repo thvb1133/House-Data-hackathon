@@ -46,11 +46,17 @@ problem.
 
 No install, no terminal, nothing to run:
 
-**https://raw.githack.com/thvb1133/Data-hackathon-/cursor/homes-vs-hotels-f5eb/dist/homes-vs-hotels.html**
+**https://thvb1133.github.io/Data-hackathon-/**
 
-`dist/homes-vs-hotels.html` is the whole tool — page, data, map and all — bundled into one
-87 KB file. Download it and double-click it and it works offline, on any laptop, with no web
-server. Useful when the venue wifi dies five minutes before a demo.
+(To switch that on once: repository **Settings → Pages → Source: Deploy from a branch →
+`main` / `/docs` → Save**. It goes live in a minute or two.)
+
+Mirror, works immediately without any setup:
+https://raw.githack.com/thvb1133/Data-hackathon-/main/dist/homes-vs-hotels.html
+
+`dist/homes-vs-hotels.html` is the whole tool — page, data, map and all — in one 119 KB file.
+Download it and double-click and it works offline, on any laptop, with no web server. Useful
+when the venue wifi dies five minutes before a demo.
 
 ## Run it
 

@@ -5,10 +5,11 @@
 **Brief:** PD (temporary accommodation) crossed with DE (permitted but unbuilt)
 **Track:** Data, Policy and Software — the entry is deliberately legible to all three
 
-**Live tool (no install):**
-https://raw.githack.com/thvb1133/Data-hackathon-/cursor/homes-vs-hotels-f5eb/dist/homes-vs-hotels.html
+**Live tool (no install):** https://thvb1133.github.io/Data-hackathon-/
+**Mirror if Pages is not switched on yet:**
+https://raw.githack.com/thvb1133/Data-hackathon-/main/dist/homes-vs-hotels.html
 
-**Code:** https://github.com/thvb1133/Data-hackathon-/pull/1
+**Code:** https://github.com/thvb1133/Data-hackathon-
 **Offline copy:** `dist/homes-vs-hotels.html` — one file, double-click, works with no wifi
 
 ## One-paragraph description

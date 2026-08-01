@@ -9,6 +9,9 @@ from pathlib import Path
 
 SITE = Path("site")
 OUT = Path("dist/homes-vs-hotels.html")
+# GitHub Pages can serve straight from main/docs, so the same bundle is written
+# there too and the repository hosts the live tool without any build step.
+PAGES = Path("docs/index.html")
 PAYLOADS = ["data.json", "boroughs.json"]
 
 
@@ -25,9 +28,10 @@ def main() -> None:
         raise ValueError("no script tag to anchor the payload to")
     html = html.replace("<script>", inline, 1)
 
-    OUT.parent.mkdir(parents=True, exist_ok=True)
-    OUT.write_text(html)
-    print(f"wrote {OUT} — {OUT.stat().st_size / 1024:.0f} KB, opens with no server")
+    for target in (OUT, PAGES):
+        target.parent.mkdir(parents=True, exist_ok=True)
+        target.write_text(html)
+    print(f"wrote {OUT} and {PAGES} — {OUT.stat().st_size / 1024:.0f} KB, opens with no server")
 
 
 if __name__ == "__main__":
