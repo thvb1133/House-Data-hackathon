@@ -28,6 +28,27 @@ def _num(v):
     return None if pd.isna(v) else float(v)
 
 
+def _spearman(x, y, trials=20000, seed=0):
+    """Rank correlation with a permutation p-value.
+
+    A permutation test avoids a scipy dependency and makes no distributional
+    assumption, which matters at n=31 boroughs.
+    """
+    import numpy as np
+
+    a, b = pd.Series(x).rank().to_numpy(), pd.Series(y).rank().to_numpy()
+    a, b = a - a.mean(), b - b.mean()
+    observed = float((a * b).sum() / (np.sqrt((a**2).sum()) * np.sqrt((b**2).sum())))
+
+    rng = np.random.default_rng(seed)
+    shuffled = np.array([b[rng.permutation(len(b))] for _ in range(trials)])
+    null = (shuffled * a).sum(axis=1) / (
+        np.sqrt((a**2).sum()) * np.sqrt((shuffled**2).sum(axis=1))
+    )
+    p = float((np.abs(null) >= abs(observed)).mean())
+    return round(observed, 2), round(p, 3)
+
+
 
 
 def main() -> None:
@@ -143,6 +164,39 @@ def main() -> None:
             }
         )
 
+    # Set demand pressure against supply failure on a common per-1,000-households
+    # basis, so the two halves of the argument can be tested against each other.
+    for a in areas:
+        stock = (
+            a["households"] / a["per_1000_households"] * 1000
+            if a["households"] and a["per_1000_households"]
+            else None
+        )
+        # Boroughs that started more than they approved keep their negative value:
+        # they sit at the delivering end of the scale, and dropping them would bias
+        # the test toward the boroughs with the worst backlogs.
+        a["unstarted_per_1000"] = (
+            round(a["approved_not_started"] / stock * 1000, 1)
+            if stock and a.get("approved_not_started") is not None
+            else None
+        )
+
+    tested = [
+        a for a in areas
+        if a["is_borough"] and a["unstarted_per_1000"] is not None and a["per_1000_households"]
+    ]
+    rho, p = _spearman(
+        [a["per_1000_households"] for a in tested],
+        [a["unstarted_per_1000"] for a in tested],
+    )
+    mismatch = {
+        "n": len(tested),
+        "rho": rho,
+        "p": p,
+        "median_ta": round(pd.Series([a["per_1000_households"] for a in tested]).median(), 1),
+        "median_unstarted": round(pd.Series([a["unstarted_per_1000"] for a in tested]).median(), 1),
+    }
+
     areas.sort(key=lambda a: (not a["is_borough"], a["name"]))
     payload = {
         "latest_quarter": latest,
@@ -150,6 +204,7 @@ def main() -> None:
         "nightly_cost_assumption": NIGHTLY_COST_ASSUMPTION,
         "build_cost_assumption": BUILD_COST_ASSUMPTION,
         "pipeline_years": "2019/20 to 2023/24",
+        "mismatch": mismatch,
         "spend_years": spend_years,
         "latest_spend_year": latest_spend_year,
         "sources": [

@@ -12,6 +12,13 @@
  "nightly_cost_assumption": 60.0,
  "build_cost_assumption": 300000.0,
  "pipeline_years": "2019/20 to 2023/24",
+ "mismatch": {
+  "n": 31,
+  "rho": -0.21,
+  "p": 0.251,
+  "median_ta": 17.1,
+  "median_unstarted": 22.4
+ },
  "spend_years": [
   "2021-22",
   "2022-23",
@@ -117,7 +124,8 @@
    "approved_not_completed": 4785.0,
    "approved_not_started": 5398.0,
    "starts": 5167.0,
-   "completion_rate_pct": 54.7
+   "completion_rate_pct": 54.7,
+   "unstarted_per_1000": 70.9
   },
   {
    "code": "E09000003",
@@ -211,7 +219,8 @@
    "approved_not_completed": 6853.0,
    "approved_not_started": -1563.0,
    "starts": 19143.0,
-   "completion_rate_pct": 61.0
+   "completion_rate_pct": 61.0,
+   "unstarted_per_1000": -10.0
   },
   {
    "code": "E09000004",
@@ -305,7 +314,8 @@
    "approved_not_completed": 881.0,
    "approved_not_started": 1736.0,
    "starts": 1910.0,
-   "completion_rate_pct": 75.8
+   "completion_rate_pct": 75.8,
+   "unstarted_per_1000": 18.0
   },
   {
    "code": "E09000005",
@@ -399,7 +409,8 @@
    "approved_not_completed": 8665.0,
    "approved_not_started": 8275.0,
    "starts": 11003.0,
-   "completion_rate_pct": 55.1
+   "completion_rate_pct": 55.1,
+   "unstarted_per_1000": null
   },
   {
    "code": "E09000006",
@@ -493,7 +504,8 @@
    "approved_not_completed": 2359.0,
    "approved_not_started": 2088.0,
    "starts": 2582.0,
-   "completion_rate_pct": 49.5
+   "completion_rate_pct": 49.5,
+   "unstarted_per_1000": 15.2
   },
   {
    "code": "E09000007",
@@ -587,7 +599,8 @@
    "approved_not_completed": -797.0,
    "approved_not_started": 1083.0,
    "starts": 1216.0,
-   "completion_rate_pct": 134.7
+   "completion_rate_pct": 134.7,
+   "unstarted_per_1000": 10.7
   },
   {
    "code": "E09000001",
@@ -681,7 +694,8 @@
    "approved_not_completed": 1.0,
    "approved_not_started": 620.0,
    "starts": 26.0,
-   "completion_rate_pct": 99.8
+   "completion_rate_pct": 99.8,
+   "unstarted_per_1000": 84.5
   },
   {
    "code": "E09000008",
@@ -775,7 +789,8 @@
    "approved_not_completed": -2209.0,
    "approved_not_started": -256.0,
    "starts": 9280.0,
-   "completion_rate_pct": 124.5
+   "completion_rate_pct": 124.5,
+   "unstarted_per_1000": -1.6
   },
   {
    "code": "E09000009",
@@ -869,7 +884,8 @@
    "approved_not_completed": 14595.0,
    "approved_not_started": 10269.0,
    "starts": 12289.0,
-   "completion_rate_pct": 35.3
+   "completion_rate_pct": 35.3,
+   "unstarted_per_1000": null
   },
   {
    "code": "E09000010",
@@ -963,7 +979,8 @@
    "approved_not_completed": 7469.0,
    "approved_not_started": 5892.0,
    "starts": 5054.0,
-   "completion_rate_pct": 31.8
+   "completion_rate_pct": 31.8,
+   "unstarted_per_1000": 48.4
   },
   {
    "code": "E09000011",
@@ -1057,7 +1074,8 @@
    "approved_not_completed": 18069.0,
    "approved_not_started": 13363.0,
    "starts": 11331.0,
-   "completion_rate_pct": 26.8
+   "completion_rate_pct": 26.8,
+   "unstarted_per_1000": 111.0
   },
   {
    "code": "E09000012",
@@ -1151,7 +1169,8 @@
    "approved_not_completed": -2433.0,
    "approved_not_started": -878.0,
    "starts": 2998.0,
-   "completion_rate_pct": 214.8
+   "completion_rate_pct": 214.8,
+   "unstarted_per_1000": -7.9
   },
   {
    "code": "E09000013",
@@ -1245,7 +1264,8 @@
    "approved_not_completed": 1051.0,
    "approved_not_started": 554.0,
    "starts": 6414.0,
-   "completion_rate_pct": 84.9
+   "completion_rate_pct": 84.9,
+   "unstarted_per_1000": 6.5
   },
   {
    "code": "E09000014",
@@ -1339,7 +1359,8 @@
    "approved_not_completed": 3673.0,
    "approved_not_started": 5022.0,
    "starts": 4237.0,
-   "completion_rate_pct": 60.3
+   "completion_rate_pct": 60.3,
+   "unstarted_per_1000": 47.0
   },
   {
    "code": "E09000015",
@@ -1433,7 +1454,8 @@
    "approved_not_completed": 905.0,
    "approved_not_started": -754.0,
    "starts": 5843.0,
-   "completion_rate_pct": 82.2
+   "completion_rate_pct": 82.2,
+   "unstarted_per_1000": -8.1
   },
   {
    "code": "E09000016",
@@ -1527,7 +1549,8 @@
    "approved_not_completed": 3233.0,
    "approved_not_started": 4064.0,
    "starts": 3236.0,
-   "completion_rate_pct": 55.7
+   "completion_rate_pct": 55.7,
+   "unstarted_per_1000": 39.2
   },
   {
    "code": "E09000017",
@@ -1621,7 +1644,8 @@
    "approved_not_completed": 5337.0,
    "approved_not_started": 5138.0,
    "starts": 5122.0,
-   "completion_rate_pct": 48.0
+   "completion_rate_pct": 48.0,
+   "unstarted_per_1000": 44.4
   },
   {
    "code": "E09000018",
@@ -1715,7 +1739,8 @@
    "approved_not_completed": 7302.0,
    "approved_not_started": 9433.0,
    "starts": 4427.0,
-   "completion_rate_pct": 47.3
+   "completion_rate_pct": 47.3,
+   "unstarted_per_1000": 87.6
   },
   {
    "code": "E09000019",
@@ -1809,7 +1834,8 @@
    "approved_not_completed": -832.0,
    "approved_not_started": 427.0,
    "starts": 2079.0,
-   "completion_rate_pct": 133.2
+   "completion_rate_pct": 133.2,
+   "unstarted_per_1000": 4.2
   },
   {
    "code": "E09000020",
@@ -1903,7 +1929,8 @@
    "approved_not_completed": -630.0,
    "approved_not_started": 228.0,
    "starts": 1088.0,
-   "completion_rate_pct": 147.9
+   "completion_rate_pct": 147.9,
+   "unstarted_per_1000": 3.2
   },
   {
    "code": "E09000021",
@@ -1997,7 +2024,8 @@
    "approved_not_completed": 3434.0,
    "approved_not_started": 1900.0,
    "starts": 3883.0,
-   "completion_rate_pct": 40.6
+   "completion_rate_pct": 40.6,
+   "unstarted_per_1000": 28.0
   },
   {
    "code": "E09000022",
@@ -2091,7 +2119,8 @@
    "approved_not_completed": 4074.0,
    "approved_not_started": 468.0,
    "starts": 7133.0,
-   "completion_rate_pct": 46.4
+   "completion_rate_pct": 46.4,
+   "unstarted_per_1000": 3.4
   },
   {
    "code": "E09000023",
@@ -2185,7 +2214,8 @@
    "approved_not_completed": 4950.0,
    "approved_not_started": -377.0,
    "starts": 8145.0,
-   "completion_rate_pct": 36.3
+   "completion_rate_pct": 36.3,
+   "unstarted_per_1000": -3.0
   },
   {
    "code": "E09000024",
@@ -2279,7 +2309,8 @@
    "approved_not_completed": 2703.0,
    "approved_not_started": 1974.0,
    "starts": 3329.0,
-   "completion_rate_pct": 49.0
+   "completion_rate_pct": 49.0,
+   "unstarted_per_1000": 23.6
   },
   {
    "code": "E09000025",
@@ -2373,7 +2404,8 @@
    "approved_not_completed": 9025.0,
    "approved_not_started": 7191.0,
    "starts": 12294.0,
-   "completion_rate_pct": 53.7
+   "completion_rate_pct": 53.7,
+   "unstarted_per_1000": 57.2
   },
   {
    "code": "E09000026",
@@ -2467,7 +2499,8 @@
    "approved_not_completed": 4435.0,
    "approved_not_started": 1651.0,
    "starts": 5102.0,
-   "completion_rate_pct": 34.3
+   "completion_rate_pct": 34.3,
+   "unstarted_per_1000": 15.4
   },
   {
    "code": "E09000027",
@@ -2561,7 +2594,8 @@
    "approved_not_completed": 735.0,
    "approved_not_started": 669.0,
    "starts": 1123.0,
-   "completion_rate_pct": 59.0
+   "completion_rate_pct": 59.0,
+   "unstarted_per_1000": 8.2
   },
   {
    "code": "E09000028",
@@ -2655,7 +2689,8 @@
    "approved_not_completed": 4844.0,
    "approved_not_started": 5709.0,
    "starts": 7686.0,
-   "completion_rate_pct": 63.8
+   "completion_rate_pct": 63.8,
+   "unstarted_per_1000": 41.0
   },
   {
    "code": "E09000029",
@@ -2749,7 +2784,8 @@
    "approved_not_completed": 817.0,
    "approved_not_started": 1891.0,
    "starts": 1146.0,
-   "completion_rate_pct": 73.1
+   "completion_rate_pct": 73.1,
+   "unstarted_per_1000": 22.4
   },
   {
    "code": "E09000030",
@@ -2843,7 +2879,8 @@
    "approved_not_completed": 7510.0,
    "approved_not_started": 9696.0,
    "starts": 11704.0,
-   "completion_rate_pct": 64.9
+   "completion_rate_pct": 64.9,
+   "unstarted_per_1000": 70.2
   },
   {
    "code": "E09000031",
@@ -2937,7 +2974,8 @@
    "approved_not_completed": 3067.0,
    "approved_not_started": 3607.0,
    "starts": 5045.0,
-   "completion_rate_pct": 64.6
+   "completion_rate_pct": 64.6,
+   "unstarted_per_1000": 34.2
   },
   {
    "code": "E09000032",
@@ -3031,7 +3069,8 @@
    "approved_not_completed": 7618.0,
    "approved_not_started": 3802.0,
    "starts": 13357.0,
-   "completion_rate_pct": 55.6
+   "completion_rate_pct": 55.6,
+   "unstarted_per_1000": 26.7
   },
   {
    "code": "E09000033",
@@ -3125,7 +3164,8 @@
    "approved_not_completed": 898.0,
    "approved_not_started": 880.0,
    "starts": 3345.0,
-   "completion_rate_pct": 78.7
+   "completion_rate_pct": 78.7,
+   "unstarted_per_1000": 8.5
   },
   {
    "code": "E92000001",
@@ -3185,7 +3225,8 @@
    "approved_not_completed": null,
    "approved_not_started": null,
    "starts": null,
-   "completion_rate_pct": null
+   "completion_rate_pct": null,
+   "unstarted_per_1000": null
   },
   {
    "code": "E12000007",
@@ -3279,7 +3320,8 @@
    "approved_not_completed": 136034.0,
    "approved_not_started": 112104.0,
    "starts": 208099.0,
-   "completion_rate_pct": 57.5
+   "completion_rate_pct": 57.5,
+   "unstarted_per_1000": 31.3
   }
  ]
 }
