@@ -4,10 +4,10 @@
 set -euo pipefail
 cd "$(dirname "$0")"
 
-PORT="${PORT:-8099}"
-
-echo "==> 1/5  Installing Python packages"
-python3 -m pip install --quiet --upgrade pandas odfpy openpyxl
+echo "==> 1/5  Checking Python packages"
+if ! python3 -c "import pandas, odf, openpyxl" 2>/dev/null; then
+  python3 -m pip install --quiet pandas odfpy openpyxl
+fi
 
 echo "==> 2/5  Downloading official data (skips anything already downloaded)"
 python3 scripts/fetch_data.py
@@ -21,6 +21,28 @@ python3 scripts/build_map.py
 python3 scripts/build_site.py
 
 echo "==> 5/5  Starting the site"
+
+# If a previous run is still serving, step along to the next free port rather
+# than dying with "Address already in use".
+START_PORT="${PORT:-8099}"
+PORT="$(START_PORT="$START_PORT" python3 - <<'PY'
+import os, socket, sys
+
+start = int(os.environ["START_PORT"])
+for port in range(start, start + 50):
+    with socket.socket() as probe:
+        if probe.connect_ex(("127.0.0.1", port)) != 0:
+            print(port)
+            sys.exit(0)
+sys.exit("no free port found")
+PY
+)"
+
+if [ "$PORT" != "$START_PORT" ]; then
+  echo "    Port ${START_PORT} was busy (the site is probably already open there)."
+  echo "    Using port ${PORT} instead."
+fi
+
 echo
 echo "    Open this in your browser:  http://localhost:${PORT}"
 echo "    Press Ctrl+C here to stop."

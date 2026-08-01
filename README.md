@@ -44,6 +44,18 @@ builds the map and the page payload, and starts a local web server. It takes a c
 minutes the first time and a few seconds after that, because downloads are cached in
 `data/raw/`. Safe to re-run any time.
 
+### If something goes wrong
+
+**`OSError: [Errno 98] Address already in use`** — the site is already running from an earlier
+`./run.sh`, so nothing is broken. Open http://localhost:8099 and it will be there. Newer runs
+step along to the next free port automatically and print which one they picked. To stop an
+old one, click the terminal window it is running in and press `Ctrl+C`.
+
+**`permission denied: ./run.sh`** — run `chmod +x run.sh` once, then try again.
+
+**A download fails** — re-run `./run.sh`. It keeps whatever it already fetched and only
+retries the missing files.
+
 If you would rather run the steps yourself:
 
 ```bash
