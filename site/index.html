@@ -207,6 +207,10 @@
 </main>
 
 <script>
+// The standalone build inlines both payloads so the page works from a file:// URL
+// with no web server; served normally, it fetches them as usual.
+const EMBEDDED = window.__EMBEDDED__ || null;
+const loadJSON = name => EMBEDDED ? Promise.resolve(EMBEDDED[name]) : fetch(name).then(r => r.json());
 const fmt = n => n == null ? "—" : n.toLocaleString("en-GB", {maximumFractionDigits: 0});
 let DATA, current, nightlyRate;
 
@@ -369,7 +373,7 @@ async function lookupPostcode(pc) {
   }
 }
 
-fetch("data.json").then(r => r.json()).then(d => {
+loadJSON("data.json").then(d => {
   DATA = d;
   nightlyRate = d.nightly_cost_assumption;
   const london = d.areas.find(a => a.code === "E12000007");
@@ -411,7 +415,7 @@ fetch("data.json").then(r => r.json()).then(d => {
   });
 
   render(london);
-  fetch("boroughs.json").then(r => r.json()).then(g => { GEO = g; drawMap(); });
+  loadJSON("boroughs.json").then(g => { GEO = g; drawMap(); });
 });
 </script>
 </body>

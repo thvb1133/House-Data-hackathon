@@ -19,6 +19,7 @@ python3 scripts/extract_pipeline.py
 echo "==> 4/5  Building the site"
 python3 scripts/build_map.py
 python3 scripts/build_site.py
+python3 scripts/build_standalone.py
 
 echo "==> 5/5  Starting the site"
 

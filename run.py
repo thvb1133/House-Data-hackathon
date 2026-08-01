@@ -24,6 +24,7 @@ STEPS = [
     ("Reading the housing delivery spreadsheet", "extract_pipeline.py"),
     ("Building the map", "build_map.py"),
     ("Building the page", "build_site.py"),
+    ("Bundling the double-clickable single file", "build_standalone.py"),
 ]
 
 
